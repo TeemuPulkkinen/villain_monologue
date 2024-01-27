@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca6dvxbtxm10c"
-path="res://.godot/imported/start_hover.png-7ec8f825046c30892c1a8356f0008a31.ctex"
+uid="uid://csbblpnvyfnk6"
+path="res://.godot/imported/placeholder_villain_.png-152294427ba55c5cfb2cca466d13a3d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/menu_assets/start_hover.png"
-dest_files=["res://.godot/imported/start_hover.png-7ec8f825046c30892c1a8356f0008a31.ctex"]
+source_file="res://art/placeholders/character_assets/placeholder_villain_.png"
+dest_files=["res://.godot/imported/placeholder_villain_.png-152294427ba55c5cfb2cca466d13a3d2.ctex"]
 
 [params]
 
