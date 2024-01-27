@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=18 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://d1xd4052aryle" path="res://art/placeholders/dialogue_assets/placeholder_herobubble.png" id="3_dn43u"]
+[ext_resource type="FontFile" uid="uid://dkjlgbwc6df5j" path="res://art/fonts/Underdog-Regular.ttf" id="4_mxbf1"]
 [ext_resource type="Texture2D" uid="uid://ffseasedo4ux" path="res://art/placeholders/dialogue_assets/placeholder_villainBubble.png" id="4_n1477"]
 [ext_resource type="Texture2D" uid="uid://di4uu02814vnd" path="res://art/placeholders/dialogue_assets/placeholder_thought1.png" id="5_iag7b"]
 [ext_resource type="Texture2D" uid="uid://cx8j54ho21a67" path="res://art/option_icons/option_placeholder.png" id="6_ctowj"]
@@ -72,6 +73,8 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
 [sub_resource type="Theme" id="Theme_01h7a"]
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 38
+RichTextLabel/fonts/normal_font = ExtResource("4_mxbf1")
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -138,6 +141,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue... Testing testing evil testing bwa ha ha ha haa."
+seconds_per_step = 0.05
+pause_at_characters = "?!"
 
 [node name="ClickMask" type="Control" parent="."]
 layout_mode = 3

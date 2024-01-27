@@ -18,8 +18,8 @@ Hero: And this is a hero test!
 Villain: Well,[next=0.5] well,[next=0.5] well.[next=2]
 Villain: We meet again.
 Hero: Ugh! Release me at once!
-Villain: Oh, I would, but...
-Villain: I don't want to. Now sit tight.
+Villain: Oh, I would, but.
+Villain: I simply don't want to. Now sit tight.
 % => motivation1
 % => motivation2
 % => motivation3
@@ -49,7 +49,7 @@ Villain: You must be curious why I bested you!
 
 ~ start4
 Hero: *gasp* [next=0.5]It can't be!
-Villain: Hah! Yes! It was <i>me</i> all along!
+Villain: Hah! Yes! It was me all along!
 Hero: No! I can't believe it!
 Hero: How could you?
 Hero: How could you be so... so...
@@ -66,14 +66,18 @@ Villain: When you sent your capybaras after me, they ate my prize carrots!
 Villain: I was going to make pickles from those!
 Villain: Pickles with dill! 
 Villain: So I swore to... to...
+Villain: [i][/i]
 - Carrot
 	Villain: ... to plant more carrots! Yeah!
 	Hero: Uh. Sure.
+	set Event.adjust_malice(-5)
 - Shark
 	Villain: ... to feed your capybaras to my sharks! Haa!
+	set Event.adjust_malice(5)
 - Brain
 	Villain: ... to come up with a plan so evil, you would all just...
 	Villain: DIE!!!
+	set Event.adjust_malice(15)
 Villain: Now, everything has gone right according to my plan...
 % => events1
 % => events2
@@ -82,21 +86,25 @@ Villain: Now, everything has gone right according to my plan...
 
 ~ motivation2
 Villain: Alas... It's only fair, after all...
-Villain: You left me... [wait=2]On read.
+Villain: You left me... On read!
 Villain: Who does that?
 Villain: It was a funny picture at that! A raccoon!
 Villain: People like you should... uh...
+Villain: [i][/i]
 - Bomb
 	Villain: Have their phone EXPLODE in a ball of FIRE! Yeah!
 	Hero: That escalated quickly.
+	set Event.adjust_malice(5)
 - Book
 	Villain: Be read for the filth you are!
 	Hero: I actually lost my phone last week.
 	Villain: Serves you right for not replying to your messages... Mrr!
+	set Event.adjust_malice(-5)
 - Raccoon
 	Villain: Make friends with raccoons...
 	Villain: They like trash like you!
 	Hero: Ouch.
+	set Event.adjust_malice(15)
 Villain: Now, everything has gone right according to my plan...
 % => events1
 % => events2
@@ -108,6 +116,7 @@ Villain: Now, everything has gone right according to my plan...
 Villain: You used to be so grand, captain of the swim league...
 Villain: Don't think I've forgotten who always got picked last.
 Villain: But when you're swimming with the fishes, I'll be thinking of...
+Villain: [i][/i]
 - Shark
 	Villain: ... how evil my three pet sharks are!
 	Villain: They'll eat you! Ha!
@@ -115,14 +124,17 @@ Villain: But when you're swimming with the fishes, I'll be thinking of...
 	Villain: And then you'll be DEAD in the water!
 	Hero: Thanks, I deduced that part myself.
 	Villain: Blood everywhere!
-	Hero: Are you quite done!
+	Hero: Are you quite done?
+	set Event.adjust_malice(15)
 - Kiss
 	Villain: ... your kisses—
 	Hero: Oh my. 
 	Villain: No! I mean... Mrr!
+	set Event.adjust_malice(-5)
 - Stone
 	Villain: How right and tight those knots around your strong wrists and ankles feel...
 	Villain: I meant, you'll sink! Like a stone!
+	set Event.adjust_malice(5)
 Villain: Now, everything has gone right according to my plan...
 % => events1
 % => events2
@@ -134,16 +146,20 @@ Villain: The unmatched socks on the murder scene? That was me!
 Villain: With my obsessive compulsion disorder, I knew you wouldn't suspect a thing!
 Villain: Granted, I did put them exactly ten centimetres apart and at a precise 90° angle.
 Villain: With those socks, I was able to... ehm...
+Villain: [i][/i]
 - Yarn
 	Villain: Spin the perfect yarn to distract the police, but still lead you right here.
 	Hero: Darn.
+	set Event.adjust_malice(5)
 - Teacup
 	Villain: Cozy up with the leftover socks and the latest Spies, Lies and Wandering Eyes!
 	Hero: Wait, isn't that series based loosely on my life?
 	Villain: A-and mine! Mrr!
+	set Event.adjust_malice(-5)
 - Sock
 	Villain: Sock-sessfully get away with murder! Mhaha!
 	Hero: Please kill me.
+	set Event.adjust_malice(15)
 => plans1
 => END
 
@@ -152,16 +168,20 @@ Villain: The smoked fish in your hotel room bathtub? That was me!
 Villain: Not only that, but I also smoked the fish with wood chips from your favorite apple tree!
 Villain: When you go home, it's gone! Ha!
 Villain: How'd you like them... Um...
+Villain: [i][/i]
 - Apple
 	Villain: Apples! Ha!
 	Hero: Yawn. I know you can do better.
+	set Event.adjust_malice(-5)
 - Bathtub
 	Villain: Salty bath waters!
 	Villain: Because they're filled with your tears! Mhah!
+	set Event.adjust_malice(5)
 - Hammer
 	Villain: ... smashing times!
-	Villain: I made apple mash and ate it with pancakes for breakdast!
+	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
+	set Event.adjust_malice(15)
 Villain: You see, the nature of evil...
 => plans1
 => END
@@ -171,20 +191,25 @@ Villain: The sudden rain that forced you to take shelter in this cave? That was 
 Villain: And, the fact that you were on this lonely road in the middle of the forest?
 Villain: That was also me, placing the leaves of the rare purple maple at the museum!
 Villain: All to get you here, so that I can... Uh...
+Villain: [i][/i]
 - Pancake
 	Villain: Have breakfast with you!
 	Villain: No, I mean.... Make pancakes with you!
 	Villain: Gak! Mrr!
+	set Event.adjust_malice(-5)
 - Car
 	Villain: Run you over with your own car!
 	Hero: You got your license?
 	Villain: No! And I don't even care if I scratch it!
 	Hero: No, not Tony the Toyota!
 	Villain: Mwahaa!
+	set Event.adjust_malice(15)
 - Umbrella
 	Villain: Return the umbrella I borrowed!
 	Hero: Really? You would do that?
 	Villain: No! I am keeping it forever, because you will be dead!
+	Villain: Corpses don't need umbrellas!
+	set Event.adjust_malice(5)
 Villain: You see, the nature of evil...
 => plans1
 => END
@@ -194,16 +219,21 @@ Villain: I will feed you to my sharks!
 Villain: They're very hungry...
 Villain: I do feed them but the vet says they need to diet.
 Villain: I guess that means...
+Villain: [i][/i]
 - Calendar
 	Villain: ... today is their cheat day!
 	Villain: And you will make one fine sharkutery board!
+	set Event.adjust_malice(15)
 - Mushroom
 	Villain: I will cook you with mushrooms and parsley until you're tender.
 	Villain: Only the best for my sharky darlings!
+	Hero: At least I'm the main course.
+	set Event.adjust_malice(5)
 - Apple
 	Villain: You will feed them their fruit bowls tonight!
 	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
 	Villain: Hnnggh... That's not what... Mrr!
+	set Event.adjust_malice(-5)
 Villain: You see, the nature of evil...
 % => rant1
 % => rant2

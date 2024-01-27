@@ -19,7 +19,7 @@ func _ready():
 	
 	# Start dialogue
 	if !dialogue:
-		DialogueManager.show_dialogue_balloon(dialogue_file, "start1")
+		DialogueManager.show_dialogue_balloon(dialogue_file, "dialogueRunner")
 		dialogue = false
 
 # If A-key is pressed on the keyboard, adjusts the value of the progress bar
