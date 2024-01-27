@@ -32,37 +32,22 @@ func _ready() -> void:
 func set_responses(next_responses: Array) -> void:
 	_responses = next_responses
 
-	# Remove any current items
-	for item in get_children():
-		if item == response_template: continue
 
-		remove_child(item)
-		item.queue_free()
-
-	# Add new items
+	# EDITED RESPONSE BUBBLES
 	if _responses.size() > 0:
-		for response in _responses:
-			var item: Control
-			if is_instance_valid(response_template):
-				item = response_template.duplicate(DUPLICATE_GROUPS | DUPLICATE_SCRIPTS | DUPLICATE_SIGNALS)
-				item.show()
+		for i in range (0, _responses.size()):
+			var thought_bubble = get_child(i)
+
+			var path = "res://art/option_icons/option_"+_responses[i].text+".png"
+			var texturefile = FileAccess.open(path, FileAccess.READ)
+			if texturefile:
+				thought_bubble.image= load(path)
+				texturefile.close()
 			else:
-				item = Button.new()
-			item.name = "Response%d" % get_child_count()
-			if not response.is_allowed:
-				item.name = String(item.name) + "Disallowed"
-				item.disabled = true
-
-			# If the item has a response property then use that
-			if "response" in item:
-				item.response = response
-			# Otherwise assume we can just set the text
-			else:
-				item.text = response.text
-
-			item.set_meta("response", response)
-
-			add_child(item)
+				thought_bubble.image= load("res://art/option_icons/option_placeholder.png")
+				texturefile.close()
+			
+			thought_bubble.set_meta("response", _responses[i])
 
 		_configure_focus()
 

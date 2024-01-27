@@ -11,6 +11,8 @@ const SKIP_ACTION = &"ui_cancel"
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+@onready var villain_bubble = %VillainBubble
+@onready var hero_bubble = %HeroBubble
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -42,9 +44,18 @@ var dialogue_line: DialogueLine:
 
 		dialogue_line = next_dialogue_line
 
-		character_label.visible = not dialogue_line.character.is_empty()
-		character_label.text = tr(dialogue_line.character, "dialogue")
-
+		# Set balloon type based on character speaking
+		if tr(dialogue_line.character, "dialogue") == "Villain":
+			balloon.size = Vector2(836,163)
+			balloon.position = Vector2(704,851)
+			villain_bubble.show()
+			hero_bubble.hide()
+		else: # Hero
+			balloon.size = Vector2(663,197)
+			balloon.position = Vector2(665,153)
+			hero_bubble.show()
+			villain_bubble.hide()
+		
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
 
@@ -136,3 +147,16 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+
+
+func _on_click_mask_gui_input(event):
+	# See if we need to skip typing of the dialogue
+	if dialogue_label.is_typing:
+		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
+		var skip_button_was_pressed: bool = event.is_action_pressed(SKIP_ACTION)
+		if mouse_was_clicked or skip_button_was_pressed:
+			get_viewport().set_input_as_handled()
+			dialogue_label.skip_typing()
+			return
+	if event is InputEventMouseButton and event.is_pressed() and event.button_index == 1:
+		next(dialogue_line.next_id)

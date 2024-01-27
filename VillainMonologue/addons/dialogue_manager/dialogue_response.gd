@@ -1,5 +1,5 @@
 ## A response to a line of dialogue, usualy attached to a [code]DialogueLine[/code].
-class_name DialogueResponse extends RefCounted
+class_name DialogueResponse extends TextureButton
 
 
 const _DialogueConstants = preload("./constants.gd")
