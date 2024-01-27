@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn8pfqy8ly4j"
-path="res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"
+uid="uid://bguwvpq0kp3b"
+path="res://.godot/imported/option_Brain.png-9d786a4d3de8f44050739b1ca7158872.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/option_icons/option_Cupcake.png"
-dest_files=["res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"]
+source_file="res://art/option_icons/option_Brain.png"
+dest_files=["res://.godot/imported/option_Brain.png-9d786a4d3de8f44050739b1ca7158872.ctex"]
 
 [params]
 

@@ -7,10 +7,10 @@
 [ext_resource type="FontFile" uid="uid://dkjlgbwc6df5j" path="res://art/fonts/Underdog-Regular.ttf" id="4_mxbf1"]
 [ext_resource type="Texture2D" uid="uid://ffseasedo4ux" path="res://art/placeholders/dialogue_assets/placeholder_villainBubble.png" id="4_n1477"]
 [ext_resource type="Texture2D" uid="uid://di4uu02814vnd" path="res://art/placeholders/dialogue_assets/placeholder_thought1.png" id="5_iag7b"]
-[ext_resource type="Texture2D" uid="uid://cx8j54ho21a67" path="res://art/option_icons/option_placeholder.png" id="6_ctowj"]
 [ext_resource type="Texture2D" uid="uid://cml0fm6vetfp0" path="res://art/placeholders/dialogue_assets/placeholder_thought2.png" id="6_epupf"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/Response.gd" id="6_ui0cx"]
 [ext_resource type="Texture2D" uid="uid://dw7eo4x8eu1oh" path="res://art/placeholders/dialogue_assets/placeholder_thought3.png" id="7_d2nwj"]
+[ext_resource type="Texture2D" uid="uid://rotl7j26mne" path="res://art/option_icons/option_Apple.png" id="9_x0qaa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -182,11 +182,11 @@ script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response1"]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 60.0
-offset_right = 301.0
-offset_bottom = 160.0
-texture = ExtResource("6_ctowj")
+offset_left = 173.0
+offset_top = 34.0
+offset_right = 323.0
+offset_bottom = 184.0
+texture = ExtResource("9_x0qaa")
 
 [node name="Response2" type="TextureButton" parent="Responses/ResponsesMenu"]
 layout_mode = 2
@@ -197,11 +197,11 @@ script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response2"]
 layout_mode = 0
-offset_left = 249.0
-offset_top = 63.0
-offset_right = 349.0
-offset_bottom = 163.0
-texture = ExtResource("6_ctowj")
+offset_left = 220.0
+offset_top = 42.0
+offset_right = 370.0
+offset_bottom = 192.0
+texture = ExtResource("9_x0qaa")
 
 [node name="Response3" type="TextureButton" parent="Responses/ResponsesMenu"]
 layout_mode = 2
@@ -212,10 +212,11 @@ script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response3"]
 layout_mode = 0
-offset_left = 229.0
-offset_top = 97.0
-offset_right = 329.0
-offset_bottom = 197.0
+offset_left = 202.0
+offset_top = 78.0
+offset_right = 352.0
+offset_bottom = 228.0
+texture = ExtResource("9_x0qaa")
 
 [connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]
 [connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

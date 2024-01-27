@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn8pfqy8ly4j"
-path="res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"
+uid="uid://bo3iw4pdox5jj"
+path="res://.godot/imported/option_Stone.png-9d722516c18b629586fa45e8cbfc0809.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/option_icons/option_Cupcake.png"
-dest_files=["res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"]
+source_file="res://art/option_icons/option_Stone.png"
+dest_files=["res://.godot/imported/option_Stone.png-9d722516c18b629586fa45e8cbfc0809.ctex"]
 
 [params]
 

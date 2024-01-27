@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxn8pfqy8ly4j"
-path="res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"
+uid="uid://ciieiygcdpa1k"
+path="res://.godot/imported/option_Mushroom.png-4122e96c274ba2d7203dc1246aed50ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/option_icons/option_Cupcake.png"
-dest_files=["res://.godot/imported/option_Cupcake.png-15384a7a9c9625b85f0a65631cfa6fd9.ctex"]
+source_file="res://art/option_icons/option_Mushroom.png"
+dest_files=["res://.godot/imported/option_Mushroom.png-4122e96c274ba2d7203dc1246aed50ba.ctex"]
 
 [params]
 
