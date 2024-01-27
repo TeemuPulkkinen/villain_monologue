@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
 [ext_resource type="Texture2D" uid="uid://c36506lgrq3i4" path="res://art/placeholders/menu_assets/retrybutton.png" id="2_ltvjj"]
 [ext_resource type="Texture2D" uid="uid://cwjb02t1w2bn7" path="res://art/placeholders/menu_assets/mainmenubutton.png" id="3_x7srh"]
-[ext_resource type="Script" path="res://menus/RetryButton.gd" id="3_xwlqr"]
+[ext_resource type="Script" path="res://scripts/RetryButton.gd" id="3_xwlqr"]
 [ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="4_ft7qo"]
-[ext_resource type="Script" path="res://menus/MainMenuButton.gd" id="5_i38a6"]
+[ext_resource type="Script" path="res://scripts/MainMenuButton.gd" id="5_i38a6"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
