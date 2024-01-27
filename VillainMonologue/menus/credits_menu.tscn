@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=8 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
-[ext_resource type="Texture2D" uid="uid://dk3ymx7lf6a5h" path="res://art/placeholders/ui_assets/creditsbackground.png" id="1_r7n5i"]
+[ext_resource type="Texture2D" uid="uid://c36506lgrq3i4" path="res://art/placeholders/menu_assets/retrybutton.png" id="2_ltvjj"]
+[ext_resource type="Texture2D" uid="uid://cwjb02t1w2bn7" path="res://art/placeholders/menu_assets/mainmenubutton.png" id="3_x7srh"]
+[ext_resource type="Script" path="res://menus/RetryButton.gd" id="3_xwlqr"]
+[ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="4_ft7qo"]
+[ext_resource type="Script" path="res://menus/MainMenuButton.gd" id="5_i38a6"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -12,8 +18,79 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l01mg")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_r7n5i")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_aahts")
+
+[node name="RetryButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -190.0
+offset_right = -100.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("2_ltvjj")
+script = ExtResource("3_xwlqr")
+
+[node name="MainMenuButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = -190.0
+offset_right = 418.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_x7srh")
+script = ExtResource("5_i38a6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 62
+text = "Credits"
+
+[node name="PlaceholderHero" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(940, 700)
+texture = ExtResource("4_ft7qo")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -423.0
+offset_right = 97.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "Chride
+Lazaros
+Mosu
+Teemu
+"
+
+[connection signal="pressed" from="CanvasLayer/RetryButton" to="CanvasLayer/RetryButton" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]
