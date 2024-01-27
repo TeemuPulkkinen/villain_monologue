@@ -1,8 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=17 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
+[ext_resource type="Texture2D" uid="uid://d1xd4052aryle" path="res://art/placeholders/dialogue_assets/placeholder_herobubble.png" id="3_dn43u"]
+[ext_resource type="Texture2D" uid="uid://ffseasedo4ux" path="res://art/placeholders/dialogue_assets/placeholder_villainBubble.png" id="4_n1477"]
+[ext_resource type="Texture2D" uid="uid://di4uu02814vnd" path="res://art/placeholders/dialogue_assets/placeholder_thought1.png" id="5_iag7b"]
+[ext_resource type="Texture2D" uid="uid://cx8j54ho21a67" path="res://art/option_icons/option_placeholder.png" id="6_ctowj"]
+[ext_resource type="Texture2D" uid="uid://cml0fm6vetfp0" path="res://art/placeholders/dialogue_assets/placeholder_thought2.png" id="6_epupf"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/Response.gd" id="6_ui0cx"]
+[ext_resource type="Texture2D" uid="uid://dw7eo4x8eu1oh" path="res://art/placeholders/dialogue_assets/placeholder_thought3.png" id="7_d2nwj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -63,36 +70,59 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="Theme" id="Theme_01h7a"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_4u26j")
 
+[node name="VillainBubble" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_left = 604.0
+offset_top = 732.0
+offset_right = 1562.0
+offset_bottom = 1044.0
+texture = ExtResource("4_n1477")
+stretch_mode = 2
+
+[node name="HeroBubble" type="TextureRect" parent="."]
+unique_name_in_owner = true
+offset_left = 633.0
+offset_top = 94.0
+offset_right = 1591.0
+offset_bottom = 406.0
+texture = ExtResource("3_dn43u")
+stretch_mode = 2
+
 [node name="Balloon" type="Panel" parent="."]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 170.0
-offset_top = -183.0
-offset_right = -195.0
-offset_bottom = -19.0
+offset_left = 695.0
+offset_top = -945.0
+offset_right = -688.0
+offset_bottom = -760.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_qq3yp")
 
-[node name="VillainDialogue" type="MarginContainer" parent="Balloon"]
+[node name="Dialogue" type="MarginContainer" parent="Balloon"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_01h7a")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/VillainDialogue"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Dialogue"]
 layout_mode = 2
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/VillainDialogue/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0.501961)
@@ -103,39 +133,87 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/VillainDialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
+[node name="DialogueLabel" parent="Balloon/Dialogue/VBoxContainer" instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
-text = "Dialogue..."
-skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
+text = "Dialogue... Testing testing evil testing bwa ha ha ha haa."
 
-[node name="Responses" type="MarginContainer" parent="Balloon"]
-visible = false
-layout_mode = 1
+[node name="ClickMask" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Responses" type="MarginContainer" parent="."]
 anchors_preset = -1
 anchor_left = 0.226
 anchor_top = 0.166
 anchor_right = 0.961
 anchor_bottom = 0.168
-offset_left = -3.31201
-offset_top = -404.224
-offset_right = -0.63208
-offset_bottom = -0.552
+offset_left = 285.08
+offset_top = -119.28
+offset_right = -581.11
+offset_bottom = 624.56
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ResponsesMenu" type="VBoxContainer" parent="Balloon/Responses" node_paths=PackedStringArray("response_template")]
+[node name="ResponsesMenu" type="VBoxContainer" parent="Responses" node_paths=PackedStringArray("response_template")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 8
 theme_override_constants/separation = 2
 script = ExtResource("3_72ixx")
-response_template = NodePath("ResponseExample")
+response_template = NodePath("Response1")
 
-[node name="ResponseExample" type="Button" parent="Balloon/Responses/ResponsesMenu"]
+[node name="Response1" type="TextureButton" parent="Responses/ResponsesMenu"]
 layout_mode = 2
-text = "Response example"
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource("5_iag7b")
+script = ExtResource("6_ui0cx")
 
-[connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
-[connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response1"]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 60.0
+offset_right = 301.0
+offset_bottom = 160.0
+texture = ExtResource("6_ctowj")
+
+[node name="Response2" type="TextureButton" parent="Responses/ResponsesMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+texture_normal = ExtResource("6_epupf")
+script = ExtResource("6_ui0cx")
+
+[node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response2"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 63.0
+offset_right = 349.0
+offset_bottom = 163.0
+texture = ExtResource("6_ctowj")
+
+[node name="Response3" type="TextureButton" parent="Responses/ResponsesMenu"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+texture_normal = ExtResource("7_d2nwj")
+script = ExtResource("6_ui0cx")
+
+[node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response3"]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 97.0
+offset_right = 329.0
+offset_bottom = 197.0
+
+[connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]
+[connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
+[connection signal="button_down" from="Responses/ResponsesMenu/Response1" to="Responses/ResponsesMenu/Response1" method="_on_button_down"]
+[connection signal="button_down" from="Responses/ResponsesMenu/Response2" to="Responses/ResponsesMenu/Response2" method="_on_button_down"]
+[connection signal="button_down" from="Responses/ResponsesMenu/Response3" to="Responses/ResponsesMenu/Response3" method="_on_button_down"]
