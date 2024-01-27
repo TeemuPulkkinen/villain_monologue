@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=3 format=3 uid="uid://b3h3fs56622yd"]
+
+[ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
+[ext_resource type="Texture2D" uid="uid://dk3ymx7lf6a5h" path="res://art/placeholders/ui_assets/creditsbackground.png" id="1_r7n5i"]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_l01mg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_r7n5i")
