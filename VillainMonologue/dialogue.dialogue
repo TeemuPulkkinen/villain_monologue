@@ -12,7 +12,13 @@ Villain: We meet again.
 Hero: Ugh! Release me at once!
 Villain: Oh, I would, but...
 Villain: I don't want to. Now...
-=> END
+- axe
+	Villain: this is axe dialogue
+- cupcake
+	Villain: cupcake dialogue
+- heart:
+	Villain: heart dialogue
+=> start1
 
 ~ start2
 Villain: Ha![next=0.5] Haa! [next=0.5]I have you now...

@@ -8,7 +8,7 @@ const DialogueResponse = preload("./dialogue_response.gd")
 
 
 ## Emitted when a response is selected.
-signal response_selected(response: DialogueResponse)
+signal response_selected(response: String)
 
 
 ## Optionally specify a control to duplicate for each response
@@ -24,30 +24,24 @@ func _ready() -> void:
 			get_menu_items()[0].grab_focus()
 	)
 
-	if is_instance_valid(response_template):
-		response_template.hide()
-
 
 ## Set the list of responses to show.
 func set_responses(next_responses: Array) -> void:
 	_responses = next_responses
 
 
-	# EDITED RESPONSE BUBBLES
+	# EDITED BIT
 	if _responses.size() > 0:
-		for i in range (0, _responses.size()):
+		for i in range(0, _responses.size()):
 			var thought_bubble = get_child(i)
-
+			thought_bubble.set_meta("response", _responses[i])
 			var path = "res://art/option_icons/option_"+_responses[i].text+".png"
 			var texturefile = FileAccess.open(path, FileAccess.READ)
 			if texturefile:
-				thought_bubble.image= load(path)
+				thought_bubble.get_node("Img").texture= load(path)
 				texturefile.close()
 			else:
-				thought_bubble.image= load("res://art/option_icons/option_placeholder.png")
-				texturefile.close()
-			
-			thought_bubble.set_meta("response", _responses[i])
+				thought_bubble.get_node("Img").texture= load("res://art/option_icons/option_placeholder.png")
 
 		_configure_focus()
 
@@ -77,8 +71,6 @@ func _configure_focus() -> void:
 			item.focus_neighbor_bottom = items[i + 1].get_path()
 			item.focus_next = items[i + 1].get_path()
 
-		item.mouse_entered.connect(_on_response_mouse_entered.bind(item))
-		item.gui_input.connect(_on_response_gui_input.bind(item, item.get_meta("response")))
 
 	items[0].grab_focus()
 
@@ -96,6 +88,11 @@ func get_menu_items() -> Array:
 
 ### Signals
 
+func _on_response_selected(response):
+	print("call event to stop timer")
+	Event.stop_timer()
+	response_selected.emit(response)
+	get_viewport().set_input_as_handled()
 
 func _on_response_mouse_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return
