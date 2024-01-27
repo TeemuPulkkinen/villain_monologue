@@ -38,10 +38,27 @@ Hero: How could you?
 Hero: How could you be so... so...
 Villain: Say it...!
 Hero: So evil?
+=>< motivation1
 => END
 
 ~ motivation1
 Villain: You lot at the Organization have it all wrong...
+Villain: When your aunt sent her gun capybaras to my door they ate my prize carrots!
+Villain: I was going to make pickles from those!
+Villain: Pickles with dill! 
+Villain: I swore to... to...
+- [Carrot]
+	Villain: ... to plant more carrots! Yeah!
+	Hero: Uh. Sure.
+- Shark
+	Villain: ... to feed your capybaras to my sharks! Haa!
+- Brain
+	Villain: ... to come up with a plan so evil, you would all just...
+	Villain: DIE!!!
+% => events1
+% => events2
+% => events3
+
 => END
 ~ motivation2
 => END
@@ -49,10 +66,13 @@ Villain: You lot at the Organization have it all wrong...
 => END
 
 ~ events1
+Villain: Testing events 1
 => END
 ~ events2
+Villain: Testing events 2
 => END
 ~ events3
+Villain: Testing events 3
 => END
 
 
