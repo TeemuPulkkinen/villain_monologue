@@ -6,6 +6,14 @@ Hero: And this is a hero test!
 # evil
 => END
 
+~ dialogueRunner
+% => start1
+% => start2
+% => start3
+% => start4
+
+=> END
+
 ~ start1
 Villain: Well,[next=0.5] well,[next=0.5] well.[next=2]
 Villain: We meet again.
@@ -47,7 +55,7 @@ Villain: When your aunt sent her gun capybaras to my door they ate my prize carr
 Villain: I was going to make pickles from those!
 Villain: Pickles with dill! 
 Villain: I swore to... to...
-- [Carrot]
+- Carrot
 	Villain: ... to plant more carrots! Yeah!
 	Hero: Uh. Sure.
 - Shark
