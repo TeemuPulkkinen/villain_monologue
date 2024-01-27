@@ -4,5 +4,89 @@ Villain: Muahaha this is a villain test!
 Hero: And this is a hero test!
 
 # evil
+=> END
 
+~ start1
+Villain: Well,[next=0.5] well,[next=0.5] well.[next=2]
+Villain: We meet again.
+Hero: Ugh! Release me at once!
+Villain: Oh, I would, but...
+Villain: I don't want to. Now...
+=> END
+
+~ start2
+Villain: Ha![next=0.5] Haa! [next=0.5]I have you now...
+Hero: What a surprising turn of events.
+Villain: Silence! Now, you must be wondering how we got here...
+=> END
+
+~ start3
+Villain: [speed=0.2]What have we here...?
+Hero: Um...
+Villain: [speed=0.5]A little fly, trapped in the...
+Hero: Spider's net?
+Villain: Stop interrupting me! 
+Villain: [speed=1.5]Also don't call me spider, they're creepy.
+Villain: You must be curious about how I bested you!
+=> END
+
+~ start4
+Hero: *gasp* [next=0.5]It can't be!
+Villain: Hah! Yes! It was <i>me</i> all along!
+Hero: No! I can't believe it!
+Hero: How could you?
+Hero: How could you be so... so...
+Villain: Say it...!
+Hero: So evil?
+=> END
+
+~ motivation1
+Villain: You lot at the Organization have it all wrong...
+=> END
+~ motivation2
+=> END
+~ motivation3
+=> END
+
+~ events1
+=> END
+~ events2
+=> END
+~ events3
+=> END
+
+
+~ plans1
+=> END
+~ plans2
+=> END
+~ plans3
+=> END
+
+~ rant1
+=> END
+~ rant2
+=> END
+~ rant3
+=> END
+
+~ mock1
+=> END
+~ mock2
+=> END
+~ mock3
+=> END
+
+~ backstory1
+=> END
+~ backstory2
+=> END 
+~ backstory3
+=> END
+
+~ brilliance1
+=> END
+~ brilliance2
+=> END
+~ brilliance3
 => END
