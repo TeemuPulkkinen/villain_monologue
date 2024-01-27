@@ -1,11 +1,9 @@
 extends TextureProgressBar
 
-@onready var malice_amount = "res://art/placeholders/ui_assets/placeholder_Malice_progress.png" 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#Function for adjusting the malice meter, input is malice value after player choice is made
+func _adjust_malice_value(new_malice_value):
+	# Create new Tween
+	var tween = get_tree().create_tween()
+	# Animates the progress bar to the new malice value over the time of 1 second
+	tween.tween_property(self, "value", new_malice_value, 1.0)
