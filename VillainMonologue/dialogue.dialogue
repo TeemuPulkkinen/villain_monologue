@@ -91,6 +91,7 @@ Villain: People like you should... uh...
 	Hero: That escalated quickly.
 - Book
 	Villain: Be read for the filth you are!
+	Hero: I actually lost my phone last week.
 	Villain: Serves you right for not replying to your messages... Mrr!
 - Raccoon
 	Villain: Make friends with raccoons...
@@ -102,6 +103,7 @@ Villain: Now, everything has gone right according to my plan...
 % => events3 
 
 => END
+
 ~ motivation3
 Villain: You used to be so grand, captain of the swim league...
 Villain: Don't think I've forgotten who always got picked last.
@@ -142,9 +144,7 @@ Villain: With those socks, I was able to... ehm...
 - Sock
 	Villain: Sock-sessfully get away with murder! Mhaha!
 	Hero: Please kill me.
-% => plans1
-% => plans2
-% => plans3
+=> plans1
 => END
 
 ~ events2
@@ -162,9 +162,8 @@ Villain: How'd you like them... Um...
 	Villain: ... smashing times!
 	Villain: I made apple mash and ate it with pancakes for breakdast!
 	Villain: And I'll make mash out of your head too! Ha!
-% => plans1
-% => plans2
-% => plans3
+Villain: You see, the nature of evil...
+=> plans1
 => END
 
 ~ events3
@@ -183,34 +182,35 @@ Villain: All to get you here, so that I can... Uh...
 	Hero: No, not Tony the Toyota!
 	Villain: Mwahaa!
 - Umbrella
-	Villain: 
-% => plans1
-% => plans2
-% => plans3
+	Villain: Return the umbrella I borrowed!
+	Hero: Really? You would do that?
+	Villain: No! I am keeping it forever, because you will be dead!
+Villain: You see, the nature of evil...
+=> plans1
 => END
-
 
 ~ plans1
-Villain: 
-% => rant1
-% => rant2
-% => rant3
-=> END
-
-~ plans2
-% => rant1
-% => rant2
-% => rant3
-=> END
-
-~ plans3
+Villain: I will feed you to my sharks!
+Villain: They're very hungry...
+Villain: I do feed them but the vet says they need to diet.
+Villain: I guess that means...
+- Calendar
+	Villain: ... today is their cheat day!
+	Villain: And you will make one fine sharkutery board!
+- Mushroom
+	Villain: I will cook you with mushrooms and parsley until you're tender.
+	Villain: Only the best for my sharky darlings!
+- Apple
+	Villain: You will feed them their fruit bowls tonight!
+	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
+	Villain: Hnnggh... That's not what... Mrr!
+Villain: You see, the nature of evil...
 % => rant1
 % => rant2
 % => rant3
 => END
 
 ~ rant1
-
 => END
 ~ rant2
 => END

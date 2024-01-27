@@ -13,3 +13,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+VillainMonologue/addons/dialogue_manager/.DS_Store
+VillainMonologue/addons/.DS_Store
