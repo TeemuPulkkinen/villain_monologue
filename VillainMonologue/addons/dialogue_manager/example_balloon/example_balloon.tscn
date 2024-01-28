@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b6w7dq6dolgs2" path="res://art/final_assets/Thoughts/bubble_thought1_hover2.png" id="10_xxj7y"]
 [ext_resource type="Texture2D" uid="uid://cig30tyjfo6a8" path="res://art/final_assets/Thoughts/pop_animated_texture.tres" id="11_4bymo"]
 [ext_resource type="Texture2D" uid="uid://ddpb6n1hooi8r" path="res://art/final_assets/Thoughts/bubble_thought2_1.png" id="11_6onyh"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="12_8s5yo"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="12_8s5yo"]
 [ext_resource type="Texture2D" uid="uid://dgef4edl5x64s" path="res://art/final_assets/Thoughts/bubble_thought2_2.png" id="12_beqy2"]
 [ext_resource type="Texture2D" uid="uid://crjeqjvr7snji" path="res://art/final_assets/Thoughts/bubble_thought3_1.png" id="13_bymet"]
 [ext_resource type="Texture2D" uid="uid://haajjkbcef6u" path="res://art/final_assets/Thoughts/bubble_thought3_2.png" id="14_iggcl"]
