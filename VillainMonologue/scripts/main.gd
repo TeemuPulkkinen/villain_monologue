@@ -28,7 +28,7 @@ func _ready():
 func starting_cutscene():
 	# Setup
 	blackout.show()
-	malice_progress_bar.position.x = malice_progress_bar.position.x - 230
+	# malice_progress_bar.position.x = malice_progress_bar.position.x - 230
 	bg_unlit.show()
 	blackout.modulate.a = 0.0
 	herolight1.hide()

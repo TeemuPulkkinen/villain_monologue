@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=9 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
 [ext_resource type="Texture2D" uid="uid://c36506lgrq3i4" path="res://art/placeholders/menu_assets/retrybutton.png" id="2_ltvjj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/RetryButton.gd" id="3_xwlqr"]
 [ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="4_ft7qo"]
 [ext_resource type="Script" path="res://scripts/MainMenuButton.gd" id="5_i38a6"]
+[ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="7_6baeo"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
@@ -91,6 +92,11 @@ Lazaros
 Mosu
 Teemu
 "
+
+[node name="SoundLibrary" type="Node2D" parent="."]
+
+[node name="Song" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("7_6baeo")
 
 [connection signal="pressed" from="CanvasLayer/RetryButton" to="CanvasLayer/RetryButton" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]
