@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://veoqh8bx2evh"
+path="res://.godot/imported/evil laugh 01.mp3-a56ad56c35ba1b9c3a909457a376f9a4.mp3str"
+
+[deps]
+
+source_file="res://sound/laughter/evil laugh 01.mp3"
+dest_files=["res://.godot/imported/evil laugh 01.mp3-a56ad56c35ba1b9c3a909457a376f9a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
