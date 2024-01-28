@@ -7,6 +7,7 @@ Hero: And this is a hero test!
 => END
 
 ~ dialogueRunner
+set Event.play_sound("Laughter")
 % => start1
 % => start2
 % => start3
@@ -37,7 +38,7 @@ Villain: Silence! Now, you must be wondering why we got here...
 ~ start3
 Villain: [speed=0.2]What have we here...?
 Hero: Um...
-Villain: [speed=0.5]A little fly, trapped in the...
+Villain: [speed=0.5]A little fly, trapped in the–
 Hero: Spider's net?
 Villain: Stop interrupting me! 
 Villain: [speed=1.5]Also don't call me spider, they're creepy.
@@ -77,7 +78,7 @@ Villain: [i][/i]
 - Brain
 	Villain: ... to come up with a plan so evil, you would all just...
 	Villain: DIE!!!
-	set Event.adjust_malice(15)
+	set Event.adjust_malice(20)
 Villain: Now, everything has gone right according to my plan...
 % => events1
 % => events2
@@ -104,7 +105,7 @@ Villain: [i][/i]
 	Villain: Make friends with raccoons...
 	Villain: They like trash like you!
 	Hero: Ouch.
-	set Event.adjust_malice(15)
+	set Event.adjust_malice(20)
 Villain: Now, everything has gone right according to my plan...
 % => events1
 % => events2
@@ -125,7 +126,7 @@ Villain: [i][/i]
 	Hero: Thanks, I deduced that part myself.
 	Villain: Blood everywhere!
 	Hero: Are you quite done?
-	set Event.adjust_malice(15)
+	set Event.adjust_malice(20)
 - Kiss
 	Villain: ... your kisses—
 	Hero: Oh my. 
@@ -158,8 +159,9 @@ Villain: [i][/i]
 	set Event.adjust_malice(-5)
 - Sock
 	Villain: Sock-sessfully get away with murder! Mhaha!
-	Hero: Please kill me.
-	set Event.adjust_malice(15)
+	Hero: Please kill me already.
+	set Event.adjust_malice(20)
+Villain: And next, my nemesis...
 => plans1
 => END
 
@@ -176,13 +178,13 @@ Villain: [i][/i]
 - Bathtub
 	Villain: Salty bath waters!
 	Villain: Because they're filled with your tears! Mhah!
-	set Event.adjust_malice(5)
+	set Event.adjust_malice(15)
 - Hammer
 	Villain: ... smashing times!
 	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
 	set Event.adjust_malice(15)
-Villain: You see, the nature of evil...
+Villain: And next, my nemesis...
 => plans1
 => END
 
@@ -203,14 +205,14 @@ Villain: [i][/i]
 	Villain: No! And I don't even care if I scratch it!
 	Hero: No, not Tony the Toyota!
 	Villain: Mwahaa!
-	set Event.adjust_malice(15)
+	set Event.adjust_malice(20)
 - Umbrella
 	Villain: Return the umbrella I borrowed!
 	Hero: Really? You would do that?
 	Villain: No! I am keeping it forever, because you will be dead!
 	Villain: Corpses don't need umbrellas!
 	set Event.adjust_malice(5)
-Villain: You see, the nature of evil...
+Villain: And next, my nemesis...
 => plans1
 => END
 
@@ -222,8 +224,8 @@ Villain: I guess that means...
 Villain: [i][/i]
 - Calendar
 	Villain: ... today is their cheat day!
-	Villain: And you will make one fine sharkutery board!
-	set Event.adjust_malice(15)
+	Villain: And you will make one fine shark-utery board!
+	set Event.adjust_malice(20)
 - Mushroom
 	Villain: I will cook you with mushrooms and parsley until you're tender.
 	Villain: Only the best for my sharky darlings!
@@ -234,7 +236,11 @@ Villain: [i][/i]
 	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
 	Villain: Hnnggh... That's not what... Mrr!
 	set Event.adjust_malice(-5)
-Villain: You see, the nature of evil...
+Villain: But how could you understand?
+% Villain: You see, the nature of evil...
+% Villain: Evilness is my calling...
+% Villain: You don't know the allure of evil...
+
 % => rant1
 % => rant2
 % => rant3
@@ -245,9 +251,27 @@ Villain: Evil is like a moonlit sky...
 Villain: Dark and vast. 
 Villain: Futile stars spread far apart, none strong enough to shine.
 Villain: Because there can only be one moon.
+Villain: And I am that moon! The most evil of evils!
 Villain: Unless you go to Jupiter, or make a new moon, but...
-Villain: A moonlit sky, that... Ehm...
+Villain: A moon in the sky, that... Ehm...
 Villain: [i][/i]
+- Halfmoon
+	Villain: Waxes and wanes with each passing day!
+	Hero: Wouldn't constant evil be better?
+	Villain: Hnnggh! Graah! Wak!
+	set Event.adjust_malice(-5)
+- Wave
+	Villain: Raises the tidal wave that will wash away all you hold dear!
+	Villain: Mwaha! Haa!
+	set Event.adjust_malice(15)
+- Rocketship
+	Villain: Only the bravest, most determined astronauts can reach me!
+	Villain: And once they do, they'll find me lonesome and dusty!
+	Hero: Do you need a... hug?
+	Villain: I could hug you to DEATH! Mwa!
+	set Event.adjust_malice(15)
+% => mock1
+% => mock2
 => END
 
 ~ rant2
@@ -257,6 +281,22 @@ Villain: It might drown you, but what a way to go.
 Villain: Surrounded by smelly creatures with sharp teeth.
 Villain: An ocean, deep, and dark like... uh...
 Villain: [i][/i]
+- Octopus
+	Villain: The ink of an octopus!
+	Villain: While you can't see, my tentacles will smother you!
+	set Event.adjust_malice(5)
+- GingerBread
+	Villain: A ginger bread cookie, with just the right amount of spice... Um...
+	Hero: I'm afraid I don't follow?
+	Villain: At least you are afraid! Hnngh!
+	set Event.adjust_malice(5)
+- Boot
+	Villain: Like the leather of my boots!
+	Villain: Under which I will crush you!
+	Villain: Like a bug! Mwah!
+	set Event.adjust_malice(15)
+% => mock1
+% => mock2
 => END
 
 ~ rant3
@@ -267,26 +307,184 @@ Villain: The best ones are French.
 Villain: And somehow, you're always there.
 Villain: A kiss, like uh... 
 Villain: [i][/i]
+- Letter
+	Villain: The one used to seal a love letter!
+	Villain: Then sent to a land far away...
+	Hero: I wish I was far away right now...
+	Villain: Then you could get my letter! Ha!
+	set Event.adjust_malice(-5)
+- Poison
+	Villain: A kiss of death, ladled with poison! Mwhaahaaa!
+	set Event.adjust_malice(15)
+- Bat
+	Villain: One from Vlad from the gym!
+	Villain: He eats blood.
+	Villain: Because he is a vampire.
+	Hero: Yeah I know Vlad.
+	Villain: He mixes it with protein powder.
+	set Event.adjust_malice(5)
+% => mock1
+% => mock2
 => END
 
 ~ mock1
+Villain: You heroes, you're all the same. 
+Villain: You just have to save every cat out of every tree.
+Villain: But what if cats just want to chill out among the leaves?
+Villain: And what about... uh....
+Villain: [i][/i]
+- Tree
+	Villain: And the trees? Why do you want to take cats away from the trees, hmm?
+	Hero: You're an environmentalist now?
+	Villain: Gak! Hnggghhh....
+	set Event.adjust_malice(-5)
+- Mouse
+	Villain: The mice! If the cats are in the trees, then mice can relax!
+	Hero: Are you calling yourself a mouse?
+	Villain: Fläh! No! Arghh...
+	set Event.adjust_malice(-5)
+- Fire
+	Villain: Fires! Yes! While you're distracted worrying about those itty bitty kitties...
+	Villain: Villains like me set the whole world on fire! Mwah! 
+	set Event.adjust_malice(15)
+Villain: You know, I wasn't always evil...
+% => backstory1
+% => backstory2
 => END
+
 ~ mock2
+Villain: Ugh, heroes like you have no sense of humor.
+Hero: Perhaps you shouldn't take the word punchline literally?
+Villain: Tsk! What other way is there?
+Villain: With all that moral fiber on your plate, I'd be constipated too.
+Villain: When you're always worrying about... uh...
+Villain: [i][/i]
+- Cereal
+	Villain: Cereal killers like me, I suppose you don't have the time to appreciate the finer nuances.
+	set Event.adjust_malice(15)
+- Mirror
+	Villain: Appearances, I guess you can't afford to grow laugh wrinkles.
+	Hero: I do have perfect skin.
+	Villain: Awk! Whah... Mrrr...
+	set Event.adjust_malice(-5)
+- Spiders
+	Villain: Spiders, with all those legs, then–
+	Hero: I don't have arachnophobia. But you do, right?
+	Hero: Are you constantly worried about spiders?
+	Hero: I know this therapist, who–
+	Villain: I AM NOT afraid! Silence! Grr...
+	set Event.adjust_malice(-5)
+Villain: You know, I wasn't always evil...
+% => backstory1
+% => backstory2
 => END
-~ mock3
-=> END
+
 
 ~ backstory1
-=> END
-~ backstory2
-=> END 
-~ backstory3
+Villain: Once upon a time, I was a plucky do-gooder like you.
+Villain: But then I lost my glasses.
+Villain: I was fumbling in the darkness, lost and alone...
+Villain: But in the darkness, I found new friends.
+Villain: And thanks to my contacts, I can see again!
+Villain: My new friends are the Society of Evil Opticians!
+Villain: And so, now...
+Villain: [i][/i]
+- GlassesCrossedOut
+	Villain: I will eradicate glasses from this world!
+	Hero: Huh? Wouldn't your Optician friends run out of work?
+	Villain: No, that's not what I meant.... Hmmmgh!
+	set Event.adjust_malice(-5)
+- Torch
+	Villain: To never get lost in the darkness, I carry a torch for you.
+	Hero: You... do?
+	Villain: To set you on fire! Mwah!
+	set Event.adjust_malice(15)
+- Raccoon
+	Villain: Now even the raccoons will get glasses!
+	Hero: I don't quite follow.
+	Villain: And they'll rummage through the trash for the tiny pieces left of you once I'm done with you!
+	Hero: Ah–haa. 
+	set Event.adjust_malice(15)
+% => brilliance1
+% => brilliance2
 => END
 
+~ backstory2
+Villain: Once upon a time, I too wanted to save the world.
+Villain: I recycled and I cycled.
+Villain: And then one day, someone stole my bike!
+Villain: I cried, and I searched, and I cried, then searched some more...
+Villain: And that's when I realized...
+Villain: I wasn't thinking of my climate anxiety at all!
+Villain: Stealing makes people sad!
+Villain: What if I could distract people from the impending ecological disaster and end of life as we know it...
+Villain: ... by stealing their material belongings? Ahh!
+Villain: And so, now...
+Villain: [i][/i]
+- Bike
+	Villain: I'm rich. I have three hundred and forty-one bicycles to choose from!
+	Villain: I even got my sharks their own bikes!
+	Villain: With little horns!
+	Villain: Honk! [wait=0.5]Honk! [wait=0.5]Honk! [wait=0.5]
+	Villain: And the baskets in the front! For snacks.
+	set Event.adjust_malice(15)
+- Trash
+	Villain: I don't even recycle anymore!
+	Hero: Whoa. That's evil!
+	set Event.adjust_malice(15)
+- Gold
+	Villain: I only care about material wealth!
+	Hero: That's sad, you know?
+	Villain: Mrrr... My gold bags beg to differ!
+	set Event.adjust_malice(5)
+% => brilliance1
+% => brilliance2
+=> END 
+
+
 ~ brilliance1
-Villain: 
+Villain: Now you see why I've bested you!
+Villain: Genius like mine only comes along once in a generation!
+Villain: My master plan is almost complete, and now...
+Villain: [i][/i]
+- Shark
+	Villain: It's time to die by shark! Mwahahahaaa!
+	set Event.adjust_malice(35)
+- Heart
+	Villain: I will rip your heart out and eat it!
+	Villain: Mwahaha!!
+	set Event.adjust_malice(35)
+- Dinner
+	Villain: I will take you to dinner!
+	Hero: What?
+	Villain: I meant, I will have you for dinner! Hnnngh!
+	Villain: Let me phrase that again...
+	set Event.adjust_malice(-5)
+% => motivation1
+% => motivation2
+% => motivation3
 => END
+
 ~ brilliance2
+Villain: My brilliance knows no limits!
+Villain: Like a diamond, I've been squeezed from dark coal into one sharp rock!
+Villain: And now, finally...
+Villain: [i][/i]
+- Shark
+	Villain: It's time to die by shark! Mwahahahaaa!
+	set Event.adjust_malice(35)
+- Heart
+	Villain: I will rip your heart out and eat it!
+	Villain: Mwahaha!!
+	set Event.adjust_malice(35)
+- Dinner
+	Villain: I will take you to dinner!
+	Hero: What?
+	Villain: I meant, I will have you for dinner! Hnnngh!
+	Villain: Let me phrase that again...
+	set Event.adjust_malice(-5)
+% => motivation1
+% => motivation2
+% => motivation3
 => END
-~ brilliance3
-=> END
+
