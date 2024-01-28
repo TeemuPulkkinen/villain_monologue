@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=26 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://2g6pt8b1u6g0" path="res://art/placeholders/ui_assets/placeholder_Background.png" id="1_xo3gr"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
 [ext_resource type="AudioStream" uid="uid://c0u0scgfe46aj" path="res://sound/laughter/evil laugh 24.mp3" id="22_542rh"]
+[ext_resource type="AudioStream" uid="uid://3hgwo5pqbs3b" path="res://sound/smug/thinking27.mp3" id="22_y7kup"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -137,5 +138,8 @@ stream = ExtResource("14_xhqm5")
 
 [node name="Laughter" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_2y1ph")
+
+[node name="Smug" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("22_y7kup")
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]
