@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6w2mpda6u5n2"
-path="res://.godot/imported/background.png-24ced9b77656f3af6dbd20d960906d01.ctex"
+uid="uid://dfjy0jrm2g7mq"
+path="res://.godot/imported/bg_sharktank.png-16fe775c9a8ed4c0e1a0fae55d5bff9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/final_assets/background.png"
-dest_files=["res://.godot/imported/background.png-24ced9b77656f3af6dbd20d960906d01.ctex"]
+source_file="res://art/final_assets/bg_sharktank.png"
+dest_files=["res://.godot/imported/bg_sharktank.png-16fe775c9a8ed4c0e1a0fae55d5bff9b.ctex"]
 
 [params]
 
