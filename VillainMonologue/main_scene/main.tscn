@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=62 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -54,6 +54,8 @@
 [ext_resource type="AudioStream" uid="uid://bghdqag2istab" path="res://sound/screaming09.mp3" id="52_y066c"]
 [ext_resource type="AudioStream" uid="uid://bef463dcpu50j" path="res://sound/creaking04.mp3" id="53_q42wx"]
 [ext_resource type="AudioStream" uid="uid://dbvkb051wior5" path="res://sound/screaming/Sharks11.mp3" id="54_rijhq"]
+[ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="55_wu1p6"]
+[ext_resource type="AudioStream" uid="uid://u7kvpqb0eg7w" path="res://sound/background01.mp3" id="56_ggua1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -330,5 +332,14 @@ volume_db = -16.396
 
 [node name="Omnom" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("54_rijhq")
+
+[node name="Song" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("55_wu1p6")
+
+[node name="Background" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("56_ggua1")
+volume_db = -11.773
+autoplay = true
+mix_target = 1
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]

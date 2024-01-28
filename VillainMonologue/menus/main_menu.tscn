@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2qwydopgeuiq"]
+[gd_scene load_steps=8 format=3 uid="uid://b2qwydopgeuiq"]
 
 [ext_resource type="Texture2D" uid="uid://xs7i7ete3264" path="res://art/title_screen_bg_withLogo.png" id="1_f1wlx"]
 [ext_resource type="Texture2D" uid="uid://bu553dsyftvdv" path="res://art/Start_Normal.png" id="2_2wjau"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://72fl7poprgcf" path="res://art/placeholders/menu_assets/exit_normal.png" id="4_3wpqd"]
 [ext_resource type="Script" path="res://scripts/PlayButton.gd" id="4_4lx3u"]
 [ext_resource type="Script" path="res://scripts/ExitButton.gd" id="6_vscd6"]
+[ext_resource type="AudioStream" uid="uid://dwlqknvf6fc0c" path="res://sound/Mosu.mp3" id="7_0vnjp"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -54,6 +55,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_3wpqd")
 script = ExtResource("6_vscd6")
+
+[node name="Humming" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_0vnjp")
+autoplay = true
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]
