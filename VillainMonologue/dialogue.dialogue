@@ -9,9 +9,9 @@ Hero: And this is a hero test!
 ~ dialogueRunner
 set Event.play_sound("Laughter")
 % => start1
-#% => start2
-#% => start3
-#% => start4
+% => start2
+% => start3
+% => start4
 
 => END
 
@@ -24,8 +24,8 @@ set Event.reveal_villain()
 Villain: Oh, I would, but.
 Villain: I simply don't want to. Now sit tight.
 % => motivation1
-#% => motivation2
-#% => motivation3
+% => motivation2
+% => motivation3
 => END
 
 ~ start2

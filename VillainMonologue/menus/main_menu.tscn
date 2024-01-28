@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2qwydopgeuiq"]
+[gd_scene load_steps=7 format=3 uid="uid://b2qwydopgeuiq"]
 
-[ext_resource type="Texture2D" uid="uid://v8e0rm1j6xhh" path="res://art/placeholders/menu_assets/title_screen_bg.png" id="1_jf5sx"]
-[ext_resource type="Texture2D" uid="uid://dand7ktc0w6u4" path="res://art/placeholders/menu_assets/start_normal.png" id="2_y61dp"]
-[ext_resource type="Texture2D" uid="uid://ca6dvxbtxm10c" path="res://art/placeholders/menu_assets/start_hover.png" id="3_2mwhh"]
+[ext_resource type="Texture2D" uid="uid://xs7i7ete3264" path="res://art/title_screen_bg_withLogo.png" id="1_f1wlx"]
+[ext_resource type="Texture2D" uid="uid://bu553dsyftvdv" path="res://art/Start_Normal.png" id="2_2wjau"]
+[ext_resource type="Texture2D" uid="uid://kajs0x2d61lo" path="res://art/Start_Hover.png" id="3_lq3m7"]
 [ext_resource type="Texture2D" uid="uid://72fl7poprgcf" path="res://art/placeholders/menu_assets/exit_normal.png" id="4_3wpqd"]
 [ext_resource type="Script" path="res://scripts/PlayButton.gd" id="4_4lx3u"]
-[ext_resource type="Texture2D" uid="uid://bgoftb4nssw7a" path="res://art/placeholders/menu_assets/title.png" id="5_id36y"]
 [ext_resource type="Script" path="res://scripts/ExitButton.gd" id="6_vscd6"]
 
 [node name="MainMenu" type="Control"]
@@ -20,7 +19,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_jf5sx")
+texture = ExtResource("1_f1wlx")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -29,14 +28,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -227.5
-offset_top = -43.0
-offset_right = 227.5
-offset_bottom = 43.0
+offset_left = -157.0
+offset_top = 206.0
+offset_right = 358.0
+offset_bottom = 363.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_y61dp")
-texture_hover = ExtResource("3_2mwhh")
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("2_2wjau")
+texture_hover = ExtResource("3_lq3m7")
 script = ExtResource("4_4lx3u")
 
 [node name="ExitButton" type="TextureButton" parent="."]
@@ -46,19 +46,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = 145.0
-offset_right = 160.0
-offset_bottom = 255.0
+offset_left = -162.0
+offset_top = 347.0
+offset_right = 158.0
+offset_bottom = 457.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("4_3wpqd")
 script = ExtResource("6_vscd6")
-
-[node name="Title" type="Sprite2D" parent="."]
-position = Vector2(1017, 246)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_id36y")
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]

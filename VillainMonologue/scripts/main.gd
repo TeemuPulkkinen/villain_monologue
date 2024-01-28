@@ -16,6 +16,8 @@ var dialogue = false
 @onready var villain = %Villain
 @onready var villain_shadow = villain.get_node("ColorRect")
 
+var ending = false
+
 # At start of game, play cutscene animations and then start dialogue
 # Also et the TextureProgressBar in scene
 func _ready():
@@ -70,6 +72,8 @@ func stop_timer():
 	
 	
 func end_game(max_evil):
+	if ending: return
+	ending = true
 	get_node("ExampleBalloon").queue_free()
 	await get_tree().create_timer(1.0).timeout
 	if max_evil:
@@ -87,21 +91,21 @@ func end_game(max_evil):
 		%ButtonSmash3.show()
 		await get_tree().create_timer(1.5).timeout
 		blackout.show()
+		blackout.modulate.a = 1.0
+		await get_tree().create_timer(0.5).timeout
 		Event.play_sound("Creak")
 		await get_tree().create_timer(0.5).timeout
 		Event.play_sound("Splash")
 		await get_tree().create_timer(1.0).timeout
 		Event.play_sound("Screaming")
 		await get_tree().create_timer(0.2).timeout
-		Event.play_sound("Omnomnom")
+		Event.play_sound("Omnom")
 		await get_tree().create_timer(3.0).timeout
 		get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
 	else:
 		Event.play_sound("Frustration")
 		DialogueManager.show_dialogue_balloon(dialogue_file, "fail")
 		return
-	blackout.show()
-	await get_tree().create_timer(3.0).timeout
 
 func kill_hero():
 	%ButtonSmash1.show()
@@ -111,12 +115,13 @@ func kill_hero():
 	%ButtonSmash3.show()
 	await get_tree().create_timer(1.5).timeout
 	blackout.show()
+	blackout.modulate.a = 1.0
 	Event.play_sound("Creak")
 	await get_tree().create_timer(0.5).timeout
 	Event.play_sound("Splash")
 	await get_tree().create_timer(1.0).timeout
 	Event.play_sound("Screaming")
 	await get_tree().create_timer(0.2).timeout
-	Event.play_sound("Omnomnom")
+	Event.play_sound("Omnom")
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
