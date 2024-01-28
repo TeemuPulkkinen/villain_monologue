@@ -32,6 +32,7 @@ func set_responses(next_responses: Array) -> void:
 
 	# EDITED BIT
 	if _responses.size() > 0:
+		Event.play_sound("Thought")
 		for i in range(0, _responses.size()):
 			var thought_bubble = get_child(i)
 			thought_bubble.set_meta("response", _responses[i])

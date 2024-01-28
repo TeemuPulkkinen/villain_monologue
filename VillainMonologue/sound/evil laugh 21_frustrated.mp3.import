@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7xvm8wg3jhnr"
+path="res://.godot/imported/evil laugh 21_frustrated.mp3-a64da4323d3027960edf6f08c166c966.mp3str"
+
+[deps]
+
+source_file="res://sound/evil laugh 21_frustrated.mp3"
+dest_files=["res://.godot/imported/evil laugh 21_frustrated.mp3-a64da4323d3027960edf6f08c166c966.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

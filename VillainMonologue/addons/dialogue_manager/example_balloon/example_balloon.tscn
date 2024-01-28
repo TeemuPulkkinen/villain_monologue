@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://b6w7dq6dolgs2" path="res://art/final_assets/Thoughts/bubble_thought1_hover2.png" id="10_xxj7y"]
 [ext_resource type="Texture2D" uid="uid://cig30tyjfo6a8" path="res://art/final_assets/Thoughts/pop_animated_texture.tres" id="11_4bymo"]
 [ext_resource type="Texture2D" uid="uid://ddpb6n1hooi8r" path="res://art/final_assets/Thoughts/bubble_thought2_1.png" id="11_6onyh"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="12_8s5yo"]
 [ext_resource type="Texture2D" uid="uid://dgef4edl5x64s" path="res://art/final_assets/Thoughts/bubble_thought2_2.png" id="12_beqy2"]
 [ext_resource type="Texture2D" uid="uid://crjeqjvr7snji" path="res://art/final_assets/Thoughts/bubble_thought3_1.png" id="13_bymet"]
 [ext_resource type="Texture2D" uid="uid://haajjkbcef6u" path="res://art/final_assets/Thoughts/bubble_thought3_2.png" id="14_iggcl"]
@@ -22,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dm3psu5qmct8b" path="res://art/final_assets/Thoughts/bubble_thought2_hover2.png" id="17_2r7eb"]
 [ext_resource type="Texture2D" uid="uid://c1g81jlrjwpj3" path="res://art/final_assets/Thoughts/bubble_thought3_hover1.png" id="20_kerkj"]
 [ext_resource type="Texture2D" uid="uid://b5q67kbq73ou2" path="res://art/final_assets/Thoughts/bubble_thought3_hover2.png" id="21_slu3n"]
+[ext_resource type="AudioStream" uid="uid://bh4yiaj3rmmg6" path="res://sound/bip_short.wav" id="22_eh252"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -132,14 +132,14 @@ frame_1/duration = 0.5
 random_pitch = 1.08
 random_volume_offset_db = 0.08
 streams_count = 1
-stream_0/stream = ExtResource("12_8s5yo")
+stream_0/stream = ExtResource("22_eh252")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rte4a"]
 random_pitch = 1.05
 random_volume_offset_db = 0.05
 streams_count = 1
-stream_0/stream = ExtResource("12_8s5yo")
+stream_0/stream = ExtResource("22_eh252")
 stream_0/weight = 1.0
 
 [node name="ExampleBalloon" type="CanvasLayer"]
@@ -296,11 +296,13 @@ texture = ExtResource("9_x0qaa")
 [node name="VillainPip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_et6dx")
+volume_db = -12.0
 pitch_scale = 0.8
 
 [node name="HeroPip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_rte4a")
+volume_db = -12.649
 
 [connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]
 [connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

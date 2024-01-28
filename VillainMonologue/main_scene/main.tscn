@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=60 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -26,7 +26,13 @@
 [ext_resource type="AudioStream" uid="uid://46nt0gh32yjh" path="res://sound/laughter/evil laugh 15.mp3" id="19_rla1b"]
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
+[ext_resource type="Texture2D" uid="uid://chyxf7ngj4d74" path="res://art/Cutscene/laugh_bg.png" id="22_7yj3a"]
 [ext_resource type="AudioStream" uid="uid://c0u0scgfe46aj" path="res://sound/laughter/evil laugh 24.mp3" id="22_542rh"]
+[ext_resource type="Texture2D" uid="uid://cdntl2shcs8d5" path="res://art/Cutscene/laugh_villain1.png" id="23_oa772"]
+[ext_resource type="Texture2D" uid="uid://s7848w4w53fq" path="res://art/Cutscene/laugh_villain2.png" id="24_fytee"]
+[ext_resource type="Texture2D" uid="uid://bixaquqr05r2k" path="res://art/Cutscene/end_1.png" id="25_bqtjl"]
+[ext_resource type="Texture2D" uid="uid://c5ql7j7d8mltq" path="res://art/Cutscene/end_2.png" id="26_mals7"]
+[ext_resource type="Texture2D" uid="uid://cepqsut76bcrh" path="res://art/Cutscene/end_3.png" id="27_sdkon"]
 [ext_resource type="AudioStream" uid="uid://3hgwo5pqbs3b" path="res://sound/smug/thinking27.mp3" id="28_v67x5"]
 [ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="29_h7rnk"]
 [ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="30_2lmu7"]
@@ -36,6 +42,18 @@
 [ext_resource type="AudioStream" uid="uid://c0e0h0yyyhgp3" path="res://sound/nodding/nodding03.mp3" id="34_m50hw"]
 [ext_resource type="AudioStream" uid="uid://dk1itihis0dkt" path="res://sound/malice_meter/RisingMeter01.mp3" id="35_6bsle"]
 [ext_resource type="AudioStream" uid="uid://dr1uj0epbhifq" path="res://sound/malice_meter/SinkingMeter02.mp3" id="36_ftd15"]
+[ext_resource type="AudioStream" uid="uid://cjxb01toy1s7v" path="res://sound/Evil_level_lowest.mp3" id="37_b1s1u"]
+[ext_resource type="AudioStream" uid="uid://bv1ab6hqh0vb7" path="res://sound/Evil_level_lower.mp3" id="38_h2cx4"]
+[ext_resource type="AudioStream" uid="uid://jw48fua3yes3" path="res://sound/Evil_level_mid.mp3" id="39_n1ro0"]
+[ext_resource type="AudioStream" uid="uid://b5y6s3q1t4mvc" path="res://sound/Evil_level_high.mp3" id="40_duv00"]
+[ext_resource type="AudioStream" uid="uid://byjdffcapm6x7" path="res://sound/Evil_level_highest.mp3" id="41_udduo"]
+[ext_resource type="AudioStream" uid="uid://dmsn0vo66gds2" path="res://sound/thoughtbubble.mp3" id="42_yyyon"]
+[ext_resource type="AudioStream" uid="uid://bjggatp36wf0p" path="res://sound/evil MEGA LAUGH.mp3" id="49_f6brw"]
+[ext_resource type="AudioStream" uid="uid://7xvm8wg3jhnr" path="res://sound/evil laugh 21_frustrated.mp3" id="50_1q4bu"]
+[ext_resource type="AudioStream" uid="uid://b3npbmw6fqgv3" path="res://sound/splashing06.mp3" id="51_hjw42"]
+[ext_resource type="AudioStream" uid="uid://bghdqag2istab" path="res://sound/screaming09.mp3" id="52_y066c"]
+[ext_resource type="AudioStream" uid="uid://bef463dcpu50j" path="res://sound/creaking04.mp3" id="53_q42wx"]
+[ext_resource type="AudioStream" uid="uid://dbvkb051wior5" path="res://sound/screaming/Sharks11.mp3" id="54_rijhq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -149,7 +167,7 @@ offset_left = 1007.0
 offset_top = -1183.0
 offset_right = 2876.0
 offset_bottom = 880.0
-rotation = 1.20951
+rotation = 0.261799
 color = Color(0, 0.00392157, 0.109804, 1)
 
 [node name="Sharktank" type="Sprite2D" parent="CanvasLayer"]
@@ -210,6 +228,42 @@ autoplay = "default"
 frame = 1
 frame_progress = 0.0965829
 
+[node name="LaughBg" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("22_7yj3a")
+
+[node name="LaughVillain1" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("23_oa772")
+
+[node name="LaughVillain2" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("24_fytee")
+
+[node name="ButtonSmash1" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("25_bqtjl")
+
+[node name="ButtonSmash2" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("26_mals7")
+
+[node name="ButtonSmash3" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(955, 524)
+texture = ExtResource("27_sdkon")
+
 [node name="Blackout" type="ColorRect" parent="CanvasLayer"]
 unique_name_in_owner = true
 visible = false
@@ -239,5 +293,42 @@ stream = ExtResource("35_6bsle")
 
 [node name="MaliceMeterDown" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("36_ftd15")
+
+[node name="Evil1" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("37_b1s1u")
+
+[node name="Evil2" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("38_h2cx4")
+
+[node name="Evil3" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("39_n1ro0")
+
+[node name="Evil4" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("40_duv00")
+
+[node name="Evil5" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("41_udduo")
+
+[node name="Thought" type="AudioStreamPlayer2D" parent="SoundLibrary"]
+stream = ExtResource("42_yyyon")
+
+[node name="EvilestLaugh" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("49_f6brw")
+
+[node name="Frustration" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("50_1q4bu")
+
+[node name="Splash" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("51_hjw42")
+
+[node name="Screaming" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("52_y066c")
+
+[node name="Creak" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("53_q42wx")
+volume_db = -16.396
+
+[node name="Omnom" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("54_rijhq")
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]

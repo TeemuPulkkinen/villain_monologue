@@ -1,14 +1,28 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=10 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
-[ext_resource type="Texture2D" uid="uid://c36506lgrq3i4" path="res://art/placeholders/menu_assets/retrybutton.png" id="2_ltvjj"]
-[ext_resource type="Texture2D" uid="uid://cwjb02t1w2bn7" path="res://art/placeholders/menu_assets/mainmenubutton.png" id="3_x7srh"]
-[ext_resource type="Script" path="res://scripts/RetryButton.gd" id="3_xwlqr"]
-[ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="4_ft7qo"]
+[ext_resource type="Texture2D" uid="uid://ckxh01y336cwr" path="res://art/Credits_1.png" id="2_2372j"]
+[ext_resource type="Texture2D" uid="uid://ddt4jhqj4aolr" path="res://art/Credits_2.png" id="3_3l2qj"]
+[ext_resource type="Texture2D" uid="uid://d3e8q60tfuv1w" path="res://art/arrow.png" id="4_usoln"]
+[ext_resource type="Texture2D" uid="uid://dkmbf0rtcsofp" path="res://art/arrow_hover.png" id="5_b7j2s"]
 [ext_resource type="Script" path="res://scripts/MainMenuButton.gd" id="5_i38a6"]
-[ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="7_6baeo"]
+[ext_resource type="AudioStream" uid="uid://vb0eucualgvg" path="res://sound/Song_Final.mp3" id="7_cx5bp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsoku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2372j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3l2qj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CreditsMenu" type="Control"]
 layout_mode = 3
@@ -29,20 +43,9 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_aahts")
 
-[node name="RetryButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -420.0
-offset_top = -190.0
-offset_right = -100.0
-offset_bottom = -80.0
-grow_horizontal = 2
-grow_vertical = 0
-texture_normal = ExtResource("2_ltvjj")
-script = ExtResource("3_xwlqr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/TextureRect"]
+sprite_frames = SubResource("SpriteFrames_hsoku")
+centered = false
 
 [node name="MainMenuButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = 7
@@ -50,53 +53,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = -190.0
-offset_right = 418.0
-offset_bottom = -80.0
+offset_left = 646.0
+offset_top = -557.0
+offset_right = 855.0
+offset_bottom = -404.0
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("3_x7srh")
+texture_normal = ExtResource("4_usoln")
+texture_hover = ExtResource("5_b7j2s")
 script = ExtResource("5_i38a6")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_right = 150.0
-offset_bottom = 150.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 62
-text = "Credits"
+[node name="Song" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_cx5bp")
+autoplay = true
 
-[node name="PlaceholderHero" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(940, 700)
-texture = ExtResource("4_ft7qo")
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -103.0
-offset_top = -423.0
-offset_right = 97.0
-offset_bottom = -23.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 32
-text = "Chride
-Lazaros
-Mosu
-Teemu
-"
-
-[node name="SoundLibrary" type="Node2D" parent="."]
-
-[node name="Song" type="AudioStreamPlayer" parent="SoundLibrary"]
-stream = ExtResource("7_6baeo")
-
-[connection signal="pressed" from="CanvasLayer/RetryButton" to="CanvasLayer/RetryButton" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]

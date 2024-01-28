@@ -172,6 +172,7 @@ func _on_mutated(_mutation: Dictionary) -> void:
 
 
 func _on_responses_menu_response_selected(response: DialogueResponse, item) -> void:
+	Event.play_sound("Thought")
 	var all_responses = responses_menu.get_children()
 	responses_menu.show()
 	for child in all_responses:

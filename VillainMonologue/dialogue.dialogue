@@ -9,26 +9,31 @@ Hero: And this is a hero test!
 ~ dialogueRunner
 set Event.play_sound("Laughter")
 % => start1
-% => start2
-% => start3
-% => start4
+#% => start2
+#% => start3
+#% => start4
 
 => END
 
 ~ start1
-Villain: Well,[next=0.5] well,[next=0.5] well.[next=2]
+Villain: [speed=0.7]Well, well,[next=1.0] well.
+set Event.wake_up_hero()
 Villain: We meet again.
 Hero: Ugh! Release me at once!
+set Event.reveal_villain()
 Villain: Oh, I would, but.
 Villain: I simply don't want to. Now sit tight.
 % => motivation1
-% => motivation2
-% => motivation3
+#% => motivation2
+#% => motivation3
 => END
 
 ~ start2
-Villain: Ha![next=0.5] Haa! [next=0.5]I have you now...
+Villain: [speed=0.7]Ha! Haa!
+Villain: I have you now...
+set Event.wake_up_hero()
 Hero: What a surprising turn of events.
+set Event.reveal_villain()
 Villain: Silence! Now, you must be wondering why we got here...
 % => motivation1
 % => motivation2
@@ -36,9 +41,11 @@ Villain: Silence! Now, you must be wondering why we got here...
 => END
 
 ~ start3
-Villain: [speed=0.2]What have we here...?
-Hero: Um...
-Villain: [speed=0.5]A little fly, trapped in the–
+Villain: [speed=0.7]What have we here...?
+Hero: [speed=0.7]Um...
+set Event.wake_up_hero()
+Villain: A little fly, trapped in the–
+set Event.reveal_villain()
 Hero: Spider's net?
 Villain: Stop interrupting me! 
 Villain: [speed=1.5]Also don't call me spider, they're creepy.
@@ -49,7 +56,10 @@ Villain: You must be curious why I bested you!
 => END
 
 ~ start4
-Hero: *gasp* [next=0.5]It can't be!
+Villain: [speed=0.7]Heh, heh, hee. [speed=1.0]Guess who?
+set Event.wake_up_hero()
+Hero: [speed=0.7]*gasp*[speed=1.0] It can't be!
+set Event.reveal_villain()
 Villain: Hah! Yes! It was me all along!
 Hero: No! I can't believe it!
 Hero: How could you?
@@ -70,16 +80,21 @@ Villain: So I swore to... to...
 Villain: [i][/i]
 - Carrot
 	Villain: ... to plant more carrots! Yeah!
+	set Event.play_sound("Smug")
 	Hero: Uh. Sure.
-	set Event.adjust_malice(-5)
+	set Event.adjust_malice(-500)
 - Shark
 	Villain: ... to feed your capybaras to my sharks! Haa!
-	set Event.adjust_malice(5)
+	set Event.adjust_malice(500)
 - Brain
 	Villain: ... to come up with a plan so evil, you would all just...
 	Villain: DIE!!!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(20)
-Villain: Now, everything has gone right according to my plan...
+if !Event.ended:
+	Villain: Now, everything has gone right according to my plan...
+else:
+	=> END
 % => events1
 % => events2
 % => events3
@@ -105,8 +120,12 @@ Villain: [i][/i]
 	Villain: Make friends with raccoons...
 	Villain: They like trash like you!
 	Hero: Ouch.
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(20)
-Villain: Now, everything has gone right according to my plan...
+if !Event.ended:
+	Villain: Now, everything has gone right according to my plan...
+else:
+	=> END
 % => events1
 % => events2
 % => events3 
@@ -136,7 +155,10 @@ Villain: [i][/i]
 	Villain: How right and tight those knots around your strong wrists and ankles feel...
 	Villain: I meant, you'll sink! Like a stone!
 	set Event.adjust_malice(5)
-Villain: Now, everything has gone right according to my plan...
+if !Event.ended:
+	Villain: Now, everything has gone right according to my plan...
+else:
+	=> END
 % => events1
 % => events2
 % => events3 
@@ -161,7 +183,10 @@ Villain: [i][/i]
 	Villain: Sock-sessfully get away with murder! Mhaha!
 	Hero: Please kill me already.
 	set Event.adjust_malice(20)
-Villain: And next, my nemesis...
+if !Event.ended:
+	Villain: And next, my nemesis...
+else:
+	=> END
 => plans1
 => END
 
@@ -184,7 +209,10 @@ Villain: [i][/i]
 	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
 	set Event.adjust_malice(15)
-Villain: And next, my nemesis...
+if !Event.ended:
+	Villain: And next, my nemesis...
+else:
+	=> END
 => plans1
 => END
 
@@ -212,7 +240,10 @@ Villain: [i][/i]
 	Villain: No! I am keeping it forever, because you will be dead!
 	Villain: Corpses don't need umbrellas!
 	set Event.adjust_malice(5)
-Villain: And next, my nemesis...
+if !Event.ended:
+	Villain: And next, my nemesis...
+else:
+	=> END
 => plans1
 => END
 
@@ -236,7 +267,10 @@ Villain: [i][/i]
 	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
 	Villain: Hnnggh... That's not what... Mrr!
 	set Event.adjust_malice(-5)
-Villain: But how could you understand?
+if !Event.ended:
+	Villain: But how could you understand?
+else:
+	=> END
 % Villain: You see, the nature of evil...
 % Villain: Evilness is my calling...
 % Villain: You don't know the allure of evil...
@@ -270,8 +304,11 @@ Villain: [i][/i]
 	Hero: Do you need a... hug?
 	Villain: I could hug you to DEATH! Mwa!
 	set Event.adjust_malice(15)
-% => mock1
-% => mock2
+if !Event.ended:
+	% => mock1
+	% => mock2
+else:
+	=> END
 => END
 
 ~ rant2
@@ -295,8 +332,11 @@ Villain: [i][/i]
 	Villain: Under which I will crush you!
 	Villain: Like a bug! Mwah!
 	set Event.adjust_malice(15)
-% => mock1
-% => mock2
+if !Event.ended:
+	% => mock1
+	% => mock2
+else:
+	=> END
 => END
 
 ~ rant3
@@ -323,8 +363,11 @@ Villain: [i][/i]
 	Hero: Yeah I know Vlad.
 	Villain: He mixes it with protein powder.
 	set Event.adjust_malice(5)
-% => mock1
-% => mock2
+if !Event.ended:
+	% => mock1
+	% => mock2
+else:
+	=> END
 => END
 
 ~ mock1
@@ -348,8 +391,11 @@ Villain: [i][/i]
 	Villain: Villains like me set the whole world on fire! Mwah! 
 	set Event.adjust_malice(15)
 Villain: You know, I wasn't always evil...
-% => backstory1
-% => backstory2
+if !Event.ended:
+	% => backstory1
+	% => backstory2
+else:
+	=> END
 => END
 
 ~ mock2
@@ -375,8 +421,11 @@ Villain: [i][/i]
 	Villain: I AM NOT afraid! Silence! Grr...
 	set Event.adjust_malice(-5)
 Villain: You know, I wasn't always evil...
-% => backstory1
-% => backstory2
+if !Event.ended:
+	% => backstory1
+	% => backstory2
+else:
+	=> END
 => END
 
 
@@ -405,8 +454,11 @@ Villain: [i][/i]
 	Villain: And they'll rummage through the trash for the tiny pieces left of you once I'm done with you!
 	Hero: Ah–haa. 
 	set Event.adjust_malice(15)
-% => brilliance1
-% => brilliance2
+if !Event.ended:
+	% => brilliance1
+	% => brilliance2
+else:
+	=> END
 => END
 
 ~ backstory2
@@ -425,7 +477,7 @@ Villain: [i][/i]
 	Villain: I'm rich. I have three hundred and forty-one bicycles to choose from!
 	Villain: I even got my sharks their own bikes!
 	Villain: With little horns!
-	Villain: Honk! [wait=0.5]Honk! [wait=0.5]Honk! [wait=0.5]
+	Villain: Honk! Honk! Honk!
 	Villain: And the baskets in the front! For snacks.
 	set Event.adjust_malice(15)
 - Trash
@@ -437,8 +489,11 @@ Villain: [i][/i]
 	Hero: That's sad, you know?
 	Villain: Mrrr... My gold bags beg to differ!
 	set Event.adjust_malice(5)
-% => brilliance1
-% => brilliance2
+if !Event.ended:
+	% => brilliance1
+	% => brilliance2
+else:
+	=> END
 => END 
 
 
@@ -460,9 +515,12 @@ Villain: [i][/i]
 	Villain: I meant, I will have you for dinner! Hnnngh!
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
-% => motivation1
-% => motivation2
-% => motivation3
+if !Event.ended:
+	% => motivation1
+	% => motivation2
+	% => motivation3
+else:
+	=> END
 => END
 
 ~ brilliance2
@@ -483,8 +541,19 @@ Villain: [i][/i]
 	Villain: I meant, I will have you for dinner! Hnnngh!
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
-% => motivation1
-% => motivation2
-% => motivation3
+if !Event.ended:
+	% => motivation1
+	% => motivation2
+	% => motivation3
+else:
+	=> END
 => END
 
+~ fail
+Villain: Anyways.
+Villain: Hrm.
+Villain: Ahem.
+Hero: ...Yes?
+Villain: You know, I'm no longer in the mood for this.
+set Event.kill_hero()
+=> END

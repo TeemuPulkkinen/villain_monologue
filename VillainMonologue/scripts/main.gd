@@ -30,10 +30,10 @@ func starting_cutscene():
 	blackout.show()
 	malice_progress_bar.position.x = malice_progress_bar.position.x - 230
 	bg_unlit.show()
-	blackout.modulate.a = 0.0
+	blackout.modulate.a = 1.0
 	herolight1.hide()
-	bg_unlit.hide()
-	villain_shadow.rotation_degrees = 69.0
+	herolight2.hide()
+	villain_shadow.rotation_degrees = 57.0
 	# Start dialogue
 	if !dialogue:
 		DialogueManager.show_dialogue_balloon(dialogue_file, "dialogueRunner")
@@ -41,20 +41,82 @@ func starting_cutscene():
 
 func starting_cutscene_hero_lights():
 	var tween = create_tween()
-	tween.tween_property(blackout, "modulate:a", 1.0, 3.0).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_callback(herolight1.show())
-	
-	
+	tween.tween_property(blackout, "modulate:a", 0.0, 2.0).set_trans(Tween.TRANS_ELASTIC)
+	tween.tween_callback(herolight1.show).set_delay(0.1)
+	tween.tween_callback(herolight2.show).set_delay(0.6)
+
+func starting_cutscene_villain_lights():
+	bg_unlit.hide()
+	bg_unlit.modulate.a = 0.0
+	var tween = create_tween().set_parallel()
+	tween.tween_property(bg_unlit, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(villain_shadow, "rotation_degrees", 15, 1.5).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(malice_progress_bar, "position:x", malice_progress_bar.position.x + 230, 1.0).set_trans(Tween.TRANS_BOUNCE)
 
 # If A-key is pressed on the keyboard, adjusts the value of the progress bar
-func adjust_malice(new_malice_value):
+func adjust_malice(new_malice_value, positive):
+	if positive:
+		Event.play_sound("MaliceMeterUp")
+	else:
+		Event.play_sound("MaliceMeterDown")
 	malice_progress_bar._adjust_malice_value(new_malice_value)
 
 # Dialogue countdown timer functions
 func start_timer():
 	await timer.start_timer(timer_time)
-	# autoselect one of the dialogue options
-	# TO DO
 
 func stop_timer():
 	timer.stop_timer()
+	
+	
+func end_game(max_evil):
+	get_node("ExampleBalloon").queue_free()
+	await get_tree().create_timer(1.0).timeout
+	if max_evil:
+		Event.play_sound("EvilestLaugh")
+		%LaughBg.show()
+		%LaughVillain1.show()
+		await get_tree().create_timer(2.0).timeout
+		%LaughVillain2.show()
+		%LaughVillain1.hide()
+		await get_tree().create_timer(2.0).timeout
+		%ButtonSmash1.show()
+		await get_tree().create_timer(1.5).timeout
+		%ButtonSmash2.show()
+		await get_tree().create_timer(0.5).timeout
+		%ButtonSmash3.show()
+		await get_tree().create_timer(1.5).timeout
+		blackout.show()
+		Event.play_sound("Creak")
+		await get_tree().create_timer(0.5).timeout
+		Event.play_sound("Splash")
+		await get_tree().create_timer(1.0).timeout
+		Event.play_sound("Screaming")
+		await get_tree().create_timer(0.2).timeout
+		Event.play_sound("Omnomnom")
+		await get_tree().create_timer(3.0).timeout
+		get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
+	else:
+		Event.play_sound("Frustration")
+		DialogueManager.show_dialogue_balloon(dialogue_file, "fail")
+		return
+	blackout.show()
+	await get_tree().create_timer(3.0).timeout
+
+func kill_hero():
+	%ButtonSmash1.show()
+	await get_tree().create_timer(1.5).timeout
+	%ButtonSmash2.show()
+	await get_tree().create_timer(1.5).timeout
+	%ButtonSmash3.show()
+	await get_tree().create_timer(1.5).timeout
+	blackout.show()
+	Event.play_sound("Creak")
+	await get_tree().create_timer(0.5).timeout
+	Event.play_sound("Splash")
+	await get_tree().create_timer(1.0).timeout
+	Event.play_sound("Screaming")
+	await get_tree().create_timer(0.2).timeout
+	Event.play_sound("Omnomnom")
+	await get_tree().create_timer(3.0).timeout
+	get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
