@@ -8,7 +8,7 @@ const DialogueResponse = preload("./dialogue_response.gd")
 
 
 ## Emitted when a response is selected.
-signal response_selected(response: String)
+signal response_selected(response: String, item)
 
 
 ## Optionally specify a control to duplicate for each response
@@ -88,11 +88,14 @@ func get_menu_items() -> Array:
 
 ### Signals
 
-func _on_response_selected(response):
-	print("call event to stop timer")
+func _on_response_selected(response, item):
 	Event.stop_timer()
-	response_selected.emit(response)
+	response_selected.emit(response, item)
 	get_viewport().set_input_as_handled()
+
+# Timer run out, autopick first option
+func _on_timer_ended():
+	response_selected.emit(get_child(0).get_meta("response"), get_child(0))
 
 func _on_response_mouse_entered(item: Control) -> void:
 	if "Disallowed" in item.name: return

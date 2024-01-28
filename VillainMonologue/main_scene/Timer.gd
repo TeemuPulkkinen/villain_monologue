@@ -1,5 +1,4 @@
 extends Node2D
-
 @onready var rope = $Rope
 @onready var bomb = $Bomb
 var stopped = false
@@ -7,7 +6,7 @@ var stopped = false
 # Start countdown & animate rope burning
 func start_timer(time):
 	show()
-
+	bomb.animation = "default"
 	# Tween rope progress bar to go to 0 over time given
 	rope.value = 100
 	var tween = create_tween()
@@ -16,13 +15,15 @@ func start_timer(time):
 	# Tween spark's movement
 
 	# Start timer
-	stopped = true
+	stopped = false
 	await get_tree().create_timer(time).timeout
 	if stopped:
 		return
 	
 	# Animate explosion
 	bomb.play("explode")
+	# Trigger next dialogue
+	get_node("/root/Main/ExampleBalloon/%ResponsesMenu")._on_timer_ended()
 	
 	return true
 

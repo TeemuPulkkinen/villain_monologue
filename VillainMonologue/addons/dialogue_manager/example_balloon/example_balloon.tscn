@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=22 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/Response.gd" id="6_ui0cx"]
 [ext_resource type="Texture2D" uid="uid://dw7eo4x8eu1oh" path="res://art/placeholders/dialogue_assets/placeholder_thought3.png" id="7_d2nwj"]
 [ext_resource type="Texture2D" uid="uid://rotl7j26mne" path="res://art/option_icons/option_Apple.png" id="9_x0qaa"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="12_8s5yo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -75,6 +76,23 @@ Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/font_sizes/normal_font_size = 38
 RichTextLabel/fonts/normal_font = ExtResource("4_mxbf1")
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_t5f05"]
+frame_0/texture = ExtResource("5_iag7b")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_et6dx"]
+random_pitch = 1.08
+random_volume_offset_db = 0.08
+streams_count = 1
+stream_0/stream = ExtResource("12_8s5yo")
+stream_0/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rte4a"]
+random_pitch = 1.05
+random_volume_offset_db = 0.05
+streams_count = 1
+stream_0/stream = ExtResource("12_8s5yo")
+stream_0/weight = 1.0
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -174,10 +192,11 @@ script = ExtResource("3_72ixx")
 response_template = NodePath("Response1")
 
 [node name="Response1" type="TextureButton" parent="Responses/ResponsesMenu"]
+custom_minimum_size = Vector2(394, 207)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture_normal = ExtResource("5_iag7b")
+texture_normal = SubResource("AnimatedTexture_t5f05")
 script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response1"]
@@ -217,6 +236,15 @@ offset_top = 78.0
 offset_right = 352.0
 offset_bottom = 228.0
 texture = ExtResource("9_x0qaa")
+
+[node name="VillainPip" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_et6dx")
+pitch_scale = 0.8
+
+[node name="HeroPip" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_rte4a")
 
 [connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]
 [connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

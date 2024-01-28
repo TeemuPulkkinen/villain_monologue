@@ -171,14 +171,20 @@ func _on_mutated(_mutation: Dictionary) -> void:
 #		next(dialogue_line.next_id)
 
 
-func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+func _on_responses_menu_response_selected(response: DialogueResponse, item) -> void:
+	var all_responses = responses_menu.get_children()
+	responses_menu.show()
+	for child in all_responses:
+		child.modulate.a = 0.0
+	item.modulate.a = 1.0
+	await item.select()
 	next(response.next_id)
+	for child in all_responses:
+		child.modulate.a = 1.0
 
 
 func _on_click_mask_gui_input(event):
 	# See if we need to skip typing of the dialogue
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-		print("clikc")
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
 		var skip_button_was_pressed: bool = event.is_action_pressed(SKIP_ACTION)

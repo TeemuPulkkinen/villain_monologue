@@ -18,6 +18,10 @@ signal skipped_typing()
 ## Emitted when typing finishes.
 signal finished_typing()
 
+# Store current pip types. 0 for villain, 1 for hero.
+var pip_type = 0
+@onready var villain_pip = %VillainPip
+@onready var hero_pip = %HeroPip
 
 # The action to press to skip typing.
 @export var skip_action: StringName = &"ui_cancel"
@@ -141,6 +145,13 @@ func _type_next(delta: float, seconds_needed: float) -> void:
 	else:
 		visible_characters += 1
 		if visible_characters <= get_total_character_count():
+			# Play audio pip
+			if pip_type == 0:
+				if !villain_pip.playing:
+					villain_pip.play()
+			else:
+				if !hero_pip.playing:
+					hero_pip.play()
 			spoke.emit(get_parsed_text()[visible_characters - 1], visible_characters - 1, _get_speed(visible_characters))
 		# See if there's time to type out some more in this frame
 		seconds_needed += seconds_per_step * (1.0 / _get_speed(visible_characters))
