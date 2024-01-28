@@ -22,8 +22,12 @@ func _ready():
 		DialogueManager.show_dialogue_balloon(dialogue_file, "dialogueRunner")
 		dialogue = false
 
-# If A-key is pressed on the keyboard, adjusts the value of the progress bar
-func adjust_malice(new_malice_value):
+## If new_malice_value is positive, play the sound for increasing malice meter, if negative, play reducing malice meter
+func adjust_malice(new_malice_value, positive):
+	if positive == true:
+		Event.play_sound("MaliceMeterUp")
+	else:
+		Event.play_sound("MaliceMeterDown")
 	malice_progress_bar._adjust_malice_value(new_malice_value)
 
 # Dialogue countdown timer functions

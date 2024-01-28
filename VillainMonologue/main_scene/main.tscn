@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=36 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://2g6pt8b1u6g0" path="res://art/placeholders/ui_assets/placeholder_Background.png" id="1_xo3gr"]
@@ -25,7 +25,9 @@
 [ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="23_w6qma"]
 [ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="24_txqp2"]
 [ext_resource type="AudioStream" uid="uid://b3cju8dklvc8k" path="res://sound/thinking/thinking11.mp3" id="25_nc4v6"]
+[ext_resource type="AudioStream" uid="uid://dk1itihis0dkt" path="res://sound/malice_meter/RisingMeter01.mp3" id="29_sqphl"]
 [ext_resource type="AudioStream" uid="uid://c6c4as4cnqfmq" path="res://sound/nodding/nodding01.mp3" id="29_vp0di"]
+[ext_resource type="AudioStream" uid="uid://dr1uj0epbhifq" path="res://sound/malice_meter/SinkingMeter02.mp3" id="30_3gy55"]
 [ext_resource type="AudioStream" uid="uid://de47icnl6mwe0" path="res://sound/nodding/nodding02.mp3" id="30_iwn54"]
 [ext_resource type="AudioStream" uid="uid://c0e0h0yyyhgp3" path="res://sound/nodding/nodding03.mp3" id="31_t3ifh"]
 
@@ -171,5 +173,11 @@ stream = SubResource("AudioStreamRandomizer_gq5qa")
 
 [node name="Nodding" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_f5n47")
+
+[node name="MaliceMeterUp" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("29_sqphl")
+
+[node name="MaliceMeterDown" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("30_3gy55")
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]
