@@ -1,17 +1,27 @@
-[gd_scene load_steps=22 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=37 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_4u26j"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="Texture2D" uid="uid://leakgbu1sk23" path="res://art/final_assets/villain_bubble.png" id="2_xp03e"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
-[ext_resource type="Texture2D" uid="uid://d1xd4052aryle" path="res://art/placeholders/dialogue_assets/placeholder_herobubble.png" id="3_dn43u"]
+[ext_resource type="Texture2D" uid="uid://ced4h3fyhp2xv" path="res://art/final_assets/hero_bubble.png" id="3_s8eg0"]
 [ext_resource type="FontFile" uid="uid://dkjlgbwc6df5j" path="res://art/fonts/Underdog-Regular.ttf" id="4_mxbf1"]
-[ext_resource type="Texture2D" uid="uid://ffseasedo4ux" path="res://art/placeholders/dialogue_assets/placeholder_villainBubble.png" id="4_n1477"]
-[ext_resource type="Texture2D" uid="uid://di4uu02814vnd" path="res://art/placeholders/dialogue_assets/placeholder_thought1.png" id="5_iag7b"]
-[ext_resource type="Texture2D" uid="uid://cml0fm6vetfp0" path="res://art/placeholders/dialogue_assets/placeholder_thought2.png" id="6_epupf"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/Response.gd" id="6_ui0cx"]
-[ext_resource type="Texture2D" uid="uid://dw7eo4x8eu1oh" path="res://art/placeholders/dialogue_assets/placeholder_thought3.png" id="7_d2nwj"]
+[ext_resource type="Texture2D" uid="uid://b017cediwopqv" path="res://art/final_assets/Thoughts/bubble_thought1_1.png" id="7_hnsi7"]
+[ext_resource type="Texture2D" uid="uid://beagrvox5pqnf" path="res://art/final_assets/Thoughts/bubble_thought1_2.png" id="8_8fppr"]
+[ext_resource type="Texture2D" uid="uid://c3pnh2mw7flfp" path="res://art/final_assets/Thoughts/bubble_thought1_hover1.png" id="9_khu2d"]
 [ext_resource type="Texture2D" uid="uid://rotl7j26mne" path="res://art/option_icons/option_Apple.png" id="9_x0qaa"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="12_8s5yo"]
+[ext_resource type="Texture2D" uid="uid://b6w7dq6dolgs2" path="res://art/final_assets/Thoughts/bubble_thought1_hover2.png" id="10_xxj7y"]
+[ext_resource type="Texture2D" uid="uid://cig30tyjfo6a8" path="res://art/final_assets/Thoughts/pop_animated_texture.tres" id="11_4bymo"]
+[ext_resource type="Texture2D" uid="uid://ddpb6n1hooi8r" path="res://art/final_assets/Thoughts/bubble_thought2_1.png" id="11_6onyh"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="12_8s5yo"]
+[ext_resource type="Texture2D" uid="uid://dgef4edl5x64s" path="res://art/final_assets/Thoughts/bubble_thought2_2.png" id="12_beqy2"]
+[ext_resource type="Texture2D" uid="uid://crjeqjvr7snji" path="res://art/final_assets/Thoughts/bubble_thought3_1.png" id="13_bymet"]
+[ext_resource type="Texture2D" uid="uid://haajjkbcef6u" path="res://art/final_assets/Thoughts/bubble_thought3_2.png" id="14_iggcl"]
+[ext_resource type="Texture2D" uid="uid://b07nda7ub3qr1" path="res://art/final_assets/Thoughts/bubble_thought2_hover1.png" id="16_uk8l0"]
+[ext_resource type="Texture2D" uid="uid://dm3psu5qmct8b" path="res://art/final_assets/Thoughts/bubble_thought2_hover2.png" id="17_2r7eb"]
+[ext_resource type="Texture2D" uid="uid://c1g81jlrjwpj3" path="res://art/final_assets/Thoughts/bubble_thought3_hover1.png" id="20_kerkj"]
+[ext_resource type="Texture2D" uid="uid://b5q67kbq73ou2" path="res://art/final_assets/Thoughts/bubble_thought3_hover2.png" id="21_slu3n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -78,7 +88,45 @@ RichTextLabel/font_sizes/normal_font_size = 38
 RichTextLabel/fonts/normal_font = ExtResource("4_mxbf1")
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_t5f05"]
-frame_0/texture = ExtResource("5_iag7b")
+frames = 2
+frame_0/texture = ExtResource("7_hnsi7")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("8_8fppr")
+frame_1/duration = 0.5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0d0tj"]
+frames = 2
+frame_0/texture = ExtResource("9_khu2d")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("10_xxj7y")
+frame_1/duration = 0.5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_s50be"]
+frames = 2
+frame_0/texture = ExtResource("11_6onyh")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("12_beqy2")
+frame_1/duration = 0.5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cbq8n"]
+frames = 2
+frame_0/texture = ExtResource("16_uk8l0")
+frame_1/texture = ExtResource("17_2r7eb")
+frame_1/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_6nxq4"]
+frames = 2
+frame_0/texture = ExtResource("13_bymet")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("14_iggcl")
+frame_1/duration = 0.5
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_dcfw8"]
+frames = 2
+frame_0/texture = ExtResource("20_kerkj")
+frame_0/duration = 0.5
+frame_1/texture = ExtResource("21_slu3n")
+frame_1/duration = 0.5
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_et6dx"]
 random_pitch = 1.08
@@ -100,11 +148,11 @@ script = ExtResource("1_4u26j")
 
 [node name="VillainBubble" type="TextureRect" parent="."]
 unique_name_in_owner = true
-offset_left = 604.0
-offset_top = 732.0
-offset_right = 1562.0
-offset_bottom = 1044.0
-texture = ExtResource("4_n1477")
+offset_left = 603.0
+offset_top = 704.0
+offset_right = 1577.0
+offset_bottom = 1047.0
+texture = ExtResource("2_xp03e")
 stretch_mode = 2
 
 [node name="HeroBubble" type="TextureRect" parent="."]
@@ -113,7 +161,7 @@ offset_left = 633.0
 offset_top = 94.0
 offset_right = 1591.0
 offset_bottom = 406.0
-texture = ExtResource("3_dn43u")
+texture = ExtResource("3_s8eg0")
 stretch_mode = 2
 
 [node name="Balloon" type="Panel" parent="."]
@@ -192,49 +240,57 @@ script = ExtResource("3_72ixx")
 response_template = NodePath("Response1")
 
 [node name="Response1" type="TextureButton" parent="Responses/ResponsesMenu"]
-custom_minimum_size = Vector2(394, 207)
+custom_minimum_size = Vector2(460, 289)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 texture_normal = SubResource("AnimatedTexture_t5f05")
+texture_hover = SubResource("AnimatedTexture_0d0tj")
+texture_disabled = ExtResource("11_4bymo")
 script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response1"]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 34.0
-offset_right = 323.0
-offset_bottom = 184.0
+offset_left = 215.0
+offset_top = 70.5
+offset_right = 365.0
+offset_bottom = 220.5
 texture = ExtResource("9_x0qaa")
 
 [node name="Response2" type="TextureButton" parent="Responses/ResponsesMenu"]
+custom_minimum_size = Vector2(460, 289)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
-texture_normal = ExtResource("6_epupf")
+size_flags_vertical = 2
+texture_normal = SubResource("AnimatedTexture_s50be")
+texture_hover = SubResource("AnimatedTexture_cbq8n")
+texture_disabled = ExtResource("11_4bymo")
 script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response2"]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 42.0
-offset_right = 370.0
-offset_bottom = 192.0
+offset_left = 228.0
+offset_top = 67.5
+offset_right = 378.0
+offset_bottom = 217.5
 texture = ExtResource("9_x0qaa")
 
 [node name="Response3" type="TextureButton" parent="Responses/ResponsesMenu"]
+custom_minimum_size = Vector2(460, 289)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 10
-texture_normal = ExtResource("7_d2nwj")
+texture_normal = SubResource("AnimatedTexture_6nxq4")
+texture_hover = SubResource("AnimatedTexture_dcfw8")
+texture_disabled = ExtResource("11_4bymo")
 script = ExtResource("6_ui0cx")
 
 [node name="Img" type="TextureRect" parent="Responses/ResponsesMenu/Response3"]
 layout_mode = 0
-offset_left = 202.0
-offset_top = 78.0
-offset_right = 352.0
-offset_bottom = 228.0
+offset_left = 216.0
+offset_top = 83.5
+offset_right = 366.0
+offset_bottom = 233.5
 texture = ExtResource("9_x0qaa")
 
 [node name="VillainPip" type="AudioStreamPlayer" parent="."]

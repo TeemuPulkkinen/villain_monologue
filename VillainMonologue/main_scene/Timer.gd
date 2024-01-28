@@ -1,16 +1,21 @@
 extends Node2D
 @onready var rope = $Rope
 @onready var bomb = $Bomb
+@onready var spark = $Spark
 var stopped = false
 
 # Start countdown & animate rope burning
 func start_timer(time):
 	show()
+	spark.show()
 	bomb.animation = "default"
 	# Tween rope progress bar to go to 0 over time given
+	# and spark x location
 	rope.value = 100
-	var tween = create_tween()
+	spark.position.x = 1116
+	var tween = create_tween().set_parallel()
 	tween.tween_property(rope, "value", 0, time)
+	tween.tween_property(spark, "position:x", 404, time)
 	
 	# Tween spark's movement
 
@@ -32,5 +37,6 @@ func stop_timer():
 	hide()
 
 func _on_bomb_animation_finished():
+	spark.hide()
 	if bomb.animation == "explode":
 		hide()
