@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=30 format=3 uid="uid://kowp0cp7kq27"]
+=======
+[gd_scene load_steps=36 format=3 uid="uid://kowp0cp7kq27"]
+>>>>>>> 586cc6d (Add malice meter sound effects)
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -24,8 +28,20 @@
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
 [ext_resource type="AudioStream" uid="uid://c0u0scgfe46aj" path="res://sound/laughter/evil laugh 24.mp3" id="22_542rh"]
+<<<<<<< HEAD
 [ext_resource type="AudioStream" uid="uid://rcdukvwewro4" path="res://sound/laughter/evil laugh 25.mp3" id="23_41u24"]
 [ext_resource type="AudioStream" uid="uid://b0v545dt4jea1" path="res://sound/laughter/evil MEGA LAUGH.mp3" id="24_22mp0"]
+=======
+[ext_resource type="AudioStream" uid="uid://3hgwo5pqbs3b" path="res://sound/smug/thinking27.mp3" id="22_y7kup"]
+[ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="23_w6qma"]
+[ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="24_txqp2"]
+[ext_resource type="AudioStream" uid="uid://b3cju8dklvc8k" path="res://sound/thinking/thinking11.mp3" id="25_nc4v6"]
+[ext_resource type="AudioStream" uid="uid://dk1itihis0dkt" path="res://sound/malice_meter/RisingMeter01.mp3" id="29_sqphl"]
+[ext_resource type="AudioStream" uid="uid://c6c4as4cnqfmq" path="res://sound/nodding/nodding01.mp3" id="29_vp0di"]
+[ext_resource type="AudioStream" uid="uid://dr1uj0epbhifq" path="res://sound/malice_meter/SinkingMeter02.mp3" id="30_3gy55"]
+[ext_resource type="AudioStream" uid="uid://de47icnl6mwe0" path="res://sound/nodding/nodding02.mp3" id="30_iwn54"]
+[ext_resource type="AudioStream" uid="uid://c0e0h0yyyhgp3" path="res://sound/nodding/nodding03.mp3" id="31_t3ifh"]
+>>>>>>> 586cc6d (Add malice meter sound effects)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -162,4 +178,22 @@ stream = ExtResource("14_xhqm5")
 [node name="Laughter" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_2y1ph")
 
+<<<<<<< HEAD
+=======
+[node name="Smug" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("22_y7kup")
+
+[node name="Thinking" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = SubResource("AudioStreamRandomizer_gq5qa")
+
+[node name="Nodding" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = SubResource("AudioStreamRandomizer_f5n47")
+
+[node name="MaliceMeterUp" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("29_sqphl")
+
+[node name="MaliceMeterDown" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("30_3gy55")
+
+>>>>>>> 586cc6d (Add malice meter sound effects)
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]
