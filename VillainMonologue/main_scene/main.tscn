@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="11_5c1hh"]
 [ext_resource type="Script" path="res://main_scene/Timer.gd" id="11_5ei3n"]
 [ext_resource type="Texture2D" uid="uid://brqsyot702lik" path="res://art/placeholders/ui_assets/placeholder_timer_bomb_explode_anim.png" id="14_7wvsm"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="14_xhqm5"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="14_xhqm5"]
 [ext_resource type="AudioStream" uid="uid://veoqh8bx2evh" path="res://sound/laughter/evil laugh 01.mp3" id="17_2caer"]
 [ext_resource type="AudioStream" uid="uid://46nt0gh32yjh" path="res://sound/laughter/evil laugh 15.mp3" id="19_rla1b"]
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]

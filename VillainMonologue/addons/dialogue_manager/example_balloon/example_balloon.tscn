@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/Response.gd" id="6_ui0cx"]
 [ext_resource type="Texture2D" uid="uid://dw7eo4x8eu1oh" path="res://art/placeholders/dialogue_assets/placeholder_thought3.png" id="7_d2nwj"]
 [ext_resource type="Texture2D" uid="uid://rotl7j26mne" path="res://art/option_icons/option_Apple.png" id="9_x0qaa"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="12_8s5yo"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="12_8s5yo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
