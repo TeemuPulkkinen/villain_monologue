@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=27 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://2g6pt8b1u6g0" path="res://art/placeholders/ui_assets/placeholder_Background.png" id="1_xo3gr"]
@@ -23,7 +23,6 @@
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
 [ext_resource type="AudioStream" uid="uid://c0u0scgfe46aj" path="res://sound/laughter/evil laugh 24.mp3" id="22_542rh"]
 [ext_resource type="AudioStream" uid="uid://rcdukvwewro4" path="res://sound/laughter/evil laugh 25.mp3" id="23_41u24"]
-[ext_resource type="AudioStream" uid="uid://b0v545dt4jea1" path="res://sound/laughter/evil MEGA LAUGH.mp3" id="24_22mp0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -56,7 +55,7 @@ animations = [{
 }]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2y1ph"]
-streams_count = 8
+streams_count = 7
 stream_0/stream = ExtResource("17_2caer")
 stream_0/weight = 1.0
 stream_1/stream = ExtResource("18_iyl8p")
@@ -71,8 +70,6 @@ stream_5/stream = ExtResource("22_542rh")
 stream_5/weight = 1.0
 stream_6/stream = ExtResource("23_41u24")
 stream_6/weight = 1.0
-stream_7/stream = ExtResource("24_22mp0")
-stream_7/weight = 1.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b15b5")
