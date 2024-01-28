@@ -1,37 +1,41 @@
-[gd_scene load_steps=30 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=36 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
-[ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
-[ext_resource type="Texture2D" uid="uid://b0mveijskspb" path="res://art/final_assets/malice_Layer-20.png" id="3_h5667"]
-[ext_resource type="Texture2D" uid="uid://rix0in4dkr3y" path="res://art/final_assets/malice_Malice_top.png" id="4_ooshw"]
-[ext_resource type="Texture2D" uid="uid://clttfucudkmbi" path="res://art/final_assets/malice_Malice_progress.png" id="5_56ii3"]
+[ext_resource type="Texture2D" uid="uid://2g6pt8b1u6g0" path="res://art/placeholders/ui_assets/placeholder_Background.png" id="1_xo3gr"]
+[ext_resource type="Texture2D" uid="uid://c7c683a1hi4gp" path="res://art/placeholders/ui_assets/placeholder_Malicebottom.png" id="3_hn6m7"]
+[ext_resource type="Texture2D" uid="uid://cvmkuk0dk7yf8" path="res://art/placeholders/ui_assets/placeholder_Malice_outline.png" id="4_4t2q4"]
+[ext_resource type="Texture2D" uid="uid://ds3umrqbi55pe" path="res://art/placeholders/ui_assets/placeholder_Malice_progress.png" id="5_fmkux"]
+[ext_resource type="Texture2D" uid="uid://rxjsmdlddjrl" path="res://art/placeholders/ui_assets/placeholder_timer_rope.png" id="6_1pmem"]
+[ext_resource type="Texture2D" uid="uid://jdr5wsoud1gg" path="res://art/placeholders/ui_assets/placeholder_rope.png" id="6_eccfd"]
 [ext_resource type="Script" path="res://scripts/malice_progressbar.gd" id="6_n2qib"]
-[ext_resource type="Texture2D" uid="uid://ckovhygddv16u" path="res://art/final_assets/villain_default.png" id="7_s20n2"]
-[ext_resource type="Texture2D" uid="uid://dnjqnl7fcmbw1" path="res://art/final_assets/hero_rope.png" id="9_ayypt"]
+[ext_resource type="Texture2D" uid="uid://chdf74tqreu2e" path="res://art/placeholders/ui_assets/placeholder_timer_bomb.png" id="7_dar3y"]
+[ext_resource type="Texture2D" uid="uid://4q5jy4lca055" path="res://art/placeholders/ui_assets/placeholder_timer_spark_anim.png" id="8_sgepl"]
+[ext_resource type="Texture2D" uid="uid://csbblpnvyfnk6" path="res://art/placeholders/character_assets/placeholder_villain_.png" id="9_dqopv"]
 [ext_resource type="Texture2D" uid="uid://bgpe66rvrbwxs" path="res://art/placeholders/character_assets/placeholder_sharks.png" id="10_4m5fg"]
-[ext_resource type="Texture2D" uid="uid://doda8obuvfs4c" path="res://art/final_assets/hero_default.png" id="10_ew846"]
+[ext_resource type="Texture2D" uid="uid://22g6qtr0r6mm" path="res://art/placeholders/character_assets/placeholder_hero.png" id="11_5c1hh"]
 [ext_resource type="Script" path="res://main_scene/Timer.gd" id="11_5ei3n"]
-[ext_resource type="Texture2D" uid="uid://dmu7lfuuefate" path="res://art/final_assets/timer_rope.png" id="12_6xgp8"]
-[ext_resource type="Texture2D" uid="uid://cxiuvjqw6emsj" path="res://art/final_assets/timer_bomb_default.png" id="13_vexra"]
-[ext_resource type="Texture2D" uid="uid://d2xnt62p7nvcx" path="res://art/final_assets/timer_bomb_explo1.png" id="14_dixf5"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder.wav" id="14_xhqm5"]
-[ext_resource type="Texture2D" uid="uid://bqm3wi8qdbogo" path="res://art/final_assets/timer_bomb_explo2.png" id="15_1l67k"]
-[ext_resource type="Texture2D" uid="uid://cyhj48o45dpyt" path="res://art/final_assets/timer_spark1.png" id="16_6sm13"]
+[ext_resource type="Texture2D" uid="uid://brqsyot702lik" path="res://art/placeholders/ui_assets/placeholder_timer_bomb_explode_anim.png" id="14_7wvsm"]
+[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="14_xhqm5"]
 [ext_resource type="AudioStream" uid="uid://veoqh8bx2evh" path="res://sound/laughter/evil laugh 01.mp3" id="17_2caer"]
-[ext_resource type="Texture2D" uid="uid://dbh6kcx3ufiri" path="res://art/final_assets/timer_spark2.png" id="17_g3ts2"]
-[ext_resource type="AudioStream" uid="uid://b5y0w0nrixwfl" path="res://sound/laughter/evil laugh 04.mp3" id="18_iyl8p"]
 [ext_resource type="AudioStream" uid="uid://46nt0gh32yjh" path="res://sound/laughter/evil laugh 15.mp3" id="19_rla1b"]
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
 [ext_resource type="AudioStream" uid="uid://c0u0scgfe46aj" path="res://sound/laughter/evil laugh 24.mp3" id="22_542rh"]
-[ext_resource type="AudioStream" uid="uid://rcdukvwewro4" path="res://sound/laughter/evil laugh 25.mp3" id="23_41u24"]
-[ext_resource type="AudioStream" uid="uid://b0v545dt4jea1" path="res://sound/laughter/evil MEGA LAUGH.mp3" id="24_22mp0"]
+[ext_resource type="AudioStream" uid="uid://3hgwo5pqbs3b" path="res://sound/smug/thinking27.mp3" id="22_y7kup"]
+[ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="23_w6qma"]
+[ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="24_txqp2"]
+[ext_resource type="AudioStream" uid="uid://b3cju8dklvc8k" path="res://sound/thinking/thinking11.mp3" id="25_nc4v6"]
+[ext_resource type="AudioStream" uid="uid://dk1itihis0dkt" path="res://sound/malice_meter/RisingMeter01.mp3" id="29_sqphl"]
+[ext_resource type="AudioStream" uid="uid://c6c4as4cnqfmq" path="res://sound/nodding/nodding01.mp3" id="29_vp0di"]
+[ext_resource type="AudioStream" uid="uid://dr1uj0epbhifq" path="res://sound/malice_meter/SinkingMeter02.mp3" id="30_3gy55"]
+[ext_resource type="AudioStream" uid="uid://de47icnl6mwe0" path="res://sound/nodding/nodding02.mp3" id="30_iwn54"]
+[ext_resource type="AudioStream" uid="uid://c0e0h0yyyhgp3" path="res://sound/nodding/nodding03.mp3" id="31_t3ifh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("13_vexra")
+"texture": ExtResource("7_dar3y")
 }],
 "loop": false,
 "name": &"default",
@@ -39,10 +43,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("14_dixf5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_1l67k")
+"texture": ExtResource("14_7wvsm")
 }],
 "loop": false,
 "name": &"explode",
@@ -53,10 +54,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_6sm13")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_g3ts2")
+"texture": ExtResource("8_sgepl")
 }],
 "loop": true,
 "name": &"default",
@@ -64,23 +62,35 @@ animations = [{
 }]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2y1ph"]
-streams_count = 8
+streams_count = 5
 stream_0/stream = ExtResource("17_2caer")
 stream_0/weight = 1.0
-stream_1/stream = ExtResource("18_iyl8p")
+stream_1/stream = ExtResource("19_rla1b")
 stream_1/weight = 1.0
-stream_2/stream = ExtResource("19_rla1b")
+stream_2/stream = ExtResource("20_t5s3s")
 stream_2/weight = 1.0
-stream_3/stream = ExtResource("20_t5s3s")
+stream_3/stream = ExtResource("21_j4870")
 stream_3/weight = 1.0
-stream_4/stream = ExtResource("21_j4870")
+stream_4/stream = ExtResource("22_542rh")
 stream_4/weight = 1.0
-stream_5/stream = ExtResource("22_542rh")
-stream_5/weight = 1.0
-stream_6/stream = ExtResource("23_41u24")
-stream_6/weight = 1.0
-stream_7/stream = ExtResource("24_22mp0")
-stream_7/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gq5qa"]
+streams_count = 3
+stream_0/stream = ExtResource("23_w6qma")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("24_txqp2")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("25_nc4v6")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_f5n47"]
+streams_count = 3
+stream_0/stream = ExtResource("29_vp0di")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("30_iwn54")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("31_t3ifh")
+stream_2/weight = 1.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_b15b5")
@@ -88,71 +98,64 @@ timer_time = 5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="background" type="TextureRect" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_k4fwo")
+texture = ExtResource("1_xo3gr")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer"]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 41.0
-offset_top = -494.0
-offset_right = 228.0
-offset_bottom = 501.0
+offset_top = -479.5
+offset_right = 115.0
+offset_bottom = 479.5
 grow_vertical = 2
 value = 20.0
 fill_mode = 3
-texture_under = ExtResource("3_h5667")
-texture_over = ExtResource("4_ooshw")
-texture_progress = ExtResource("5_56ii3")
+texture_under = ExtResource("3_hn6m7")
+texture_over = ExtResource("4_4t2q4")
+texture_progress = ExtResource("5_fmkux")
 script = ExtResource("6_n2qib")
 
-[node name="Villain" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(530, 582)
-texture = ExtResource("7_s20n2")
+[node name="PlaceholderRope" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1453, 174)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_eccfd")
+
+[node name="PlaceholderVillain" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(589, 593)
+texture = ExtResource("9_dqopv")
 
 [node name="PlaceholderSharks" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(1494, 632)
 texture = ExtResource("10_4m5fg")
 
-[node name="Hero" type="Node2D" parent="CanvasLayer"]
-position = Vector2(1494, -93)
-
-[node name="HeroRope" type="Sprite2D" parent="CanvasLayer/Hero"]
-position = Vector2(10.5, 206.5)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("9_ayypt")
-
-[node name="HeroSprite" type="Sprite2D" parent="CanvasLayer/Hero"]
-position = Vector2(-25.5, 409.5)
-texture = ExtResource("10_ew846")
+[node name="PlaceholderHero" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1397, 302)
+texture = ExtResource("11_5c1hh")
 
 [node name="Timer" type="Node2D" parent="CanvasLayer"]
 unique_name_in_owner = true
-position = Vector2(-28, -22)
 script = ExtResource("11_5ei3n")
 
 [node name="Rope" type="TextureProgressBar" parent="CanvasLayer/Timer"]
-offset_left = 393.0
-offset_top = 899.0
-offset_right = 1161.0
-offset_bottom = 1083.0
+offset_left = 281.0
+offset_top = 787.0
+offset_right = 1049.0
+offset_bottom = 971.0
 value = 100.0
-texture_progress = ExtResource("12_6xgp8")
+texture_progress = ExtResource("6_1pmem")
 
 [node name="Bomb" type="AnimatedSprite2D" parent="CanvasLayer/Timer"]
-position = Vector2(323, 868)
+position = Vector2(226, 937)
 sprite_frames = SubResource("SpriteFrames_xhk0d")
+animation = &"explode"
 autoplay = "default"
 
 [node name="Spark" type="AnimatedSprite2D" parent="CanvasLayer/Timer"]
-position = Vector2(1117, 939)
+position = Vector2(1048, 778)
 sprite_frames = SubResource("SpriteFrames_d3576")
-autoplay = "default"
-frame = 1
-frame_progress = 0.0965829
 
 [node name="SoundLibrary" type="Node2D" parent="."]
 
@@ -161,5 +164,20 @@ stream = ExtResource("14_xhqm5")
 
 [node name="Laughter" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_2y1ph")
+
+[node name="Smug" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("22_y7kup")
+
+[node name="Thinking" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = SubResource("AudioStreamRandomizer_gq5qa")
+
+[node name="Nodding" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = SubResource("AudioStreamRandomizer_f5n47")
+
+[node name="MaliceMeterUp" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("29_sqphl")
+
+[node name="MaliceMeterDown" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("30_3gy55")
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]
