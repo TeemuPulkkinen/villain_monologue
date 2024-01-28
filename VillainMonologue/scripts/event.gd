@@ -16,7 +16,11 @@ func stop_timer():
 
 func adjust_malice(amount):
 	current_malice += amount
-	main.adjust_malice(current_malice)
+	var positive
+	if amount > 0:
+		positive = true
+	else: positive = false
+	main.adjust_malice(current_malice, positive)
 	
 	if current_malice >= 100:
 		end_game_max_evil()
