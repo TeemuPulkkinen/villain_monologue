@@ -1,0 +1,12 @@
+[gd_resource type="AnimatedTexture" load_steps=3 format=3 uid="uid://cig30tyjfo6a8"]
+
+[ext_resource type="Texture2D" uid="uid://cog0q4422y1fm" path="res://art/final_assets/Thoughts/bubble_thought_pop.png" id="1_6cc45"]
+[ext_resource type="Texture2D" uid="uid://cnhbyyq28ycq6" path="res://art/final_assets/Thoughts/bubble_thought_pop2.png" id="2_prlrp"]
+
+[resource]
+frames = 2
+one_shot = true
+frame_0/texture = ExtResource("1_6cc45")
+frame_0/duration = 0.3
+frame_1/texture = ExtResource("2_prlrp")
+frame_1/duration = 1.0
