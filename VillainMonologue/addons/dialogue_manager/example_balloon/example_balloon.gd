@@ -175,14 +175,12 @@ func _on_responses_menu_response_selected(response: DialogueResponse, item) -> v
 	var all_responses = responses_menu.get_children()
 	responses_menu.show()
 	for child in all_responses:
-		if child != item:
-			child.disabled = true
-			child.img.hide()
+		child.modulate.a = 0.0
+	item.modulate.a = 1.0
 	await item.select()
 	next(response.next_id)
 	for child in all_responses:
-		child.disabled = false
-		child.img.show()
+		child.modulate.a = 1.0
 
 
 func _on_click_mask_gui_input(event):

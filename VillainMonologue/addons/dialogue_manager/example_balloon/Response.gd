@@ -9,8 +9,6 @@ func _on_button_down():
 
 func select():
 	# do animation here
+	print("select animation playing")
 	await get_tree().create_timer(0.5).timeout
-	disabled = true
-	img.hide()
-	await get_tree().create_timer(0.3).timeout
 	return true
