@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=13 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
 [ext_resource type="Texture2D" uid="uid://ckxh01y336cwr" path="res://art/Credits_1.png" id="2_2372j"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dkmbf0rtcsofp" path="res://art/arrow_hover.png" id="5_b7j2s"]
 [ext_resource type="Script" path="res://scripts/MainMenuButton.gd" id="5_i38a6"]
 [ext_resource type="AudioStream" uid="uid://vb0eucualgvg" path="res://sound/Song_Final.mp3" id="7_cx5bp"]
+[ext_resource type="Theme" uid="uid://bjrfh00igwq3" path="res://art/karaoke_theme.tres" id="7_ef2rx"]
+[ext_resource type="Script" path="res://menus/Karaoke.gd" id="7_njo73"]
+[ext_resource type="Texture2D" uid="uid://n3shgjkp4wb3" path="res://art/karaokeblock.png" id="7_yrbor"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
@@ -66,6 +69,56 @@ texture_normal = ExtResource("4_usoln")
 texture_hover = ExtResource("5_b7j2s")
 script = ExtResource("5_i38a6")
 
+[node name="Karaoke" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("7_njo73")
+
+[node name="Line1Lyrics" type="RichTextLabel" parent="CanvasLayer/Karaoke"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 362.0
+offset_top = 919.0
+offset_right = 1546.0
+offset_bottom = 1038.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_ef2rx")
+bbcode_enabled = true
+text = "[center](He is Evil)"
+
+[node name="Line1Progress" type="TextureProgressBar" parent="CanvasLayer/Karaoke"]
+clip_children = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 919.0
+offset_right = 1546.0
+offset_bottom = 1038.0
+value = 100.0
+texture_progress = ExtResource("7_yrbor")
+
+[node name="Line1SungLyrics" type="RichTextLabel" parent="CanvasLayer/Karaoke/Line1Progress"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_ef2rx")
+theme_override_colors/font_outline_color = Color(0.921569, 0.0588235, 0.529412, 1)
+bbcode_enabled = true
+text = "[center](He is Evil)"
+
+[node name="Blackout" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_right = 1930.0
+offset_bottom = 1102.0
+color = Color(0, 0, 0.0509804, 1)
+
 [node name="SoundLibrary" type="Node2D" parent="."]
 
 [node name="Song" type="AudioStreamPlayer2D" parent="SoundLibrary"]
@@ -73,4 +126,6 @@ stream = ExtResource("7_cx5bp")
 volume_db = 10.0
 autoplay = true
 
+[connection signal="blackout" from="CanvasLayer/MainMenuButton" to="." method="_on_main_menu_button_blackout"]
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]
+[connection signal="blackout" from="CanvasLayer/Karaoke" to="." method="_on_karaoke_blackout"]

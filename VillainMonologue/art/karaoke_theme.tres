@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bjrfh00igwq3"]
+
+[ext_resource type="FontFile" uid="uid://bsxtm6ljguvrv" path="res://art/fonts/RaviPrakash-Regular.ttf" id="1_y10xr"]
+
+[resource]
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0.215686, 1)
+RichTextLabel/constants/line_separation = -35
+RichTextLabel/constants/outline_size = 40
+RichTextLabel/font_sizes/bold_font_size = 50
+RichTextLabel/font_sizes/normal_font_size = 80
+RichTextLabel/fonts/normal_font = ExtResource("1_y10xr")
