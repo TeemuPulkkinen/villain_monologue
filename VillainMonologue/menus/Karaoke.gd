@@ -51,6 +51,6 @@ func tween_current_lines(duration := base_line_duration, offset := 0.0):
 	tween.tween_property(line1_progress, "value", 100-offset, duration)
 	return tween.finished
 
-func line(line:String):
-	line1_lyrics.text = "[center]"+line
-	line1_sung.text = "[center]"+line
+func line(this_line:String):
+	line1_lyrics.text = "[center]"+this_line
+	line1_sung.text = "[center]"+this_line
