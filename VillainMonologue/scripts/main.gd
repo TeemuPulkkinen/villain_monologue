@@ -7,20 +7,26 @@ extends Node2D
 @onready var timer = %Timer
 @onready var malice_progress_bar : TextureProgressBar = get_node("CanvasLayer/TextureProgressBar")
 var dialogue = false
+var ending = false
 
 @onready var bg_unlit = %Background_Unlit
 @onready var herolight1 = %HeroLight1
 @onready var herolight2 = %HeroLight2
 @onready var blackout = %Blackout
+@onready var pows = %Pows
 
+
+@onready var hero = %Hero
 @onready var villain = %Villain
 @onready var villain_shadow = villain.get_node("ColorRect")
 
-var ending = false
+var current_malice = 30
+var malice_limits = [18, 33, 53, 76, 95]
 
 # At start of game, play cutscene animations and then start dialogue
 # Also et the TextureProgressBar in scene
 func _ready():
+	hero.hide()
 	timer.hide()
 	Event.main = self # Update Event on this node's location
 	Event.sound_library = $SoundLibrary
@@ -36,32 +42,75 @@ func starting_cutscene():
 	herolight1.hide()
 	herolight2.hide()
 	villain_shadow.rotation_degrees = 57.0
+	Event.play_sound("Laughter")
+	await get_tree().create_timer(3.0).timeout
 	# Start dialogue
 	if !dialogue:
 		DialogueManager.show_dialogue_balloon(dialogue_file, "dialogueRunner")
 		dialogue = false
 
 func starting_cutscene_hero_lights():
-	var tween = create_tween()
-	tween.tween_property(blackout, "modulate:a", 0.0, 2.0).set_trans(Tween.TRANS_ELASTIC)
-	tween.tween_callback(herolight1.show).set_delay(0.1)
-	tween.tween_callback(herolight2.show).set_delay(0.6)
+	get_node("ExampleBalloon").hide()
+	var tween = create_tween().set_parallel()
+	tween.tween_property(blackout, "modulate:a", 0.0, 2.0).set_trans(Tween.TRANS_QUART)
+	tween.tween_callback(hero.show).set_delay(2.0)
+	tween.tween_callback(hero.dangle_down).set_delay(2.0)
+	tween.tween_callback(herolight1.show).set_delay(4.0)
+	await tween.finished
+	Event.play_sound("LampSnap")
+	await get_tree().create_timer(1.0).timeout
+	herolight2.show()
+	Event.play_sound("LampSnap")
+	await get_tree().create_timer(1.0).timeout
+	get_node("ExampleBalloon").show()
 
 func starting_cutscene_villain_lights():
-	bg_unlit.hide()
-	bg_unlit.modulate.a = 0.0
+	get_node("ExampleBalloon").hide()
+	Event.play_sound("LampSnap")
 	var tween = create_tween().set_parallel()
-	tween.tween_property(bg_unlit, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE)
-	tween.tween_property(villain_shadow, "rotation_degrees", 15, 1.5).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(bg_unlit, "modulate:a", 0.0, 2.0).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(villain_shadow, "rotation_degrees", 15, 1.0).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(malice_progress_bar, "position:x", malice_progress_bar.position.x + 230, 1.0).set_trans(Tween.TRANS_BOUNCE)
+	await tween.finished
+	get_node("ExampleBalloon").show()
 
 # If A-key is pressed on the keyboard, adjusts the value of the progress bar
-func adjust_malice(new_malice_value, positive):
-	if positive:
+func adjust_malice(amount):
+	# see if we want a Pow
+	var pow_display = check_malice_limits(amount)
+	# Update malice
+	current_malice += amount
+
+	# Animate malice meter
+	get_node("ExampleBalloon").hide()
+	if amount > 0:
 		Event.play_sound("MaliceMeterUp")
 	else:
 		Event.play_sound("MaliceMeterDown")
-	malice_progress_bar._adjust_malice_value(new_malice_value)
+	await malice_progress_bar._adjust_malice_value(current_malice)
+	
+	# Display Pow if needed
+	if pow_display:
+		pows.display(pow_display)
+		await get_tree().create_timer(3.0).timeout
+	get_node("ExampleBalloon").show()
+	
+	if current_malice >= 100:
+		end_game(true)
+	elif current_malice <= 0:
+		end_game(false)
+
+# Check if malice passed a limit where we want to display a pow
+func check_malice_limits(added_amount):
+	var new_malice = current_malice + added_amount
+	for i in range (0,malice_limits.size()):
+		var limit = malice_limits[i]
+		if (current_malice < limit && new_malice >= limit) or (current_malice >= limit && new_malice < limit):
+			return i
+		else:
+			continue
+		return null
+
 
 # Dialogue countdown timer functions
 func start_timer():
@@ -69,9 +118,10 @@ func start_timer():
 
 func stop_timer():
 	timer.stop_timer()
-	
-	
+
+
 func end_game(max_evil):
+	Event.ended = true
 	if ending: return
 	ending = true
 	get_node("ExampleBalloon").queue_free()

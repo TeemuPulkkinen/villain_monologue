@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=76 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -16,9 +16,9 @@
 [ext_resource type="Script" path="res://main_scene/Timer.gd" id="11_5ei3n"]
 [ext_resource type="Texture2D" uid="uid://c6voggspwnc2o" path="res://art/final_assets/hero_light2.png" id="11_7i586"]
 [ext_resource type="Texture2D" uid="uid://dmu7lfuuefate" path="res://art/final_assets/timer_rope.png" id="12_6xgp8"]
+[ext_resource type="Script" path="res://main_scene/Hero.gd" id="13_ckwux"]
 [ext_resource type="Texture2D" uid="uid://cxiuvjqw6emsj" path="res://art/final_assets/timer_bomb_default.png" id="13_vexra"]
 [ext_resource type="Texture2D" uid="uid://d2xnt62p7nvcx" path="res://art/final_assets/timer_bomb_explo1.png" id="14_dixf5"]
-[ext_resource type="AudioStream" uid="uid://r56407rijv00" path="res://sound/placeholder/placeholder.wav" id="14_xhqm5"]
 [ext_resource type="Texture2D" uid="uid://bqm3wi8qdbogo" path="res://art/final_assets/timer_bomb_explo2.png" id="15_1l67k"]
 [ext_resource type="Texture2D" uid="uid://cyhj48o45dpyt" path="res://art/final_assets/timer_spark1.png" id="16_6sm13"]
 [ext_resource type="AudioStream" uid="uid://veoqh8bx2evh" path="res://sound/laughter/evil laugh 01.mp3" id="17_2caer"]
@@ -63,6 +63,92 @@
 [ext_resource type="AudioStream" uid="uid://dbvkb051wior5" path="res://sound/screaming/Sharks11.mp3" id="54_rijhq"]
 [ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="55_wu1p6"]
 [ext_resource type="AudioStream" uid="uid://u7kvpqb0eg7w" path="res://sound/background01.mp3" id="56_ggua1"]
+[ext_resource type="AudioStream" uid="uid://b4yf2m48c2xv5" path="res://sound/lampsnap.wav" id="64_06mqh"]
+
+[sub_resource type="Animation" id="Animation_a0lxj"]
+resource_name = "dangle_down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1494, -546), Vector2(1494, -321.05), Vector2(1494, -65.56), Vector2(1494, -180.62), Vector2(1497, -173.39), Vector2(1495, -91.59), Vector2(1495.31, -140.599), Vector2(1495.61, -122.968), Vector2(1495.92, -100.273), Vector2(1496.23, -119.964), Vector2(1496.53, -113.351), Vector2(1496.84, -117.353), Vector2(1497.15, -113.902)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9, 1.1, 1.3, 1.5, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0174533, -0.0698132, 0.0349066, -0.0174533, 0.0, -0.00872665, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeroSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.6, 0.7, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.9, 1.08), Vector2(0.8, 1.2), Vector2(1.05, 0.95), Vector2(0.9, 1.1), Vector2(1.05, 0.95), Vector2(0.96, 1.04), Vector2(1, 1.04)]
+}
+
+[sub_resource type="Animation" id="Animation_j80w8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1494, -93)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HeroSprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rfp4f"]
+_data = {
+"RESET": SubResource("Animation_j80w8"),
+"dangle_down": SubResource("Animation_a0lxj")
+}
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
 animations = [{
@@ -99,46 +185,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="Animation" id="Animation_67crv"]
-resource_name = "appear"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 2.4, 2.5, 2.6, 2.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.3, 0.3), Vector2(1.1, 1.1), Vector2(1, 0.8), Vector2(0.6, 0.6), Vector2(0.8, 0.8), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.75, 0.65), Vector2(0.3, 0.3)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 2.6, 2.8),
-"transitions": PackedFloat32Array(-2, -2, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.380392), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:offset")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3),
-"transitions": PackedFloat32Array(-2, -2, -2, -2),
-"update": 0,
-"values": [Vector2(200, 0), Vector2(200, -50), Vector2(200, 0), Vector2(200, -50)]
-}
 
 [sub_resource type="Animation" id="Animation_ku2xw"]
 length = 0.001
@@ -177,6 +223,46 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(200, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_67crv"]
+resource_name = "appear"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(1.1, 1.1), Vector2(1, 0.8), Vector2(0.6, 0.6), Vector2(0.8, 0.8), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.75, 0.65), Vector2(0.3, 0.3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1.9, 2.1),
+"transitions": PackedFloat32Array(-2, -2, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.380392), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(200, 0), Vector2(200, -50), Vector2(200, 0), Vector2(200, -50)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0qvsh"]
@@ -285,16 +371,23 @@ position = Vector2(1566, 239)
 texture = ExtResource("11_7i586")
 
 [node name="Hero" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true
 position = Vector2(1494, -93)
+script = ExtResource("13_ckwux")
 
 [node name="HeroRope" type="Sprite2D" parent="CanvasLayer/Hero"]
-position = Vector2(10.5, 206.5)
-scale = Vector2(0.75, 0.75)
+position = Vector2(10.5, 172.67)
+scale = Vector2(0.75, 0.928052)
 texture = ExtResource("9_ayypt")
 
 [node name="HeroSprite" type="Sprite2D" parent="CanvasLayer/Hero"]
 position = Vector2(-25.5, 409.5)
 texture = ExtResource("10_ew846")
+
+[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Hero"]
+libraries = {
+"": SubResource("AnimationLibrary_rfp4f")
+}
 
 [node name="Timer" type="Node2D" parent="CanvasLayer"]
 unique_name_in_owner = true
@@ -359,6 +452,7 @@ position = Vector2(955, 524)
 texture = ExtResource("27_sdkon")
 
 [node name="Pows" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true
 position = Vector2(200, -25)
 scale = Vector2(0.8, 0.8)
 script = ExtResource("28_5tgj3")
@@ -385,6 +479,7 @@ position = Vector2(-45, 980)
 scale = Vector2(1.1, 0.9)
 texture = ExtResource("29_3dyut")
 offset = Vector2(200, 0)
+script = ExtResource("30_svud8")
 
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Pows/Naughty"]
 libraries = {
@@ -400,8 +495,9 @@ position = Vector2(-68.75, 690)
 scale = Vector2(1.1, 0.9)
 texture = ExtResource("30_4m68f")
 offset = Vector2(200, 0)
+script = ExtResource("30_svud8")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Pows/LesserEvil"]
+[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Pows/LesserEvil"]
 libraries = {
 "": SubResource("AnimationLibrary_0qvsh")
 }
@@ -415,6 +511,7 @@ position = Vector2(-81.25, 466.25)
 scale = Vector2(1.1, 0.9)
 texture = ExtResource("31_6jdj4")
 offset = Vector2(200, 0)
+script = ExtResource("30_svud8")
 
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Pows/MegaEvil"]
 libraries = {
@@ -430,6 +527,7 @@ position = Vector2(-51.25, 282.5)
 scale = Vector2(1.1, 0.9)
 texture = ExtResource("32_7yqon")
 offset = Vector2(200, 0)
+script = ExtResource("30_svud8")
 
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Pows/UltimateEvil"]
 libraries = {
@@ -448,71 +546,97 @@ color = Color(0, 0, 0.0509804, 1)
 
 [node name="SoundLibrary" type="Node2D" parent="."]
 
-[node name="Placeholder" type="AudioStreamPlayer" parent="SoundLibrary"]
-stream = ExtResource("14_xhqm5")
-
 [node name="Laughter" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_c8etr")
+bus = &"Room"
 
 [node name="Smug" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("28_v67x5")
+volume_db = -8.432
+bus = &"Room"
 
 [node name="Thinking" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_8cebv")
+bus = &"Room"
 
 [node name="Nodding" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = SubResource("AudioStreamRandomizer_lp6eg")
+bus = &"Room"
 
 [node name="MaliceMeterUp" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("35_6bsle")
+volume_db = -12.18
+bus = &"Room"
 
 [node name="MaliceMeterDown" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("36_ftd15")
+volume_db = -20.613
+bus = &"Room"
 
 [node name="Evil1" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("37_b1s1u")
+bus = &"Room"
 
 [node name="Evil2" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("38_h2cx4")
+bus = &"Room"
 
 [node name="Evil3" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("39_n1ro0")
+bus = &"Room"
 
 [node name="Evil4" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("40_duv00")
+bus = &"Room"
 
 [node name="Evil5" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("41_udduo")
+bus = &"Room"
 
 [node name="Thought" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("42_yyyon")
+bus = &"Room"
 
 [node name="EvilestLaugh" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("49_f6brw")
+bus = &"Room"
 
 [node name="Frustration" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("50_1q4bu")
+bus = &"Room"
 
 [node name="Splash" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("51_hjw42")
+bus = &"Room"
 
 [node name="Screaming" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("52_y066c")
+bus = &"Room"
 
 [node name="Creak" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("53_q42wx")
 volume_db = -16.396
+bus = &"Room"
 
 [node name="Omnom" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("54_rijhq")
+bus = &"Room"
 
 [node name="Song" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("55_wu1p6")
+bus = &"Room"
 
 [node name="Background" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("56_ggua1")
 volume_db = -11.773
 autoplay = true
 mix_target = 1
+bus = &"Room"
+
+[node name="LampSnap" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("64_06mqh")
+volume_db = -8.494
+mix_target = 1
+bus = &"Room"
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]

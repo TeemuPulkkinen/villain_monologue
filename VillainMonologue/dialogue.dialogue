@@ -7,7 +7,6 @@ Hero: And this is a hero test!
 => END
 
 ~ dialogueRunner
-set Event.play_sound("Laughter")
 % => start1
 % => start2
 % => start3
@@ -16,14 +15,14 @@ set Event.play_sound("Laughter")
 => END
 
 ~ start1
-Villain: [speed=0.7]Well, well,[next=1.0] well.
+Villain: Well,[wait=0.5] well,[wait=0.5] well.
 set Event.wake_up_hero()
-Villain: We meet again.
+Villain: [wait=6.0]We meet again.
 Hero: Ugh! Release me at once!
 set Event.reveal_villain()
-Villain: Oh, I would, but.
+Villain: [wait=3.0]Oh, I would, but.
 set Event.play_sound("Laughter")
-Villain: I simply don't want to. Now sit tight.
+Villain: [wait=0.5]I simply don't want to. Now sit tight.
 % => motivation1
 % => motivation2
 % => motivation3
@@ -31,9 +30,9 @@ Villain: I simply don't want to. Now sit tight.
 
 ~ start2
 set Event.wake_up_hero()
-Villain: [speed=0.7]Ha! Haa!
+Villain: [wait=4.0][speed=0.7]Ha![wait=0.5] Haa!
 set Event.reveal_villain()
-Villain: I have you now...
+Villain: [wait=3.0]I have you now...
 Hero: What a surprising turn of events.
 set Event.play_sound("Frustration")
 Villain: Silence! Now, you must be wondering why we got here...
@@ -43,13 +42,12 @@ Villain: Silence! Now, you must be wondering why we got here...
 => END
 
 ~ start3
-Villain: Well look at that...
+Villain: Well, look at that...
 set Event.wake_up_hero()
-Villain: [speed=0.7]What have we here...?
+Villain: [wait=6.0][speed=0.7]What have we here...?
 Hero: [speed=0.7]Um...
 set Event.reveal_villain()
-Villain: A little fly, trapped in the–
-set Event.play_sound("Smug")
+Villain: [wait=3.0]A little fly, trapped in the–
 Hero: Spider's net?
 set Event.play_sound("Frustration")
 Villain: Stop interrupting me! 
@@ -61,15 +59,15 @@ Villain: You must be curious why I bested you!
 => END
 
 ~ start4
-Villain: [speed=0.7]Heh, heh, hee. [speed=1.0]Guess who?
+Villain: [speed=0.7]Heh, heh, hee. [wait=0.3][speed=1.0]Guess who?
 set Event.wake_up_hero()
-Hero: [speed=0.7]*gasp*[speed=1.0] It can't be!
+Hero: [wait=6.0][speed=0.7]*gasp*[wait=0.3][speed=1.0] It can't be!
 set Event.reveal_villain()
-Villain: Hah! Yes! It was me all along!
+Villain: [wait=3.0]Hah! Yes! It was me all along!
 Hero: No! I can't believe it!
 Hero: How could you?
 Hero: How could you be so... so...
-Villain: Say it...!
+Villain: [speed=0.7]Say it...!
 Hero: So evil?
 Villain: Indeed!
 % => motivation1
@@ -86,7 +84,6 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Carrot
 	Villain: ... to plant more carrots! Yeah!
-	set Event.play_sound("Smug")
 	Hero: Uh. Sure.
 	set Event.play_sound("Frustration")
 	set Event.adjust_malice(-5)
@@ -150,24 +147,21 @@ Villain: [i][/i]
 - Shark
 	Villain: ... how evil my three pet sharks are!
 	Villain: They'll eat you! Ha!
-	set Event.play_sound("Smug")
 	Hero: Imagine that.
-	set Event.play_sound("Laughter")
 	Villain: And then you'll be DEAD in the water!
 	Hero: Thanks, I deduced that part myself.
+	set Event.play_sound("Laughter")
 	Villain: Blood everywhere!
 	Hero: Are you quite done?
 	set Event.adjust_malice(20)
 - Kiss
 	Villain: ... your kisses—
-	set Event.play_sound("Smug")
 	Hero: Oh my. 
 	set Event.play_sound("Frustration")
 	Villain: No! I mean... Mrr!
 	set Event.adjust_malice(-5)
 - Stone
 	Villain: How right and tight those knots around your strong wrists and ankles feel...
-	set Event.play_sound("Laughter")
 	Villain: I meant, you'll sink! Like a stone!
 	set Event.adjust_malice(5)
 if !Event.ended:
@@ -193,12 +187,12 @@ Villain: [i][/i]
 	set Event.adjust_malice(5)
 - Teacup
 	Villain: Cozy up with the leftover socks and the latest Spies, Lies and Wandering Eyes!
-	set Event.play_sound("Smug")
 	Hero: Wait, isn't that series based loosely on my life?
+	set Event.play_sound("Frustration")
 	Villain: A-and mine! Mrr!
 	set Event.adjust_malice(-5)
 - Sock
-	set Event.play_sound("Laughter")	
+	set Event.play_sound("Laughter")
 	Villain: Sock-sessfully get away with murder! Mhaha!
 	Hero: Please kill me already.
 	set Event.adjust_malice(20)
@@ -218,8 +212,8 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Apple
 	Villain: Apples! Ha!
-	set Event.play_sound("Smug")	
 	Hero: Yawn. I know you can do better.
+	set Event.play_sound("Frustration")
 	set Event.adjust_malice(-5)
 - Bathtub
 	Villain: Salty bath waters!
@@ -228,7 +222,7 @@ Villain: [i][/i]
 	set Event.adjust_malice(15)
 - Hammer
 	Villain: ... smashing times!
-	set Event.play_sound("Laughter")	
+	set Event.play_sound("Laughter")
 	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
 	set Event.adjust_malice(15)
@@ -248,8 +242,8 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Pancake
 	Villain: Have breakfast with you!
-	set Event.play_sound("Frustration")
 	Villain: No, I mean.... Make pancakes with you!
+	set Event.play_sound("Frustration")
 	Villain: Gak! Mrr!
 	set Event.adjust_malice(-5)
 - Car
@@ -262,7 +256,6 @@ Villain: [i][/i]
 	set Event.adjust_malice(20)
 - Umbrella
 	Villain: Return the umbrella I borrowed!
-	set Event.play_sound("Smug")
 	Hero: Really? You would do that?
 	Villain: No! I am keeping it forever, because you will be dead!
 	set Event.play_sound("Laughter")
@@ -290,12 +283,10 @@ Villain: [i][/i]
 - Mushroom
 	Villain: I will cook you with mushrooms and parsley until you're tender.
 	Villain: Only the best for my sharky darlings!
-	set Event.play_sound("Laughter")
 	Hero: At least I'm the main course.
 	set Event.adjust_malice(5)
 - Apple
 	Villain: You will feed them their fruit bowls tonight!
-	set Event.play_sound("Smug")
 	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
 	set Event.play_sound("Frustration")
 	Villain: Hnnggh... That's not what... Mrr!
@@ -326,16 +317,19 @@ Villain: [i][/i]
 - Halfmoon
 	Villain: Waxes and wanes with each passing day!
 	Hero: Wouldn't constant evil be better?
+	set Event.play_sound("Frustration")
 	Villain: Hnnggh! Graah! Wak!
 	set Event.adjust_malice(-5)
 - Wave
 	Villain: Raises the tidal wave that will wash away all you hold dear!
+	set Event.play_sound("Laughter")
 	Villain: Mwaha! Haa!
-	set Event.adjust_malice(15)
+	set Event.adjust_malice(20)
 - Rocketship
 	Villain: Only the bravest, most determined astronauts can reach me!
 	Villain: And once they do, they'll find me lonesome and dusty!
 	Hero: Do you need a... hug?
+	set Event.play_sound("Laughter")
 	Villain: I could hug you to DEATH! Mwa!
 	set Event.adjust_malice(15)
 if !Event.ended:
@@ -360,12 +354,14 @@ Villain: [i][/i]
 - GingerBread
 	Villain: A ginger bread cookie, with just the right amount of spice... Um...
 	Hero: I'm afraid I don't follow?
+	set Event.play_sound("Frustration")
 	Villain: At least you are afraid! Hnngh!
 	set Event.adjust_malice(5)
 - Boot
 	Villain: Like the leather of my boots!
 	Villain: Under which I will crush you!
 	Villain: Like a bug! Mwah!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 if !Event.ended:
 	% => mock1
@@ -387,10 +383,12 @@ Villain: [i][/i]
 	Villain: The one used to seal a love letter!
 	Villain: Then sent to a land far away...
 	Hero: I wish I was far away right now...
-	Villain: Then you could get my letter! Ha!
+	set Event.play_sound("Frustration")
+	Villain: At least then you could get my letter! Ha!
 	set Event.adjust_malice(-5)
 - Poison
 	Villain: A kiss of death, ladled with poison! Mwhaahaaa!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Bat
 	Villain: One from Vlad from the gym!
@@ -416,16 +414,19 @@ Villain: [i][/i]
 - Tree
 	Villain: And the trees? Why do you want to take cats away from the trees, hmm?
 	Hero: You're an environmentalist now?
+	set Event.play_sound("Frustration")
 	Villain: Gak! Hnggghhh....
 	set Event.adjust_malice(-5)
 - Mouse
 	Villain: The mice! If the cats are in the trees, then mice can relax!
 	Hero: Are you calling yourself a mouse?
+	set Event.play_sound("Frustration")
 	Villain: Fläh! No! Arghh...
 	set Event.adjust_malice(-5)
 - Fire
 	Villain: Fires! Yes! While you're distracted worrying about those itty bitty kitties...
-	Villain: Villains like me set the whole world on fire! Mwah! 
+	Villain: Villains like me set the whole world on fire! Mwah!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 Villain: You know, I wasn't always evil...
 if !Event.ended:
@@ -445,10 +446,12 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Cereal
 	Villain: Cereal killers like me, I suppose you don't have the time to appreciate the finer nuances.
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Mirror
 	Villain: Appearances, I guess you can't afford to grow laugh wrinkles.
 	Hero: I do have perfect skin.
+	set Event.play_sound("Frustration")
 	Villain: Awk! Whah... Mrrr...
 	set Event.adjust_malice(-5)
 - Spiders
@@ -456,6 +459,7 @@ Villain: [i][/i]
 	Hero: I don't have arachnophobia. But you do, right?
 	Hero: Are you constantly worried about spiders?
 	Hero: I know this therapist, who–
+	set Event.play_sound("Frustration")
 	Villain: I AM NOT afraid! Silence! Grr...
 	set Event.adjust_malice(-5)
 Villain: You know, I wasn't always evil...
@@ -481,17 +485,20 @@ Villain: [i][/i]
 	Villain: I will eradicate glasses from this world!
 	Hero: Huh? Wouldn't your Optician friends run out of work?
 	Villain: No, that's not what I meant.... Hmmmgh!
+	set Event.play_sound("Frustration")
 	set Event.adjust_malice(-5)
 - Torch
 	Villain: To never get lost in the darkness, I carry a torch for you.
 	Hero: You... do?
 	Villain: To set you on fire! Mwah!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Raccoon
 	Villain: Now even the raccoons will get glasses!
 	Hero: I don't quite follow.
 	Villain: And they'll rummage through the trash for the tiny pieces left of you once I'm done with you!
-	Hero: Ah–haa. 
+	Hero: Ah–haa.
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 if !Event.ended:
 	% => brilliance1
@@ -519,10 +526,12 @@ Villain: [i][/i]
 	Villain: With little horns!
 	Villain: Honk! Honk! Honk!
 	Villain: And the baskets in the front! For snacks.
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Trash
 	Villain: I don't even recycle anymore!
 	Hero: Whoa. That's evil!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Gold
 	Villain: I only care about material wealth!
@@ -545,15 +554,18 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Shark
 	Villain: It's time to die by shark! Mwahahahaaa!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(35)
-- Heart
+- Hearts
 	Villain: I will rip your heart out and eat it!
 	Villain: Mwahaha!!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(35)
 - Dinner
 	Villain: I will take you to dinner!
 	Hero: What?
 	Villain: I meant, I will have you for dinner! Hnnngh!
+	set Event.play_sound("Frustration")
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
 if !Event.ended:
@@ -572,15 +584,18 @@ set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Shark
 	Villain: It's time to die by shark! Mwahahahaaa!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(35)
-- Heart
+- Hearts
 	Villain: I will rip your heart out and eat it!
 	Villain: Mwahaha!!
+	set Event.play_sound("Laughter")
 	set Event.adjust_malice(35)
 - Dinner
 	Villain: I will take you to dinner!
 	Hero: What?
 	Villain: I meant, I will have you for dinner! Hnnngh!
+	set Event.play_sound("Frustration")
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
 if !Event.ended:
@@ -593,6 +608,7 @@ else:
 
 ~ fail
 Villain: Anyways.
+set Event.play_sound("Frustration")
 Villain: Hrm.
 Villain: Ahem.
 Hero: ...Yes?

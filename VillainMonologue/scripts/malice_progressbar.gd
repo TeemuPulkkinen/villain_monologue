@@ -7,3 +7,4 @@ func _adjust_malice_value(new_malice_value):
 	var tween = get_tree().create_tween()
 	# Animates the progress bar to the new malice value over the time of 1 second
 	tween.tween_property(self, "value", new_malice_value, 1.0)
+	return tween.finished
