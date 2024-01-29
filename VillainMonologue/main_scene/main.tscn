@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=85 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -25,7 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://cypdxitqwi4f7" path="res://art/extra_expressions/hero_smug.png" id="17_0mnsf"]
 [ext_resource type="AudioStream" uid="uid://veoqh8bx2evh" path="res://sound/laughter/evil laugh 01.mp3" id="17_2caer"]
 [ext_resource type="Texture2D" uid="uid://dbh6kcx3ufiri" path="res://art/final_assets/timer_spark2.png" id="17_g3ts2"]
+[ext_resource type="Texture2D" uid="uid://bwkr7pk3jhm4j" path="res://art/extra_expressions/escaped_chair.png" id="18_ohuit"]
+[ext_resource type="Texture2D" uid="uid://cbp1asnv7xx5x" path="res://art/extra_expressions/escaped_rope.png" id="19_p1yak"]
 [ext_resource type="AudioStream" uid="uid://46nt0gh32yjh" path="res://sound/laughter/evil laugh 15.mp3" id="19_rla1b"]
+[ext_resource type="Texture2D" uid="uid://cchl18acd4t6t" path="res://art/extra_expressions/escaped_trail.png" id="20_jiuhp"]
 [ext_resource type="AudioStream" uid="uid://c5r6x2n5l0j41" path="res://sound/laughter/evil laugh 16.mp3" id="20_t5s3s"]
 [ext_resource type="AudioStream" uid="uid://clt6iprtlkqqy" path="res://sound/laughter/evil laugh 17.mp3" id="21_j4870"]
 [ext_resource type="Texture2D" uid="uid://chyxf7ngj4d74" path="res://art/Cutscene/laugh_bg.png" id="22_7yj3a"]
@@ -177,6 +180,31 @@ tracks/2/keys = {
 _data = {
 "RESET": SubResource("Animation_j80w8"),
 "dangle_down": SubResource("Animation_a0lxj")
+}
+
+[sub_resource type="Animation" id="Animation_h2w4c"]
+resource_name = "escaped"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rope:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2, 1.5, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0872665, -0.0523599, 0.0349066, -0.0261799, 0.00523599, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d8jns"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7313y"]
+_data = {
+"RESET": SubResource("Animation_d8jns"),
+"escaped": SubResource("Animation_h2w4c")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xhk0d"]
@@ -417,6 +445,30 @@ autoplay = "default"
 [node name="Animation" type="AnimationPlayer" parent="CanvasLayer/Hero"]
 libraries = {
 "": SubResource("AnimationLibrary_rfp4f")
+}
+
+[node name="HeroEscaped" type="Node2D" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+
+[node name="Chair" type="Sprite2D" parent="CanvasLayer/HeroEscaped"]
+position = Vector2(1481, 728)
+texture = ExtResource("18_ohuit")
+
+[node name="Rope" type="Sprite2D" parent="CanvasLayer/HeroEscaped"]
+position = Vector2(1506, -76)
+rotation = 0.0872665
+texture = ExtResource("19_p1yak")
+centered = false
+offset = Vector2(-14.81, 68.93)
+
+[node name="Trail" type="Sprite2D" parent="CanvasLayer/HeroEscaped"]
+position = Vector2(1756, 786)
+texture = ExtResource("20_jiuhp")
+
+[node name="Animation" type="AnimationPlayer" parent="CanvasLayer/HeroEscaped"]
+libraries = {
+"": SubResource("AnimationLibrary_7313y")
 }
 
 [node name="Timer" type="Node2D" parent="CanvasLayer"]

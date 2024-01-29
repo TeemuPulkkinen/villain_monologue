@@ -17,6 +17,7 @@ var ending = false
 
 
 @onready var hero = %Hero
+@onready var heroEscaped = %HeroEscaped
 @onready var villain = %Villain
 @onready var villain_shadow = villain.get_node("ColorRect")
 
@@ -26,6 +27,7 @@ var malice_limits = [18, 33, 53, 76, 95]
 # At start of game, play cutscene animations and then start dialogue
 # Also et the TextureProgressBar in scene
 func _ready():
+	malice_progress_bar.value = current_malice
 	hero.hide()
 	timer.hide()
 	Event.main = self # Update Event on this node's location
@@ -103,9 +105,12 @@ func adjust_malice(amount):
 # Check if malice passed a limit where we want to display a pow
 func check_malice_limits(added_amount):
 	var new_malice = current_malice + added_amount
+	print(current_malice)
+	print(new_malice)
 	for i in range (0,malice_limits.size()):
 		var limit = malice_limits[i]
 		if (current_malice < limit && new_malice >= limit) or (current_malice >= limit && new_malice < limit):
+			print("pow")
 			return i
 		else:
 			continue
@@ -147,11 +152,17 @@ func end_game(max_evil):
 		await get_tree().create_timer(0.5).timeout
 		Event.play_sound("Splash")
 		await get_tree().create_timer(1.0).timeout
-		Event.play_sound("Screaming")
-		await get_tree().create_timer(0.2).timeout
-		Event.play_sound("Omnom")
-		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
+		blackout.hide()
+		hero.hide()
+		%LaughBg.hide()
+		%LaughVillain1.hide()
+		%LaughVillain2.hide()
+		%ButtonSmash1.hide()
+		%ButtonSmash2.hide()
+		%ButtonSmash3.hide()
+		heroEscaped.show()
+		heroEscaped.get_node("Animation").play("escaped")
+		DialogueManager.show_dialogue_balloon(dialogue_file, "win")
 	else:
 		Event.play_sound("Frustration")
 		DialogueManager.show_dialogue_balloon(dialogue_file, "fail")
@@ -159,9 +170,9 @@ func end_game(max_evil):
 
 func kill_hero():
 	%ButtonSmash1.show()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(2.0).timeout
 	%ButtonSmash2.show()
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.5).timeout
 	%ButtonSmash3.show()
 	await get_tree().create_timer(1.5).timeout
 	blackout.show()
@@ -174,11 +185,24 @@ func kill_hero():
 	await get_tree().create_timer(0.2).timeout
 	Event.play_sound("Omnom")
 	await get_tree().create_timer(3.0).timeout
+	hero.hide()
+	%LaughBg.hide()
+	%LaughVillain1.hide()
+	%LaughVillain2.hide()
+	%ButtonSmash1.hide()
+	%ButtonSmash2.hide()
+	%ButtonSmash3.hide()
+	DialogueManager.show_dialogue_balloon(dialogue_file, "post_fail")
+
+func go_credits():
+	blackout.show()
+	blackout.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(blackout, "modulate:a", 1.0, 1.0)
+	await tween.finished
 	get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
 
-
 # Expressions
-
 func hero_smug():
 	hero.smug()
 

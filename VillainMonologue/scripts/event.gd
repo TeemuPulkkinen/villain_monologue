@@ -41,3 +41,6 @@ func hero_angry():
 
 func kill_hero():
 	main.kill_hero()
+
+func go_credits():
+	main.go_credits()
