@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=11 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
 [ext_resource type="Texture2D" uid="uid://ckxh01y336cwr" path="res://art/Credits_1.png" id="2_2372j"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkmbf0rtcsofp" path="res://art/arrow_hover.png" id="5_b7j2s"]
 [ext_resource type="Script" path="res://scripts/MainMenuButton.gd" id="5_i38a6"]
 [ext_resource type="AudioStream" uid="uid://vb0eucualgvg" path="res://sound/Song_Final.mp3" id="7_cx5bp"]
+[ext_resource type="AudioStream" uid="uid://b724vhkwdi3v0" path="res://sound/clicking/click.wav" id="8_s08uy"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
@@ -72,5 +73,8 @@ script = ExtResource("5_i38a6")
 stream = ExtResource("7_cx5bp")
 volume_db = 10.0
 autoplay = true
+
+[node name="Click" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("8_s08uy")
 
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]
