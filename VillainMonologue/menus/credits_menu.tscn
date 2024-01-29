@@ -88,7 +88,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("7_ef2rx")
 bbcode_enabled = true
-text = "[center](He is Evil)"
+text = "[center]He is Evil"
 
 [node name="Line1Progress" type="TextureProgressBar" parent="CanvasLayer/Karaoke"]
 clip_children = 1
@@ -110,7 +110,7 @@ grow_vertical = 2
 theme = ExtResource("7_ef2rx")
 theme_override_colors/font_outline_color = Color(0.921569, 0.0588235, 0.529412, 1)
 bbcode_enabled = true
-text = "[center](He is Evil)"
+text = "[center]He is Evil"
 
 [node name="Blackout" type="ColorRect" parent="CanvasLayer"]
 unique_name_in_owner = true
