@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://b2qwydopgeuiq"]
 
-[ext_resource type="Script" path="res://menus/main_menu.gd" id="1_012gj"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_012gj"]
 [ext_resource type="Texture2D" uid="uid://xs7i7ete3264" path="res://art/title_screen_bg_withLogo.png" id="1_f1wlx"]
 [ext_resource type="Texture2D" uid="uid://bu553dsyftvdv" path="res://art/Start_Normal.png" id="2_2wjau"]
 [ext_resource type="Texture2D" uid="uid://kajs0x2d61lo" path="res://art/Start_Hover.png" id="3_lq3m7"]
@@ -72,6 +72,7 @@ stream = ExtResource("9_m8eg5")
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_right = 1930.0
 offset_bottom = 1102.0
 color = Color(0, 0, 0.0509804, 1)
