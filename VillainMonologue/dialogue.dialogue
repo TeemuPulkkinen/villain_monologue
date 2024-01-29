@@ -18,11 +18,13 @@ Hero: And this is a hero test!
 Villain: Well,[wait=0.5] well,[wait=0.5] well.
 set Event.wake_up_hero()
 Villain: [wait=6.0]We meet again.
+set Event.hero_angry()
 Hero: Ugh! Release me at once!
 set Event.reveal_villain()
 Villain: [wait=3.0]Oh, I would, but.
 set Event.play_sound("Laughter")
 Villain: [wait=0.5]I simply don't want to. Now sit tight.
+set Event.hero_default()
 % => motivation1
 % => motivation2
 % => motivation3
@@ -48,10 +50,12 @@ Villain: [wait=6.0][speed=0.7]What have we here...?
 Hero: [speed=0.7]Um...
 set Event.reveal_villain()
 Villain: [wait=3.0]A little fly, trapped in the–
+set Event.hero_smug()
 Hero: Spider's net?
 set Event.play_sound("Frustration")
 Villain: Stop interrupting me! 
 Villain: [speed=1.5]Also don't call me spider, they're creepy.
+set Event.hero_default()
 Villain: You must be curious why I bested you!
 % => motivation1
 % => motivation2
@@ -65,6 +69,7 @@ Hero: [wait=6.0][speed=0.7]*gasp*[wait=0.3][speed=1.0] It can't be!
 set Event.reveal_villain()
 Villain: [wait=3.0]Hah! Yes! It was me all along!
 Hero: No! I can't believe it!
+set Event.hero_angry()
 Hero: How could you?
 Hero: How could you be so... so...
 Villain: [speed=0.7]Say it...!

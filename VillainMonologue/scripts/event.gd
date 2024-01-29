@@ -28,6 +28,15 @@ func wake_up_hero():
 func reveal_villain():
 	main.starting_cutscene_villain_lights()
 
+# Expressions
+func hero_default():
+	main.hero_default()
+
+func hero_smug():
+	main.hero_smug()
+
+func hero_angry():
+	main.hero_angry()
 
 
 func kill_hero():

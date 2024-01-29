@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/PlayButton.gd" id="4_4lx3u"]
 [ext_resource type="Script" path="res://scripts/ExitButton.gd" id="6_vscd6"]
 [ext_resource type="AudioStream" uid="uid://dwlqknvf6fc0c" path="res://sound/Mosu.mp3" id="7_0vnjp"]
-[ext_resource type="Texture2D" path="res://art/placeholders/menu_assets/creditsbutton.png" id="8_22eki"]
+[ext_resource type="Texture2D" uid="uid://db3lcgwu1i27o" path="res://art/placeholders/menu_assets/creditsbutton.png" id="8_22eki"]
 [ext_resource type="Script" path="res://scripts/CreditsButton.gd" id="9_5gqfn"]
 [ext_resource type="AudioStream" uid="uid://b724vhkwdi3v0" path="res://sound/clicking/click.wav" id="9_m8eg5"]
 

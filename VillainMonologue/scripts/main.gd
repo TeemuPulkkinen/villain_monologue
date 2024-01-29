@@ -43,7 +43,7 @@ func starting_cutscene():
 	herolight2.hide()
 	villain_shadow.rotation_degrees = 57.0
 	Event.play_sound("Laughter")
-	await get_tree().create_timer(3.0).timeout
+	await get_tree().create_timer(2.0).timeout
 	# Start dialogue
 	if !dialogue:
 		DialogueManager.show_dialogue_balloon(dialogue_file, "dialogueRunner")
@@ -175,3 +175,15 @@ func kill_hero():
 	Event.play_sound("Omnom")
 	await get_tree().create_timer(3.0).timeout
 	get_tree().change_scene_to_file("res://menus/credits_menu.tscn")
+
+
+# Expressions
+
+func hero_smug():
+	hero.smug()
+
+func hero_angry():
+	hero.angry()
+
+func hero_default():
+	hero.default()
