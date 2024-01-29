@@ -542,7 +542,7 @@ unique_name_in_owner = true
 visible = false
 offset_right = 1930.0
 offset_bottom = 1102.0
-color = Color(0, 0, 0.0509804, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="SoundLibrary" type="Node2D" parent="."]
 
