@@ -6,20 +6,20 @@ signal blackout
 @onready var line1_progress = $Line1Progress
 @onready var line1_sung = line1_progress.get_node("Line1SungLyrics")
 
-var base_line_duration : float = 1.8
+var base_line_duration : float = 1.9
 
 func _ready():
 	await tween_current_lines(base_line_duration, 30)
 	line("He will hunt you down")
-	await tween_current_lines(base_line_duration, 10)
+	await tween_current_lines(base_line_duration, 5)
 	line("He is evil")
 	await tween_current_lines(base_line_duration, 30)
 	line("He will look for you in town")
-	await tween_current_lines(base_line_duration, 10)
+	await tween_current_lines(base_line_duration, 5)
 	line("He is evil")
 	await tween_current_lines(base_line_duration, 30)
 	line("He will do his evil deeds")
-	await tween_current_lines(base_line_duration, 10)
+	await tween_current_lines(base_line_duration, 5)
 	line("He is evil")
 	await tween_current_lines(base_line_duration, 30)
 	line("He will have you on your knees")
@@ -39,7 +39,7 @@ func _ready():
 	line("He is evil")
 	await tween_current_lines(base_line_duration, 30)
 	line("And he hates to be alone")
-	await tween_current_lines(3.0, 10)
+	await tween_current_lines(2.7, 10)
 	blackout.emit()
 	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file("res://menus/main_menu.tscn")

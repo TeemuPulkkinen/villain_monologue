@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b3h3fs56622yd"]
+[gd_scene load_steps=14 format=3 uid="uid://b3h3fs56622yd"]
 
 [ext_resource type="Script" path="res://scripts/credits_menu.gd" id="1_l01mg"]
 [ext_resource type="Texture2D" uid="uid://ckxh01y336cwr" path="res://art/Credits_1.png" id="2_2372j"]
@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://bjrfh00igwq3" path="res://art/karaoke_theme.tres" id="7_ef2rx"]
 [ext_resource type="Script" path="res://menus/Karaoke.gd" id="7_njo73"]
 [ext_resource type="Texture2D" uid="uid://n3shgjkp4wb3" path="res://art/karaokeblock.png" id="7_yrbor"]
+[ext_resource type="AudioStream" uid="uid://b724vhkwdi3v0" path="res://sound/clicking/click.wav" id="11_ql1ev"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_aahts"]
 
@@ -126,6 +127,8 @@ stream = ExtResource("7_cx5bp")
 volume_db = 10.0
 autoplay = true
 
-[connection signal="blackout" from="CanvasLayer/MainMenuButton" to="." method="_on_main_menu_button_blackout"]
+[node name="Click" type="AudioStreamPlayer" parent="SoundLibrary"]
+stream = ExtResource("11_ql1ev")
+
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]
 [connection signal="blackout" from="CanvasLayer/Karaoke" to="." method="_on_karaoke_blackout"]
