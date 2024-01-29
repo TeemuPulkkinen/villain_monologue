@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=67 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -33,10 +33,15 @@
 [ext_resource type="Texture2D" uid="uid://bixaquqr05r2k" path="res://art/Cutscene/end_1.png" id="25_bqtjl"]
 [ext_resource type="Texture2D" uid="uid://c5ql7j7d8mltq" path="res://art/Cutscene/end_2.png" id="26_mals7"]
 [ext_resource type="Texture2D" uid="uid://cepqsut76bcrh" path="res://art/Cutscene/end_3.png" id="27_sdkon"]
+[ext_resource type="Texture2D" uid="uid://bpeiwnaqhunfp" path="res://art/final_assets/Pows/Inconvenience_Pow.png" id="28_ljg20"]
 [ext_resource type="AudioStream" uid="uid://3hgwo5pqbs3b" path="res://sound/smug/thinking27.mp3" id="28_v67x5"]
+[ext_resource type="Texture2D" uid="uid://csgmlii1m8j5v" path="res://art/final_assets/Pows/Naughty_Pow.png" id="29_3dyut"]
 [ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="29_h7rnk"]
 [ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="30_2lmu7"]
+[ext_resource type="Texture2D" uid="uid://b0owbgbk66dat" path="res://art/final_assets/Pows/LesserEvil_Pow.png" id="30_4m68f"]
+[ext_resource type="Texture2D" uid="uid://di4tgc3jj6vw3" path="res://art/final_assets/Pows/MegaEvil_Pow.png" id="31_6jdj4"]
 [ext_resource type="AudioStream" uid="uid://b3cju8dklvc8k" path="res://sound/thinking/thinking11.mp3" id="31_hr0ei"]
+[ext_resource type="Texture2D" uid="uid://bkwe3esbuf1cv" path="res://art/final_assets/Pows/UltimateEvil_Pow.png" id="32_7yqon"]
 [ext_resource type="AudioStream" uid="uid://c6c4as4cnqfmq" path="res://sound/nodding/nodding01.mp3" id="32_vdk2v"]
 [ext_resource type="AudioStream" uid="uid://de47icnl6mwe0" path="res://sound/nodding/nodding02.mp3" id="33_4pgok"]
 [ext_resource type="AudioStream" uid="uid://c0e0h0yyyhgp3" path="res://sound/nodding/nodding03.mp3" id="34_m50hw"]
@@ -272,6 +277,37 @@ visible = false
 offset_right = 1930.0
 offset_bottom = 1102.0
 color = Color(0, 0, 0.0509804, 1)
+
+[node name="Pows" type="Node2D" parent="CanvasLayer"]
+
+[node name="Inconvenience" type="Sprite2D" parent="CanvasLayer/Pows"]
+position = Vector2(254, 948)
+scale = Vector2(0.673401, 0.747212)
+texture = ExtResource("28_ljg20")
+
+[node name="Naughty" type="Sprite2D" parent="CanvasLayer/Pows"]
+visible = false
+position = Vector2(309, 771)
+scale = Vector2(0.673401, 0.747212)
+texture = ExtResource("29_3dyut")
+
+[node name="LesserEvil" type="Sprite2D" parent="CanvasLayer/Pows"]
+visible = false
+position = Vector2(276, 524)
+scale = Vector2(0.673401, 0.747212)
+texture = ExtResource("30_4m68f")
+
+[node name="MegaEvil" type="Sprite2D" parent="CanvasLayer/Pows"]
+visible = false
+position = Vector2(282, 336)
+scale = Vector2(0.673401, 0.747212)
+texture = ExtResource("31_6jdj4")
+
+[node name="UltimateEvil" type="Sprite2D" parent="CanvasLayer/Pows"]
+visible = false
+position = Vector2(282, 187)
+scale = Vector2(0.673401, 0.747212)
+texture = ExtResource("32_7yqon")
 
 [node name="SoundLibrary" type="Node2D" parent="."]
 

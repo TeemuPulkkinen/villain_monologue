@@ -136,8 +136,8 @@ stream_0/stream = ExtResource("22_eh252")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_rte4a"]
-random_pitch = 1.05
-random_volume_offset_db = 0.05
+random_pitch = 1.02
+random_volume_offset_db = 0.02
 streams_count = 1
 stream_0/stream = ExtResource("22_eh252")
 stream_0/weight = 1.0
@@ -296,13 +296,14 @@ texture = ExtResource("9_x0qaa")
 [node name="VillainPip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_et6dx")
-volume_db = -12.0
+volume_db = -16.0
 pitch_scale = 0.8
 
 [node name="HeroPip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_rte4a")
-volume_db = -12.649
+volume_db = -16.0
+pitch_scale = 1.1
 
 [connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]
 [connection signal="response_selected" from="Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

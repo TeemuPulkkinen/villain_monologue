@@ -63,8 +63,11 @@ texture_normal = ExtResource("4_usoln")
 texture_hover = ExtResource("5_b7j2s")
 script = ExtResource("5_i38a6")
 
-[node name="Song" type="AudioStreamPlayer2D" parent="."]
+[node name="SoundLibrary" type="Node2D" parent="."]
+
+[node name="Song" type="AudioStreamPlayer2D" parent="SoundLibrary"]
 stream = ExtResource("7_cx5bp")
+volume_db = 10.0
 autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/MainMenuButton" to="CanvasLayer/MainMenuButton" method="_on_button_pressed"]

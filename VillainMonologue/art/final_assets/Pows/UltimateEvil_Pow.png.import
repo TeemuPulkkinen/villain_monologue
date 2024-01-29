@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbvn6twvnfqpg"
-path="res://.godot/imported/villainlight_mask.png-e22b0b67acb9be8c7e5ce708c1865f7f.ctex"
+uid="uid://bkwe3esbuf1cv"
+path="res://.godot/imported/UltimateEvil_Pow.png-0772e6b3e655bc0f3d313454b81c6295.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/final_assets/villainlight_mask.png"
-dest_files=["res://.godot/imported/villainlight_mask.png-e22b0b67acb9be8c7e5ce708c1865f7f.ctex"]
+source_file="res://art/final_assets/Pows/UltimateEvil_Pow.png"
+dest_files=["res://.godot/imported/UltimateEvil_Pow.png-0772e6b3e655bc0f3d313454b81c6295.ctex"]
 
 [params]
 
