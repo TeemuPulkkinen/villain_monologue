@@ -113,6 +113,7 @@ else:
 ~ motivation2
 Villain: Alas... It's only fair, after all...
 Villain: You left me... On read!
+set Event.hero_default()
 Villain: Who does that?
 Villain: It was a funny picture at that! A raccoon!
 Villain: People like you should... uh...
@@ -149,6 +150,7 @@ else:
 ~ motivation3
 Villain: You used to be so grand, captain of the swim league...
 Villain: Don't think I've forgotten who always got picked last.
+set Event.hero_default()
 Villain: But when you're swimming with the fishes, I'll be thinking of...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
@@ -187,6 +189,7 @@ else:
 ~ events1
 Villain: The unmatched socks on the murder scene? That was me!
 set Event.play_sound("Laughter")
+set Event.hero_default()
 Villain: With my obsessive compulsion disorder, I knew you wouldn't suspect a thing!
 Villain: Granted, I did put them exactly ten centimetres apart and at a precise 90° angle.
 Villain: With those socks, I was able to... ehm...
@@ -219,6 +222,7 @@ else:
 
 ~ events2
 Villain: The smoked fish in your hotel room bathtub? That was me!
+set Event.hero_default()
 Villain: Not only that, but I also smoked the fish with wood chips from your favorite apple tree!
 Villain: When you go home, it's gone! Ha!
 Villain: How'd you like them... Um...
@@ -234,14 +238,14 @@ Villain: [i][/i]
 	Villain: Salty bath waters!
 	set Event.play_sound("Laughter")
 	Villain: Because they're filled with your tears! Mhah!
-	set Event.hero_default()
+	set Event.hero_angry()
 	set Event.adjust_malice(15)
 - Hammer
 	Villain: ... smashing times!
 	set Event.play_sound("Laughter")
 	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
-	set Event.hero_default()
+	set Event.hero_angry()
 	set Event.adjust_malice(15)
 if !Event.ended:
 	Villain: And next, my nemesis...
@@ -252,6 +256,7 @@ else:
 
 ~ events3
 Villain: The sudden rain that forced you to take shelter in this cave? That was me!
+set Event.hero_default()
 Villain: And, the fact that you were on this lonely road in the middle of the forest?
 Villain: That was also me, placing the leaves of the rare purple maple at the museum!
 Villain: All to get you here, so that I can... Uh...
@@ -290,6 +295,7 @@ else:
 
 ~ plans1
 Villain: I will feed you to my sharks!
+set Event.hero_default()
 Villain: They're very hungry...
 Villain: I do feed them but the vet says they need to diet.
 Villain: I guess that means...
@@ -329,6 +335,7 @@ else:
 
 ~ rant1
 Villain: Evil is like a moonlit sky...
+set Event.hero_default()
 Villain: Dark and vast. 
 Villain: Futile stars spread far apart, none strong enough to shine.
 Villain: Because there can only be one moon.
@@ -367,6 +374,7 @@ else:
 
 ~ rant2
 Villain: Evil is like the ocean...
+set Event.hero_default()
 Villain: Cruel and cold, like a reluctant mother's love.
 Villain: It might drown you, but what a way to go.
 Villain: Surrounded by smelly creatures with sharp teeth.
@@ -400,6 +408,7 @@ else:
 
 ~ rant3
 Villain: Evil is like a lover's kiss...
+set Event.hero_default()
 Villain: It takes your breath away.
 Villain: Just once is never enough.
 Villain: The best ones are French.
@@ -437,6 +446,7 @@ else:
 
 ~ mock1
 Villain: You heroes, you're all the same. 
+set Event.hero_default()
 Villain: You just have to save every cat out of every tree.
 Villain: But what if cats just want to chill out among the leaves?
 Villain: And what about... uh....

@@ -2,6 +2,8 @@ extends Node2D
 @onready var rope = $Rope
 @onready var bomb = $Bomb
 @onready var spark = $Spark
+@onready var boom_sound = $Boom
+@onready var sss_sound = $Sss
 var stopped = false
 
 # Start countdown & animate rope burning
@@ -16,6 +18,8 @@ func start_timer(time):
 	var tween = create_tween().set_parallel()
 	tween.tween_property(rope, "value", 0, time)
 	tween.tween_property(spark, "position:x", 404, time)
+	#Sound
+	sss_sound.play()
 	
 	# Tween spark's movement
 
@@ -26,7 +30,10 @@ func start_timer(time):
 		return
 	
 	# Animate explosion
+	sss_sound.stop()
+	spark.hide()
 	bomb.play("explode")
+	boom_sound.play()
 	# Trigger next dialogue
 	get_node("/root/Main/ExampleBalloon/%ResponsesMenu")._on_timer_ended()
 	
@@ -37,6 +44,7 @@ func stop_timer():
 	hide()
 
 func _on_bomb_animation_finished():
+	sss_sound.stop()
 	spark.hide()
 	if bomb.animation == "explode":
 		hide()

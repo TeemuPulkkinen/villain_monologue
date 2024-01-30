@@ -94,15 +94,6 @@ autoplay = true
 [node name="Click" type="AudioStreamPlayer" parent="SoundLibrary"]
 stream = ExtResource("9_m8eg5")
 
-[node name="Blackout" type="ColorRect" parent="."]
-unique_name_in_owner = true
-visible = false
-modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_right = 1930.0
-offset_bottom = 1102.0
-color = Color(0, 0, 0.0509804, 1)
-
 [node name="Title" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -115,6 +106,15 @@ offset_bottom = 628.0
 grow_horizontal = 2
 texture = ExtResource("14_icor4")
 script = ExtResource("15_c82sh")
+
+[node name="Blackout" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1930.0
+offset_bottom = 1102.0
+color = Color(0, 0, 0.0509804, 1)
 
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_button_pressed"]
 [connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_pressed"]

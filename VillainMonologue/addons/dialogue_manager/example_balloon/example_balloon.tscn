@@ -297,14 +297,13 @@ texture = ExtResource("9_x0qaa")
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_et6dx")
 volume_db = -16.0
-pitch_scale = 0.8
+pitch_scale = 0.7
 bus = &"Room"
 
 [node name="HeroPip" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_rte4a")
-volume_db = -16.0
-pitch_scale = 1.1
+volume_db = -14.0
 bus = &"Room"
 
 [connection signal="gui_input" from="ClickMask" to="." method="_on_click_mask_gui_input"]

@@ -46,11 +46,13 @@ var dialogue_line: DialogueLine:
 
 		# Set balloon type based on character speaking
 		if tr(dialogue_line.character, "dialogue") == "Villain":
+			dialogue_label.pip_type = 0
 			balloon.size = Vector2(836,183)
 			balloon.position = Vector2(683,833)
 			villain_bubble.show()
 			hero_bubble.hide()
 		else: # Hero
+			dialogue_label.pip_type = 1
 			balloon.size = Vector2(537,185)
 			balloon.position = Vector2(695,135)
 			hero_bubble.show()

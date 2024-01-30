@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=89 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -47,9 +47,11 @@
 [ext_resource type="AudioStream" uid="uid://do6j13xwkvejr" path="res://sound/thinking/thinking07.mp3" id="29_h7rnk"]
 [ext_resource type="AudioStream" uid="uid://bxsj2022byfaa" path="res://sound/thinking/thinking09.mp3" id="30_2lmu7"]
 [ext_resource type="Texture2D" uid="uid://b0owbgbk66dat" path="res://art/final_assets/Pows/LesserEvil_Pow.png" id="30_4m68f"]
+[ext_resource type="AudioStream" uid="uid://d1f8i5g6ewvoe" path="res://sound/boom.wav" id="30_puku0"]
 [ext_resource type="Script" path="res://main_scene/pow_animate.gd" id="30_svud8"]
 [ext_resource type="Texture2D" uid="uid://di4tgc3jj6vw3" path="res://art/final_assets/Pows/MegaEvil_Pow.png" id="31_6jdj4"]
 [ext_resource type="AudioStream" uid="uid://b3cju8dklvc8k" path="res://sound/thinking/thinking11.mp3" id="31_hr0ei"]
+[ext_resource type="AudioStream" uid="uid://cgdchk34mbev5" path="res://sound/sssssss.wav" id="31_ijefs"]
 [ext_resource type="Texture2D" uid="uid://bkwe3esbuf1cv" path="res://art/final_assets/Pows/UltimateEvil_Pow.png" id="32_7yqon"]
 [ext_resource type="AudioStream" uid="uid://c6c4as4cnqfmq" path="res://sound/nodding/nodding01.mp3" id="32_vdk2v"]
 [ext_resource type="AudioStream" uid="uid://de47icnl6mwe0" path="res://sound/nodding/nodding02.mp3" id="33_4pgok"]
@@ -509,6 +511,13 @@ sprite_frames = SubResource("SpriteFrames_d3576")
 autoplay = "default"
 frame = 1
 frame_progress = 0.0965829
+
+[node name="Boom" type="AudioStreamPlayer" parent="CanvasLayer/Timer"]
+stream = ExtResource("30_puku0")
+
+[node name="Sss" type="AudioStreamPlayer" parent="CanvasLayer/Timer"]
+stream = ExtResource("31_ijefs")
+volume_db = 5.153
 
 [node name="LaughBg" type="Sprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
