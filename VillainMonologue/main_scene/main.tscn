@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=94 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -7,15 +7,19 @@
 [ext_resource type="Texture2D" uid="uid://rix0in4dkr3y" path="res://art/final_assets/malice_Malice_top.png" id="4_ooshw"]
 [ext_resource type="Texture2D" uid="uid://clttfucudkmbi" path="res://art/final_assets/malice_Malice_progress.png" id="5_56ii3"]
 [ext_resource type="Script" path="res://scripts/malice_progressbar.gd" id="6_n2qib"]
-[ext_resource type="Texture2D" uid="uid://ckovhygddv16u" path="res://art/final_assets/villain_default.png" id="7_s20n2"]
+[ext_resource type="Texture2D" uid="uid://bjdjku743iw6n" path="res://art/extra_expressions/villain_default-001.png" id="8_w6xfw"]
 [ext_resource type="Texture2D" uid="uid://dnjqnl7fcmbw1" path="res://art/final_assets/hero_rope.png" id="9_ayypt"]
 [ext_resource type="Texture2D" uid="uid://dfjy0jrm2g7mq" path="res://art/final_assets/bg_sharktank.png" id="9_r2plm"]
+[ext_resource type="Texture2D" uid="uid://cflusqllx1cns" path="res://art/extra_expressions/villain_distraught.png" id="9_v21at"]
 [ext_resource type="Texture2D" uid="uid://bfwlsauuen8p1" path="res://art/final_assets/sharks.png" id="10_bo12u"]
+[ext_resource type="Texture2D" uid="uid://cyqohusygbgiv" path="res://art/extra_expressions/villain_ecstatic.png" id="10_goykq"]
 [ext_resource type="Texture2D" uid="uid://c00rrqxjt8v21" path="res://art/final_assets/hero_light1.png" id="10_slxdr"]
 [ext_resource type="Script" path="res://main_scene/Timer.gd" id="11_5ei3n"]
 [ext_resource type="Texture2D" uid="uid://cuoucrhvhef3j" path="res://art/extra_expressions/sharks_escape.png" id="11_7haxe"]
 [ext_resource type="Texture2D" uid="uid://c6voggspwnc2o" path="res://art/final_assets/hero_light2.png" id="11_7i586"]
+[ext_resource type="Texture2D" uid="uid://b70anuo7ou6qi" path="res://art/extra_expressions/villain_frustrated.png" id="11_ly5r1"]
 [ext_resource type="Texture2D" uid="uid://dmu7lfuuefate" path="res://art/final_assets/timer_rope.png" id="12_6xgp8"]
+[ext_resource type="Texture2D" uid="uid://cx7vfvqh3cyre" path="res://art/extra_expressions/villain_gleeful.png" id="12_8rdsf"]
 [ext_resource type="Texture2D" uid="uid://dylf8gtjerrli" path="res://art/extra_expressions/sharks_happy.png" id="12_t762c"]
 [ext_resource type="Script" path="res://main_scene/Hero.gd" id="13_ckwux"]
 [ext_resource type="Texture2D" uid="uid://cxiuvjqw6emsj" path="res://art/final_assets/timer_bomb_default.png" id="13_vexra"]
@@ -73,6 +77,49 @@
 [ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="55_wu1p6"]
 [ext_resource type="AudioStream" uid="uid://u7kvpqb0eg7w" path="res://sound/background01.mp3" id="56_ggua1"]
 [ext_resource type="AudioStream" uid="uid://b4yf2m48c2xv5" path="res://sound/lampsnap.wav" id="64_06mqh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x7a67"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_w6xfw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_v21at")
+}],
+"loop": false,
+"name": &"distraught",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_goykq")
+}],
+"loop": false,
+"name": &"ecstatic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ly5r1")
+}],
+"loop": false,
+"name": &"frustrated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8rdsf")
+}],
+"loop": true,
+"name": &"gleeful",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehf8j"]
 animations = [{
@@ -377,6 +424,7 @@ texture = ExtResource("2_k4fwo")
 
 [node name="Background_Unlit" type="TextureRect" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("3_cxijt")
@@ -397,11 +445,13 @@ texture_over = ExtResource("4_ooshw")
 texture_progress = ExtResource("5_56ii3")
 script = ExtResource("6_n2qib")
 
-[node name="Villain" type="Sprite2D" parent="CanvasLayer"]
+[node name="Villain" type="AnimatedSprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true
 clip_children = 2
-position = Vector2(530, 582)
-texture = ExtResource("7_s20n2")
+position = Vector2(544, 553)
+sprite_frames = SubResource("SpriteFrames_x7a67")
+animation = &"ecstatic"
+autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Villain"]
 offset_left = 1007.0

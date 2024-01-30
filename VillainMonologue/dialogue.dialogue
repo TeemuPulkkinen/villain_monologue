@@ -23,7 +23,9 @@ Hero: Ugh! Release me at once!
 set Event.reveal_villain()
 Villain: [wait=3.0]Oh, I would, but.
 set Event.play_sound("Laughter")
+set Event.villain_gleeful()
 Villain: [wait=0.5]I simply don't want to. Now sit tight.
+set Event.villain_default()
 % => motivation1
 % => motivation2
 % => motivation3
@@ -52,8 +54,10 @@ Villain: [wait=3.0]A little fly, trapped in the–
 set Event.hero_smug()
 Hero: Spider's net?
 set Event.play_sound("Frustration")
+set Event.villain_frustrated()
 Villain: Stop interrupting me! 
 Villain: [speed=1.5]Also don't call me spider, they're creepy.
+set Event.villain_default()
 Villain: You must be curious why I bested you!
 % => motivation1
 % => motivation2
@@ -70,8 +74,10 @@ Hero: No! I can't believe it!
 set Event.hero_angry()
 Hero: How could you?
 Hero: How could you be so... so...
+set Event.villain_gleeful()
 Villain: [speed=0.7]Say it...!
 Hero: So evil?
+set Event.villain_default()
 Villain: Indeed!
 % => motivation1
 % => motivation2
@@ -81,26 +87,32 @@ Villain: Indeed!
 ~ motivation1
 Villain: When you sent your capybaras after me, they ate my prize carrots!
 Villain: I was going to make pickles from those!
+set Event.villain_gleeful()
 Villain: Pickles with dill! 
+set Event.villain_default()
 Villain: So I swore to... to...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Carrot
+	set Event.villain_frustrated()
 	Villain: ... to plant more carrots! Yeah!
 	set Event.hero_smug()
 	Hero: Uh. Sure.
 	set Event.play_sound("Frustration")
 	set Event.adjust_malice(-5)
 - Shark
+	set Event.villain_gleeful()
 	Villain: ... to feed your capybaras to my sharks! Haa!
 	set Event.hero_default()
 	set Event.adjust_malice(5)
 - Brain
 	Villain: ... to come up with a plan so evil, you would all just...
+	set Event.villain_ecstatic()
 	Villain: DIE!!!
 	set Event.hero_default()
 	set Event.play_sound("Laughter")
 	set Event.adjust_malice(20)
+	set Event.villain_gleeful()
 if !Event.ended:
 	Villain: Now, everything has gone right according to my plan...
 else:
@@ -115,29 +127,37 @@ Villain: Alas... It's only fair, after all...
 Villain: You left me... On read!
 set Event.hero_default()
 Villain: Who does that?
+set Event.villain_frustrated()
 Villain: It was a funny picture at that! A raccoon!
 Villain: People like you should... uh...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Bomb
+	set Event.villain_gleeful()
 	Villain: Have their phone EXPLODE in a ball of FIRE! Yeah!
 	set Event.hero_default()
 	Hero: That escalated quickly.
 	set Event.adjust_malice(5)
 - Book
+	set Event.villain_default()
 	Villain: Be read for the filth you are!
 	set Event.play_sound("Smug")
 	Hero: I actually lost my phone last week.
+	set Event.villain_frustrated()
 	Villain: Serves you right for not replying to your messages... Mrr!
 	set Event.adjust_malice(-5)
 - Raccoon
+	set Event.villain_default()
 	Villain: Make friends with raccoons...
+	set Event.villain_ecstatic()
+	set Event.play_sound("Laughter")
 	Villain: They like trash like you!
 	set Event.hero_angry()
 	Hero: Ouch.
-	set Event.play_sound("Laughter")
+	set Event.villain_default()
 	set Event.adjust_malice(20)
 if !Event.ended:
+	set Event.villain_default()
 	Villain: Now, everything has gone right according to my plan...
 else:
 	=> END
@@ -155,29 +175,40 @@ Villain: But when you're swimming with the fishes, I'll be thinking of...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Shark
+	set Event.villain_default()
 	Villain: ... how evil my three pet sharks are!
+	set Event.villain_ecstatic()
 	Villain: They'll eat you! Ha!
 	set Event.hero_default()
 	Hero: Imagine that.
+	set Event.villain_gleeful()
 	Villain: And then you'll be DEAD in the water!
 	Hero: Thanks, I deduced that part myself.
 	set Event.play_sound("Laughter")
+	set Event.villain_ecstatic()
 	Villain: Blood everywhere!
 	Hero: Are you quite done?
+	set Event.villain_gleeful()
 	set Event.adjust_malice(20)
 - Kiss
+	set Event.villain_default()
 	Villain: ... your kisses—
 	set Event.hero_smug()
 	Hero: Oh my. 
+	set Event.villain_distraught()
 	set Event.play_sound("Frustration")
 	Villain: No! I mean... Mrr!
+	set Event.villain_frustrated()
 	set Event.adjust_malice(-5)
 - Stone
+	set Event.villain_default()
 	Villain: How right and tight those knots around your strong wrists and ankles feel...
 	set Event.hero_smug()
+	set Event.villain_gleeful()
 	Villain: I meant, you'll sink! Like a stone!
 	set Event.adjust_malice(5)
 if !Event.ended:
+	set Event.villain_default()
 	Villain: Now, everything has gone right according to my plan...
 else:
 	=> END
@@ -188,29 +219,37 @@ else:
 
 ~ events1
 Villain: The unmatched socks on the murder scene? That was me!
+set Event.villain_ecstatic()
 set Event.play_sound("Laughter")
 set Event.hero_default()
 Villain: With my obsessive compulsion disorder, I knew you wouldn't suspect a thing!
+set Event.villain_gleeful()
 Villain: Granted, I did put them exactly ten centimetres apart and at a precise 90° angle.
 Villain: With those socks, I was able to... ehm...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Yarn
+	set Event.villain_default()
 	Villain: Spin the perfect yarn to distract the police, but still lead you right here.
 	set Event.hero_default()
 	Hero: Darn.
 	set Event.adjust_malice(5)
 - Teacup
+	set Event.villain_default()
 	Villain: Cozy up with the leftover socks and the latest Spies, Lies and Wandering Eyes!
 	set Event.hero_smug()
 	Hero: Wait, isn't that series based loosely on my life?
 	set Event.play_sound("Frustration")
+	set Event.villain_distraught()
 	Villain: A-and mine! Mrr!
 	set Event.adjust_malice(-5)
+	set Event.villain_frustrated()
 - Sock
+	set Event.villain_ecstatic()
 	set Event.play_sound("Laughter")
 	Villain: Sock-sessfully get away with murder! Mhaha!
 	set Event.hero_default()
+	set Event.villain_gleeful()
 	Hero: Please kill me already.
 	set Event.adjust_malice(20)
 if !Event.ended:
@@ -221,33 +260,43 @@ else:
 => END
 
 ~ events2
+set Event.villain_default()
 Villain: The smoked fish in your hotel room bathtub? That was me!
 set Event.hero_default()
 Villain: Not only that, but I also smoked the fish with wood chips from your favorite apple tree!
+set Event.villain_gleeful()
 Villain: When you go home, it's gone! Ha!
 Villain: How'd you like them... Um...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Apple
+	set Event.villain_gleeful()
 	Villain: Apples! Ha!
 	set Event.hero_smug()
 	Hero: Yawn. I know you can do better.
+	set Event.villain_frustrated()
 	set Event.play_sound("Frustration")
+	Villain: Hmph!
 	set Event.adjust_malice(-5)
 - Bathtub
+	set Event.villain_default()
 	Villain: Salty bath waters!
 	set Event.play_sound("Laughter")
+	set Event.villain_gleeful()
 	Villain: Because they're filled with your tears! Mhah!
 	set Event.hero_angry()
 	set Event.adjust_malice(15)
 - Hammer
+	set Event.villain_ecstatic()
 	Villain: ... smashing times!
 	set Event.play_sound("Laughter")
+	set Event.villain_gleeful()
 	Villain: I made apple mash and ate it with pancakes for breakfast!
 	Villain: And I'll make mash out of your head too! Ha!
 	set Event.hero_angry()
 	set Event.adjust_malice(15)
 if !Event.ended:
+	set Event.villain_default()
 	Villain: And next, my nemesis...
 else:
 	=> END
@@ -255,38 +304,50 @@ else:
 => END
 
 ~ events3
+set Event.villain_default()
 Villain: The sudden rain that forced you to take shelter in this cave? That was me!
 set Event.hero_default()
 Villain: And, the fact that you were on this lonely road in the middle of the forest?
+set Event.villain_gleeful()
 Villain: That was also me, placing the leaves of the rare purple maple at the museum!
+set Event.villain_default()
 Villain: All to get you here, so that I can... Uh...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Pancake
 	Villain: Have breakfast with you!
+	set Event.villain_frustrated()
 	Villain: No, I mean.... Make pancakes with you!
+	set Event.villain_distraught()
 	set Event.play_sound("Frustration")
 	Villain: Gak! Mrr!
 	set Event.adjust_malice(-5)
 - Car
+	set Event.villain_default()
 	Villain: Run you over with your own car!
 	set Event.hero_default()
 	Hero: You got your license?
+	set Event.villain_gleeful()
 	Villain: No! And I don't even care if I scratch it!
 	set Event.hero_angry()
 	Hero: No, not Tony the Toyota!
 	set Event.play_sound("Laughter")
+	set Event.villain_ecstatic()
 	Villain: Mwahaa!
 	set Event.adjust_malice(20)
 - Umbrella
+	set Event.villain_default()
 	Villain: Return the umbrella I borrowed!
 	set Event.hero_default()
 	Hero: Really? You would do that?
+	set Event.villain_ecstatic()
 	Villain: No! I am keeping it forever, because you will be dead!
 	set Event.play_sound("Laughter")
+	set Event.villain_gleeful()
 	Villain: Corpses don't need umbrellas!
 	set Event.adjust_malice(15)
 if !Event.ended:
+	set Event.villain_default()
 	Villain: And next, my nemesis...
 else:
 	=> END
@@ -294,32 +355,42 @@ else:
 => END
 
 ~ plans1
+set Event.villain_gleeful()
 Villain: I will feed you to my sharks!
 set Event.hero_default()
 Villain: They're very hungry...
+set Event.villain_default()
 Villain: I do feed them but the vet says they need to diet.
 Villain: I guess that means...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Calendar
+	set Event.villain_default()
 	Villain: ... today is their cheat day!
 	set Event.play_sound("Laughter")
+	set Event.villain_ecstatic()
 	Villain: And you will make one fine shark-utery board!
 	set Event.hero_angry()
 	set Event.adjust_malice(20)
+	set Event.villain_gleeful()
 - Mushroom
+	set Event.villain_default()
 	Villain: I will cook you with mushrooms and parsley until you're tender.
+	set Event.villain_gleeful()
 	Villain: Only the best for my sharky darlings!
 	set Event.hero_default()
 	Hero: At least I'm the main course.
 	set Event.adjust_malice(5)
 - Apple
+	set Event.villain_default()
 	Villain: You will feed them their fruit bowls tonight!
 	set Event.hero_smug()
 	Hero: You'd let me feed Fin-neas, Maw-nica and Jaw-nathan?
+	set Event.villain_distraught()
 	set Event.play_sound("Frustration")
 	Villain: Hnnggh... That's not what... Mrr!
 	set Event.adjust_malice(-5)
+	set Event.villain_frustrated()
 if !Event.ended:
 	Villain: But how could you understand?
 else:
@@ -334,37 +405,48 @@ else:
 => END
 
 ~ rant1
+set Event.villain_default()
 Villain: Evil is like a moonlit sky...
 set Event.hero_default()
-Villain: Dark and vast. 
+Villain: Dark and vast.
 Villain: Futile stars spread far apart, none strong enough to shine.
 Villain: Because there can only be one moon.
+set Event.villain_gleeful()
 Villain: And I am that moon! The most evil of evils!
+set Event.villain_default()
 Villain: Unless you go to Jupiter, or make a new moon, but...
 Villain: A moon in the sky, that... Ehm...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Halfmoon
+	set Event.villain_gleeful()
 	Villain: Waxes and wanes with each passing day!
 	set Event.hero_smug()
 	Hero: Wouldn't constant evil be better?
+	set Event.villain_distraught()
 	set Event.play_sound("Frustration")
 	Villain: Hnnggh! Graah! Wak!
+	set Event.villain_frustrated()
 	set Event.adjust_malice(-5)
 - Wave
+	set Event.villain_ecstatic()
 	Villain: Raises the tidal wave that will wash away all you hold dear!
 	set Event.play_sound("Laughter")
+	set Event.villain_gleeful()
 	Villain: Mwaha! Haa!
 	set Event.hero_angry()
 	set Event.adjust_malice(20)
 - Rocketship
 	Villain: Only the bravest, most determined astronauts can reach me!
+	set Event.villain_gleeful()
 	Villain: And once they do, they'll find me lonesome and dusty!
 	set Event.hero_default()
 	Hero: Do you need a... hug?
 	set Event.play_sound("Laughter")
+	set Event.villain_ecstatic()
 	Villain: I could hug you to DEATH! Mwa!
 	set Event.adjust_malice(15)
+	set Event.villain_gleeful()
 if !Event.ended:
 	% => mock1
 	% => mock2
@@ -373,29 +455,38 @@ else:
 => END
 
 ~ rant2
+set Event.villain_default()
 Villain: Evil is like the ocean...
 set Event.hero_default()
 Villain: Cruel and cold, like a reluctant mother's love.
 Villain: It might drown you, but what a way to go.
+set Event.villain_gleeful()
 Villain: Surrounded by smelly creatures with sharp teeth.
 Villain: An ocean, deep, and dark like... uh...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Octopus
+	set Event.villain_default()
 	Villain: The ink of an octopus!
 	Villain: While you can't see, my tentacles will smother you!
 	set Event.adjust_malice(5)
 - GingerBread
+	set Event.villain_default()
 	Villain: A ginger bread cookie, with just the right amount of spice... Um...
 	set Event.hero_default()
 	Hero: I'm afraid I don't follow?
 	set Event.play_sound("Frustration")
+	set Event.villain_frustrated()
 	Villain: At least you are afraid! Hnngh!
 	set Event.adjust_malice(5)
 - Boot
+	set Event.villain_default()
 	Villain: Like the leather of my boots!
+	set Event.villain_gleeful()
 	Villain: Under which I will crush you!
+	set Event.villain_ecstatic()
 	Villain: Like a bug! Mwah!
+	set Event.villain_gleeful()
 	set Event.hero_angry()
 	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
@@ -407,6 +498,7 @@ else:
 => END
 
 ~ rant3
+set Event.villain_default()
 Villain: Evil is like a lover's kiss...
 set Event.hero_default()
 Villain: It takes your breath away.
@@ -425,13 +517,17 @@ Villain: [i][/i]
 	Villain: Then you could get my letter! Ha!
 	set Event.adjust_malice(-5)
 - Poison
+	set Event.villain_ecstatic()
 	Villain: A kiss of death, ladled with poison! Mwhaahaaa!
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(15)
+	set Event.villain_gleeful()
 - Bat
+	set Event.villain_gleeful()
 	Villain: One from Vlad from the gym!
 	Villain: He eats blood.
+	set Event.villain_default()
 	Villain: Because he is a vampire.
 	set Event.hero_default()
 	Hero: Yeah I know Vlad.
@@ -448,6 +544,7 @@ else:
 Villain: You heroes, you're all the same. 
 set Event.hero_default()
 Villain: You just have to save every cat out of every tree.
+set Event.villain_default()
 Villain: But what if cats just want to chill out among the leaves?
 Villain: And what about... uh....
 set Event.play_sound("Thinking")
@@ -456,22 +553,29 @@ Villain: [i][/i]
 	Villain: And the trees? Why do you want to take cats away from the trees, hmm?
 	set Event.hero_smug()
 	Hero: You're an environmentalist now?
+	set Event.villain_distraught()
 	set Event.play_sound("Frustration")
 	Villain: Gak! Hnggghhh....
+	set Event.villain_frustrated()
 	set Event.adjust_malice(-5)
 - Mouse
 	Villain: The mice! If the cats are in the trees, then mice can relax!
 	set Event.hero_smug()
 	Hero: Are you calling yourself a mouse?
 	set Event.play_sound("Frustration")
+	set Event.villain_distraught()
 	Villain: Fläh! No! Arghh...
 	set Event.adjust_malice(-5)
+	set Event.villain_frustrated()
 - Fire
+	set Event.villain_gleeful()
 	Villain: Fires! Yes! While you're distracted worrying about those itty bitty kitties...
+	set Event.villain_ecstatic()
 	Villain: Villains like me set the whole world on fire! Mwah!
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(15)
+	set Event.villain_gleeful()
 Villain: You know, I wasn't always evil...
 if !Event.ended:
 	% => backstory1
@@ -481,6 +585,7 @@ else:
 => END
 
 ~ mock2
+set Event.villain_default()
 Villain: Ugh, heroes like you have no sense of humor.
 set Event.hero_default()
 Hero: Perhaps you shouldn't take the word punchline literally?
@@ -490,18 +595,23 @@ Villain: When you're always worrying about... uh...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Cereal
+	set Event.villain_gleeful()
 	Villain: Cereal killers like me, I suppose you don't have the time to appreciate the finer nuances.
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(15)
 - Mirror
+	set Event.villain_frustrated()
 	Villain: Appearances, I guess you can't afford to grow laugh wrinkles.
 	set Event.hero_smug()
 	Hero: I do have perfect skin.
 	set Event.play_sound("Frustration")
+	set Event.villain_distraught()
 	Villain: Awk! Whah... Mrrr...
 	set Event.adjust_malice(-5)
+	set Event.villain_frustrated()
 - Spiders
+	set Event.villain_default()
 	Villain: Spiders, with all those legs, then–
 	set Event.hero_smug()
 	Hero: I don't have arachnophobia. But you do, right?
@@ -509,8 +619,10 @@ Villain: [i][/i]
 	set Event.hero_default()
 	Hero: I know this therapist, who–
 	set Event.play_sound("Frustration")
+	set Event.villain_distraught()
 	Villain: I AM NOT afraid! Silence! Grr...
 	set Event.adjust_malice(-5)
+	set Event.villain_frustrated()
 Villain: You know, I wasn't always evil...
 if !Event.ended:
 	% => backstory1
@@ -521,19 +633,24 @@ else:
 
 
 ~ backstory1
+set Event.villain_default()
 Villain: Once upon a time, I was a plucky do-gooder like you.
 Villain: But then I lost my glasses.
 Villain: I was fumbling in the darkness, lost and alone...
 Villain: But in the darkness, I found new friends.
+set Event.villain_gleeful()
 Villain: And thanks to my contacts, I can see again!
 Villain: My new friends are the Society of Evil Opticians!
+set Event.villain_default()
 Villain: And so, now...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - GlassesCrossedOut
+	set Event.villain_ecstatic()
 	Villain: I will eradicate glasses from this world!
 	set Event.hero_smug()
 	Hero: Huh? Wouldn't your Optician friends run out of work?
+	set Event.villain_frustrated()
 	Villain: No, that's not what I meant.... Hmmmgh!
 	set Event.play_sound("Frustration")
 	set Event.adjust_malice(-5)
@@ -541,13 +658,17 @@ Villain: [i][/i]
 	Villain: To never get lost in the darkness, I carry a torch for you.
 	set Event.hero_default()
 	Hero: You... do?
+	set Event.villain_ecstatic()
 	Villain: To set you on fire! Mwah!
 	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
+	set Event.villain_default()
 - Raccoon
+	set Event.villain_default()
 	Villain: Now even the raccoons will get glasses!
 	set Event.hero_default()
 	Hero: I don't quite follow.
+	set Event.villain_gleeful()
 	Villain: And they'll rummage through the trash for the tiny pieces left of you once I'm done with you!
 	Hero: Ah–haa.
 	set Event.play_sound("Laughter")
@@ -560,37 +681,47 @@ else:
 => END
 
 ~ backstory2
+set Event.villain_default()
 Villain: Once upon a time, I too wanted to save the world.
 Villain: I recycled and I cycled.
 Villain: And then one day, someone stole my bike!
 Villain: I cried, and I searched, and I cried, then searched some more...
 Villain: And that's when I realized...
 Villain: I wasn't thinking of my climate anxiety at all!
+set Event.villain_gleeful()
 Villain: Stealing makes people sad!
 Villain: What if I could distract people from the impending ecological disaster and end of life as we know it...
+set Event.villain_ecstatic()
 Villain: ... by stealing their material belongings? Ahh!
+set Event.villain_default()
 Villain: And so, now...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Bike
 	Villain: I'm rich. I have three hundred and forty-one bicycles to choose from!
+	set Event.villain_gleeful()
 	Villain: I even got my sharks their own bikes!
 	Villain: With little horns!
+	set Event.villain_ecstatic()
 	Villain: Honk! Honk! Honk!
 	set Event.hero_default()
+	set Event.villain_gleeful()
 	Villain: And the baskets in the front! For snacks.
 	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
 - Trash
+	set Event.villain_ecstatic()
 	Villain: I don't even recycle anymore!
 	set Event.hero_angry()
 	Hero: Whoa. That's evil!
 	set Event.play_sound("Laughter")
 	set Event.adjust_malice(15)
+	set Event.villain_gleeful()
 - Gold
 	Villain: I only care about material wealth!
 	set Event.hero_default()
 	Hero: That's sad, you know?
+	set Event.villain_frustrated()
 	Villain: Mrrr... My gold bags beg to differ!
 	set Event.adjust_malice(5)
 if !Event.ended:
@@ -602,28 +733,38 @@ else:
 
 
 ~ brilliance1
+set Event.villain_gleeful()
 Villain: Now you see why I've bested you!
 Villain: Genius like mine only comes along once in a generation!
+set Event.villain_default()
 Villain: My master plan is almost complete, and now...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Shark
+	set Event.villain_ecstatic()
 	Villain: It's time to die by shark! Mwahahahaaa!
+	set Event.villain_gleeful()
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(35)
 - Hearts
+	set Event.villain_gleeful()
 	Villain: I will rip your heart out and eat it!
+	set Event.villain_ecstatic()
 	Villain: Mwahaha!!
+	set Event.villain_gleeful()
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(35)
 - Dinner
+	set Event.villain_gleeful()
 	Villain: I will take you to dinner!
 	set Event.hero_smug()
 	Hero: What?
+	set Event.villain_distraught()
 	Villain: I meant, I will have you for dinner! Hnnngh!
 	set Event.play_sound("Frustration")
+	set Event.villain_frustrated()
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
 if !Event.ended:
@@ -635,28 +776,38 @@ else:
 => END
 
 ~ brilliance2
+set Event.villain_gleeful()
 Villain: My brilliance knows no limits!
 Villain: Like a diamond, I've been squeezed from dark coal into one sharp rock!
+set Event.villain_default()
 Villain: And now, finally...
 set Event.play_sound("Thinking")
 Villain: [i][/i]
 - Shark
+	set Event.villain_ecstatic()
 	Villain: It's time to die by shark! Mwahahahaaa!
 	set Event.play_sound("Laughter")
+	set Event.villain_gleeful()
 	set Event.hero_angry()
 	set Event.adjust_malice(35)
 - Hearts
+	set Event.villain_gleeful()
 	Villain: I will rip your heart out and eat it!
+	set Event.villain_ecstatic()
 	Villain: Mwahaha!!
 	set Event.play_sound("Laughter")
 	set Event.hero_angry()
 	set Event.adjust_malice(35)
+	set Event.villain_gleeful()
 - Dinner
+	set Event.villain_gleeful()
 	Villain: I will take you to dinner!
 	set Event.hero_smug()
 	Hero: What?
+	set Event.villain_distraught()
 	Villain: I meant, I will have you for dinner! Hnnngh!
 	set Event.play_sound("Frustration")
+	set Event.villain_frustrated()
 	Villain: Let me phrase that again...
 	set Event.adjust_malice(-5)
 if !Event.ended:
@@ -668,32 +819,44 @@ else:
 => END
 
 ~ fail
+set Event.villain_frustrated()
 Villain: Urk! Gah! [next=0.5]
+set Event.villain_distraught()
 set Event.play_sound("Frustration")
 Villain: Grrrhgh! [next=0.5]
 set Event.hero_smug()
 Hero: ...Yes?
+set Event.villain_frustrated()
 Villain: Enough with that smug face!
 Villain: You should be trembling before my dastardly schemes!
 Villain: My horrifying lack of decency! My tear-jerking backstory!
 Villain: But there you sit, unimpressed. Hrrrrggggggh!
+set Event.play_sound("Frustration")
+set Event.villain_distraught()
 Villain: I'll make you impressed!!
 set Event.kill_hero()
 => END
 
 ~ post_fail
+set Event.villain_default()
 Villain: Um.[next=0.5]
+set Event.villain_frustrated()
 Villain: Hm.[next=0.5]
+set Event.villain_default()
 Villain: That's that, then.
 Villain: What a waste of a captive audience.
 set Event.go_credits()
 => END
 
 ~ win
+set Event.villain_distraught()
 Villain: Gack! [next=0.5]
+set Event.villain_frustrated()
 Villain: Where's he gone?
 Villain: That little rat! Foiled me once more!
+set Event.villain_default()
 Villain: I'll get you next time, you hear me!
+set Event.villain_ecstatic()
 Villain: And you'll rue the day you dared to cross me! Bwa ha ha!
 set Event.go_credits()
 => END

@@ -164,7 +164,6 @@ func end_game(max_evil):
 		heroEscaped.get_node("Animation").play("escaped")
 		DialogueManager.show_dialogue_balloon(dialogue_file, "win")
 	else:
-		Event.play_sound("Frustration")
 		DialogueManager.show_dialogue_balloon(dialogue_file, "fail")
 		return
 
@@ -214,3 +213,18 @@ func hero_angry():
 
 func hero_default():
 	hero.default()
+
+func villain_default():
+	villain.play("default")
+
+func villain_distraught():
+	villain.play("distraught")
+
+func villain_ecstatic():
+	villain.play("ecstatic")
+
+func villain_frustrated():
+	villain.play("frustrated")
+
+func villain_gleeful():
+	villain.play("gleeful")

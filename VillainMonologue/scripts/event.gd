@@ -38,6 +38,21 @@ func hero_smug():
 func hero_angry():
 	main.hero_angry()
 
+func villain_default():
+	main.villain_default()
+
+func villain_distraught():
+	main.villain_distraught()
+
+func villain_ecstatic():
+	main.villain_ecstatic()
+
+func villain_frustrated():
+	main.villain_frustrated()
+
+func villain_gleeful():
+	main.villain_gleeful()
+
 
 func kill_hero():
 	main.kill_hero()

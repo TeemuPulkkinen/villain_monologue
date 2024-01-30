@@ -41,10 +41,10 @@ func start_timer(time):
 
 func stop_timer():
 	stopped = true
+	sss_sound.stop()
 	hide()
 
 func _on_bomb_animation_finished():
-	sss_sound.stop()
 	spark.hide()
 	if bomb.animation == "explode":
 		hide()
