@@ -6,6 +6,7 @@ room_size = 0.51
 damping = 0.12
 
 [resource]
+bus/0/volume_db = 2.54701
 bus/0/effect/0/effect = SubResource("AudioEffectReverb_f6rie")
 bus/0/effect/0/enabled = false
 bus/1/name = &"Room"

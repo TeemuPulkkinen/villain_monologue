@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=87 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bfwlsauuen8p1" path="res://art/final_assets/sharks.png" id="10_bo12u"]
 [ext_resource type="Texture2D" uid="uid://c00rrqxjt8v21" path="res://art/final_assets/hero_light1.png" id="10_slxdr"]
 [ext_resource type="Script" path="res://main_scene/Timer.gd" id="11_5ei3n"]
+[ext_resource type="Texture2D" uid="uid://cuoucrhvhef3j" path="res://art/extra_expressions/sharks_escape.png" id="11_7haxe"]
 [ext_resource type="Texture2D" uid="uid://c6voggspwnc2o" path="res://art/final_assets/hero_light2.png" id="11_7i586"]
 [ext_resource type="Texture2D" uid="uid://dmu7lfuuefate" path="res://art/final_assets/timer_rope.png" id="12_6xgp8"]
+[ext_resource type="Texture2D" uid="uid://dylf8gtjerrli" path="res://art/extra_expressions/sharks_happy.png" id="12_t762c"]
 [ext_resource type="Script" path="res://main_scene/Hero.gd" id="13_ckwux"]
 [ext_resource type="Texture2D" uid="uid://cxiuvjqw6emsj" path="res://art/final_assets/timer_bomb_default.png" id="13_vexra"]
 [ext_resource type="Texture2D" uid="uid://d2xnt62p7nvcx" path="res://art/final_assets/timer_bomb_explo1.png" id="14_dixf5"]
@@ -182,6 +184,9 @@ _data = {
 "dangle_down": SubResource("Animation_a0lxj")
 }
 
+[sub_resource type="Animation" id="Animation_d8jns"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_h2w4c"]
 resource_name = "escaped"
 length = 5.0
@@ -197,9 +202,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0872665, -0.0523599, 0.0349066, -0.0261799, 0.00523599, 0.0]
 }
-
-[sub_resource type="Animation" id="Animation_d8jns"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7313y"]
 _data = {
@@ -408,12 +410,23 @@ rotation = 0.261799
 color = Color(0, 0.00392157, 0.109804, 1)
 
 [node name="Sharktank" type="Sprite2D" parent="CanvasLayer"]
+unique_name_in_owner = true
 position = Vector2(1514.5, 734.5)
 texture = ExtResource("9_r2plm")
 
-[node name="sharks" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(1488.5, 761.5)
+[node name="Sharks_default" type="Sprite2D" parent="CanvasLayer/Sharktank"]
+position = Vector2(-26, 27)
 texture = ExtResource("10_bo12u")
+
+[node name="Sharks_escaped" type="Sprite2D" parent="CanvasLayer/Sharktank"]
+visible = false
+position = Vector2(-29, 34)
+texture = ExtResource("11_7haxe")
+
+[node name="Sharks_happy" type="Sprite2D" parent="CanvasLayer/Sharktank"]
+visible = false
+position = Vector2(-26, 35)
+texture = ExtResource("12_t762c")
 
 [node name="HeroLight1" type="Sprite2D" parent="CanvasLayer"]
 unique_name_in_owner = true

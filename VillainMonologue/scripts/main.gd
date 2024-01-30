@@ -19,6 +19,7 @@ var ending = false
 @onready var hero = %Hero
 @onready var heroEscaped = %HeroEscaped
 @onready var villain = %Villain
+@onready var sharktank = %Sharktank
 @onready var villain_shadow = villain.get_node("ColorRect")
 
 var current_malice = 30
@@ -92,7 +93,7 @@ func adjust_malice(amount):
 	await malice_progress_bar._adjust_malice_value(current_malice)
 	
 	# Display Pow if needed
-	if pow_display:
+	if pow_display != null:
 		pows.display(pow_display)
 		await get_tree().create_timer(3.0).timeout
 	get_node("ExampleBalloon").show()
@@ -105,12 +106,9 @@ func adjust_malice(amount):
 # Check if malice passed a limit where we want to display a pow
 func check_malice_limits(added_amount):
 	var new_malice = current_malice + added_amount
-	print(current_malice)
-	print(new_malice)
 	for i in range (0,malice_limits.size()):
 		var limit = malice_limits[i]
 		if (current_malice < limit && new_malice >= limit) or (current_malice >= limit && new_malice < limit):
-			print("pow")
 			return i
 		else:
 			continue
@@ -154,6 +152,7 @@ func end_game(max_evil):
 		await get_tree().create_timer(1.0).timeout
 		blackout.hide()
 		hero.hide()
+		sharktank.get_child(0).hide()
 		%LaughBg.hide()
 		%LaughVillain1.hide()
 		%LaughVillain2.hide()
@@ -161,6 +160,7 @@ func end_game(max_evil):
 		%ButtonSmash2.hide()
 		%ButtonSmash3.hide()
 		heroEscaped.show()
+		sharktank.get_child(1).show()
 		heroEscaped.get_node("Animation").play("escaped")
 		DialogueManager.show_dialogue_balloon(dialogue_file, "win")
 	else:
@@ -186,12 +186,15 @@ func kill_hero():
 	Event.play_sound("Omnom")
 	await get_tree().create_timer(3.0).timeout
 	hero.hide()
+	sharktank.get_child(0).hide()
+	sharktank.get_child(2).hide()
 	%LaughBg.hide()
 	%LaughVillain1.hide()
 	%LaughVillain2.hide()
 	%ButtonSmash1.hide()
 	%ButtonSmash2.hide()
 	%ButtonSmash3.hide()
+	blackout.hide()
 	DialogueManager.show_dialogue_balloon(dialogue_file, "post_fail")
 
 func go_credits():

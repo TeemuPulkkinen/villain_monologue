@@ -1,16 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2qwydopgeuiq"]
+[gd_scene load_steps=16 format=3 uid="uid://b2qwydopgeuiq"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_012gj"]
-[ext_resource type="Texture2D" uid="uid://xs7i7ete3264" path="res://art/title_screen_bg_withLogo.png" id="1_f1wlx"]
 [ext_resource type="Texture2D" uid="uid://bu553dsyftvdv" path="res://art/Start_Normal.png" id="2_2wjau"]
+[ext_resource type="Texture2D" uid="uid://cilg13w3veu1o" path="res://art/title_screen_bg_only.png" id="2_36jfi"]
 [ext_resource type="Texture2D" uid="uid://kajs0x2d61lo" path="res://art/Start_Hover.png" id="3_lq3m7"]
-[ext_resource type="Texture2D" uid="uid://72fl7poprgcf" path="res://art/placeholders/menu_assets/exit_normal.png" id="4_3wpqd"]
 [ext_resource type="Script" path="res://scripts/PlayButton.gd" id="4_4lx3u"]
+[ext_resource type="Texture2D" uid="uid://cvo238xacrn47" path="res://art/Credits_normal.png" id="6_7xije"]
 [ext_resource type="Script" path="res://scripts/ExitButton.gd" id="6_vscd6"]
 [ext_resource type="AudioStream" uid="uid://dwlqknvf6fc0c" path="res://sound/Mosu.mp3" id="7_0vnjp"]
-[ext_resource type="Texture2D" uid="uid://db3lcgwu1i27o" path="res://art/placeholders/menu_assets/creditsbutton.png" id="8_22eki"]
+[ext_resource type="Texture2D" uid="uid://bnoqrdskajdr3" path="res://art/credits_hover.png" id="7_limm4"]
 [ext_resource type="Script" path="res://scripts/CreditsButton.gd" id="9_5gqfn"]
 [ext_resource type="AudioStream" uid="uid://b724vhkwdi3v0" path="res://sound/clicking/click.wav" id="9_m8eg5"]
+[ext_resource type="Texture2D" uid="uid://ow7suwafgxj5" path="res://art/Quit_normal.png" id="9_od5c6"]
+[ext_resource type="Texture2D" uid="uid://c3q667cwyeqyk" path="res://art/Quit_hover.png" id="10_typc6"]
+[ext_resource type="Texture2D" uid="uid://d2eu4x1mfht83" path="res://art/menu_title_only.png" id="14_icor4"]
+[ext_resource type="Script" path="res://menus/Title_anim.gd" id="15_c82sh"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -25,7 +29,7 @@ script = ExtResource("1_012gj")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_f1wlx")
+texture = ExtResource("2_36jfi")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -34,32 +38,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.0
-offset_top = 106.0
-offset_right = 358.0
-offset_bottom = 263.0
+offset_left = -143.0
+offset_top = 99.0
+offset_right = 372.0
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("2_2wjau")
 texture_hover = ExtResource("3_lq3m7")
 script = ExtResource("4_4lx3u")
-
-[node name="ExitButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = 347.0
-offset_right = 158.0
-offset_bottom = 457.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("4_3wpqd")
-script = ExtResource("6_vscd6")
 
 [node name="CreditsButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -68,14 +56,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = 218.0
-offset_right = 158.0
-offset_bottom = 328.0
+offset_left = -214.0
+offset_top = 206.0
+offset_right = 551.0
+offset_bottom = 398.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("8_22eki")
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("6_7xije")
+texture_hover = ExtResource("7_limm4")
 script = ExtResource("9_5gqfn")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = 329.0
+offset_right = 319.0
+offset_bottom = 521.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("9_od5c6")
+texture_hover = ExtResource("10_typc6")
+script = ExtResource("6_vscd6")
 
 [node name="Humming" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_0vnjp")
@@ -95,6 +103,19 @@ offset_right = 1930.0
 offset_bottom = 1102.0
 color = Color(0, 0, 0.0509804, 1)
 
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -447.0
+offset_top = 118.0
+offset_right = 448.0
+offset_bottom = 628.0
+grow_horizontal = 2
+texture = ExtResource("14_icor4")
+script = ExtResource("15_c82sh")
+
 [connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_button_pressed"]
-[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]
 [connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_pressed"]
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]
