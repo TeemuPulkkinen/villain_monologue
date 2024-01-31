@@ -35,14 +35,10 @@ func set_responses(next_responses: Array) -> void:
 		Event.play_sound("Thought")
 		for i in range(0, _responses.size()):
 			var thought_bubble = get_child(i)
-			thought_bubble.set_meta("response", _responses[i])
-			var path = "res://art/option_icons/option_"+_responses[i].text+".png"
-			var texturefile = FileAccess.open(path, FileAccess.READ)
-			if texturefile:
-				thought_bubble.get_node("Img").texture= load(path)
-				texturefile.close()
-			else:
-				thought_bubble.get_node("Img").texture= load("res://art/option_icons/option_placeholder.png")
+			var response = _responses[i]
+			thought_bubble.set_meta("response", response)
+
+			thought_bubble.get_node("Img").texture= Event.get_icon(response.text)
 
 		_configure_focus()
 

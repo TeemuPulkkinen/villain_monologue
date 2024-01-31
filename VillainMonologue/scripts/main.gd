@@ -36,6 +36,7 @@ func _ready():
 	
 	starting_cutscene()
 
+
 func starting_cutscene():
 	# Setup
 	blackout.show()
