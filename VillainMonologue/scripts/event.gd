@@ -3,25 +3,16 @@ extends Node
 # Main scene tells where it is when it loads
 var main
 var sound_library
-var icon_library = {}
+var icon_library
 
 var current_malice = 20
 var ended = false
 
 # LOAD RESOURCES FOR ICONS
-func _ready():
-	var dir = DirAccess.open("res://art/option_icons/")
-	dir.list_dir_begin()
-	var filename = dir.get_next()
-	while (filename != ""):
-		if filename.ends_with(".png"):
-			filename = filename.replace('.import', '')
-			icon_library[filename.left(filename.length()-4)] = load("res://art/option_icons/" + filename)
-		filename = dir.get_next()
 
-# Turn icon name into texture file
+# Turn icon name into a texture
 func get_icon(icon_name):
-	return icon_library["option_"+icon_name]
+	return icon_library.get_node("option_"+icon_name).texture
 
 
 # FUNCTIONS TO CALL FROM DIALOGUE:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://kowp0cp7kq27"]
+[gd_scene load_steps=136 format=3 uid="uid://kowp0cp7kq27"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_b15b5"]
 [ext_resource type="Texture2D" uid="uid://isjvjl8ohmg5" path="res://art/final_assets/bg_lit.png" id="2_k4fwo"]
@@ -77,6 +77,48 @@
 [ext_resource type="AudioStream" uid="uid://cy7od3xg68qn1" path="res://sound/song/Song_Final.mp3" id="55_wu1p6"]
 [ext_resource type="AudioStream" uid="uid://u7kvpqb0eg7w" path="res://sound/background01.mp3" id="56_ggua1"]
 [ext_resource type="AudioStream" uid="uid://b4yf2m48c2xv5" path="res://sound/lampsnap.wav" id="64_06mqh"]
+[ext_resource type="Texture2D" uid="uid://rotl7j26mne" path="res://art/option_icons/option_Apple.png" id="78_ajedc"]
+[ext_resource type="Texture2D" uid="uid://dddpbn1ylhjeq" path="res://art/option_icons/option_Bat.png" id="79_3bjts"]
+[ext_resource type="Texture2D" uid="uid://cogncp3piy46o" path="res://art/option_icons/option_Bathtub.png" id="80_onvoj"]
+[ext_resource type="Texture2D" uid="uid://b87eby5ou4aqi" path="res://art/option_icons/option_Bike.png" id="81_rvwo6"]
+[ext_resource type="Texture2D" uid="uid://deiprfaeckgac" path="res://art/option_icons/option_Bomb.png" id="82_fqdw1"]
+[ext_resource type="Texture2D" uid="uid://c82tvd2gknqju" path="res://art/option_icons/option_Book.png" id="83_epvv4"]
+[ext_resource type="Texture2D" uid="uid://cb7bxysqpxgmk" path="res://art/option_icons/option_Boot.png" id="84_okp7q"]
+[ext_resource type="Texture2D" uid="uid://bguwvpq0kp3b" path="res://art/option_icons/option_Brain.png" id="85_30gbx"]
+[ext_resource type="Texture2D" uid="uid://bxkm82e4otkjg" path="res://art/option_icons/option_Calendar.png" id="86_lm27f"]
+[ext_resource type="Texture2D" uid="uid://dobr5bu627n7y" path="res://art/option_icons/option_Car.png" id="87_7wg1f"]
+[ext_resource type="Texture2D" uid="uid://clvleaba4ss4r" path="res://art/option_icons/option_Carrot.png" id="88_ehfd2"]
+[ext_resource type="Texture2D" uid="uid://bop6l6uh4che" path="res://art/option_icons/option_Cereal.png" id="89_g833r"]
+[ext_resource type="Texture2D" uid="uid://b2ukgybuvup8a" path="res://art/option_icons/option_Dinner.png" id="90_4ohqd"]
+[ext_resource type="Texture2D" uid="uid://beot5i8ilsgn" path="res://art/option_icons/option_Fire.png" id="91_kehs5"]
+[ext_resource type="Texture2D" uid="uid://lo2364bv5ys2" path="res://art/option_icons/option_GingerBread.png" id="92_1fih6"]
+[ext_resource type="Texture2D" uid="uid://yl2r28ywnxpy" path="res://art/option_icons/option_GlassesCrossedOut.png" id="93_rifdu"]
+[ext_resource type="Texture2D" uid="uid://w2h2ybl7a6a1" path="res://art/option_icons/option_Gold.png" id="94_bybb5"]
+[ext_resource type="Texture2D" uid="uid://d00wr4lh8haa2" path="res://art/option_icons/option_Halfmoon.png" id="95_deqsi"]
+[ext_resource type="Texture2D" uid="uid://jxv8merjb352" path="res://art/option_icons/option_Hammer.png" id="96_vtlfd"]
+[ext_resource type="Texture2D" uid="uid://dqfjm7odqebl1" path="res://art/option_icons/option_Hearts.png" id="97_ivw7e"]
+[ext_resource type="Texture2D" uid="uid://cjh44s5qplnel" path="res://art/option_icons/option_Kiss.png" id="98_v7f47"]
+[ext_resource type="Texture2D" uid="uid://cejshki4kh2yr" path="res://art/option_icons/option_Letter.png" id="99_ah2yh"]
+[ext_resource type="Texture2D" uid="uid://d1y24pcf7kysj" path="res://art/option_icons/option_Mirror.png" id="100_nmcvn"]
+[ext_resource type="Texture2D" uid="uid://cdyhkodgumet1" path="res://art/option_icons/option_Mouse.png" id="101_biwp3"]
+[ext_resource type="Texture2D" uid="uid://ciieiygcdpa1k" path="res://art/option_icons/option_Mushroom.png" id="102_n6nv1"]
+[ext_resource type="Texture2D" uid="uid://cvm2xc68nkh6d" path="res://art/option_icons/option_Octopus.png" id="103_w0jnu"]
+[ext_resource type="Texture2D" uid="uid://vl4oryixbln" path="res://art/option_icons/option_Pancake.png" id="104_oe1tn"]
+[ext_resource type="Texture2D" uid="uid://cx8j54ho21a67" path="res://art/option_icons/option_placeholder.png" id="105_oni6l"]
+[ext_resource type="Texture2D" uid="uid://dlx7ftdhmp0f6" path="res://art/option_icons/option_Poison.png" id="106_w80o7"]
+[ext_resource type="Texture2D" uid="uid://bcpmt2be2w5d2" path="res://art/option_icons/option_Raccoon.png" id="107_diq1g"]
+[ext_resource type="Texture2D" uid="uid://dswkhsyryw0q7" path="res://art/option_icons/option_Rocketship.png" id="108_42o37"]
+[ext_resource type="Texture2D" uid="uid://cl3c5bk110rye" path="res://art/option_icons/option_Shark.png" id="109_1qd3q"]
+[ext_resource type="Texture2D" uid="uid://dtu6eggh7aho1" path="res://art/option_icons/option_Sock.png" id="110_11yfa"]
+[ext_resource type="Texture2D" uid="uid://cyohk7wk8oj53" path="res://art/option_icons/option_Spiders.png" id="111_h3v7g"]
+[ext_resource type="Texture2D" uid="uid://bo3iw4pdox5jj" path="res://art/option_icons/option_Stone.png" id="112_qow7u"]
+[ext_resource type="Texture2D" uid="uid://b0e07t11lg5l3" path="res://art/option_icons/option_Teacup.png" id="113_prcus"]
+[ext_resource type="Texture2D" uid="uid://kc7r4n2hbysx" path="res://art/option_icons/option_Torch.png" id="114_d4itd"]
+[ext_resource type="Texture2D" uid="uid://i3jlf0k74378" path="res://art/option_icons/option_Trash.png" id="115_4nlms"]
+[ext_resource type="Texture2D" uid="uid://cg05ssp5leg4w" path="res://art/option_icons/option_Tree.png" id="116_y7sk8"]
+[ext_resource type="Texture2D" uid="uid://bjv1l8hrpml86" path="res://art/option_icons/option_Umbrella.png" id="117_mst8y"]
+[ext_resource type="Texture2D" uid="uid://d4m1vxiebfn5s" path="res://art/option_icons/option_Wave.png" id="118_r07fp"]
+[ext_resource type="Texture2D" uid="uid://ciitihxw57jcl" path="res://art/option_icons/option_Yarn.png" id="119_keqo1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x7a67"]
 animations = [{
@@ -792,5 +834,175 @@ stream = ExtResource("64_06mqh")
 volume_db = -8.494
 mix_target = 1
 bus = &"Room"
+
+[node name="IconLibrary" type="Node2D" parent="."]
+
+[node name="option_Apple" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("78_ajedc")
+
+[node name="option_Bat" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("79_3bjts")
+
+[node name="option_Bathtub" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("80_onvoj")
+
+[node name="option_Bike" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("81_rvwo6")
+
+[node name="option_Bomb" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("82_fqdw1")
+
+[node name="option_Book" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("83_epvv4")
+
+[node name="option_Boot" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("84_okp7q")
+
+[node name="option_Brain" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("85_30gbx")
+
+[node name="option_Calendar" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("86_lm27f")
+
+[node name="option_Car" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("87_7wg1f")
+
+[node name="option_Carrot" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("88_ehfd2")
+
+[node name="option_Cereal" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("89_g833r")
+
+[node name="option_Dinner" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("90_4ohqd")
+
+[node name="option_Fire" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("91_kehs5")
+
+[node name="option_GingerBread" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("92_1fih6")
+
+[node name="option_GlassesCrossedOut" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("93_rifdu")
+
+[node name="option_Gold" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("94_bybb5")
+
+[node name="option_Halfmoon" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("95_deqsi")
+
+[node name="option_Hammer" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("96_vtlfd")
+
+[node name="option_Hearts" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("97_ivw7e")
+
+[node name="option_Kiss" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("98_v7f47")
+
+[node name="option_Letter" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("99_ah2yh")
+
+[node name="option_Mirror" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("100_nmcvn")
+
+[node name="option_Mouse" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("101_biwp3")
+
+[node name="option_Mushroom" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("102_n6nv1")
+
+[node name="option_Octopus" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("103_w0jnu")
+
+[node name="option_Pancake" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("104_oe1tn")
+
+[node name="option_Placeholder" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("105_oni6l")
+
+[node name="option_Poison" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("106_w80o7")
+
+[node name="option_Raccoon" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("107_diq1g")
+
+[node name="option_Rocketship" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("108_42o37")
+
+[node name="option_Shark" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("109_1qd3q")
+
+[node name="option_Sock" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("110_11yfa")
+
+[node name="option_Spiders" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("111_h3v7g")
+
+[node name="option_Stone" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("112_qow7u")
+
+[node name="option_Teacup" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("113_prcus")
+
+[node name="option_Torch" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("114_d4itd")
+
+[node name="option_Trash" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("115_4nlms")
+
+[node name="option_Tree" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("116_y7sk8")
+
+[node name="option_Umbrella" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("117_mst8y")
+
+[node name="option_Wave" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("118_r07fp")
+
+[node name="option_Yarn" type="Sprite2D" parent="IconLibrary"]
+position = Vector2(2159, 520)
+texture = ExtResource("119_keqo1")
 
 [connection signal="animation_finished" from="CanvasLayer/Timer/Bomb" to="CanvasLayer/Timer" method="_on_bomb_animation_finished"]

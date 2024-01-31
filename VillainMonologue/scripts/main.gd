@@ -33,6 +33,7 @@ func _ready():
 	timer.hide()
 	Event.main = self # Update Event on this node's location
 	Event.sound_library = $SoundLibrary
+	Event.icon_library = $IconLibrary
 	
 	starting_cutscene()
 
